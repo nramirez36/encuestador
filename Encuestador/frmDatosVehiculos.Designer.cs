@@ -46,6 +46,7 @@
             this.label3.Size = new System.Drawing.Size(114, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Fecha Encuesta:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -56,6 +57,7 @@
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Patente:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbTipoVehiculo
             // 
@@ -65,6 +67,7 @@
             this.cmbTipoVehiculo.Name = "cmbTipoVehiculo";
             this.cmbTipoVehiculo.Size = new System.Drawing.Size(199, 24);
             this.cmbTipoVehiculo.TabIndex = 1;
+            this.cmbTipoVehiculo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVehiculo_SelectedIndexChanged);
             // 
             // btnSiguiente
             // 
@@ -84,6 +87,7 @@
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(199, 26);
             this.txtPatente.TabIndex = 3;
+            this.txtPatente.TextChanged += new System.EventHandler(this.txtPatente_TextChanged);
             // 
             // label1
             // 
@@ -94,6 +98,7 @@
             this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Vehículo:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtFechaHoraEncuesta
             // 
@@ -103,6 +108,7 @@
             this.txtFechaHoraEncuesta.Name = "txtFechaHoraEncuesta";
             this.txtFechaHoraEncuesta.Size = new System.Drawing.Size(199, 26);
             this.txtFechaHoraEncuesta.TabIndex = 5;
+            this.txtFechaHoraEncuesta.TextChanged += new System.EventHandler(this.txtFechaHoraEncuesta_TextChanged);
             // 
             // frmDatosVehiculos
             // 

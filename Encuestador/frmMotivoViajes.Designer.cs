@@ -45,6 +45,7 @@
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Motivo de Viaje:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -55,6 +56,7 @@
             this.label2.Size = new System.Drawing.Size(125, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Distancia de Viaje:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbDistanciaViaje
             // 
@@ -64,6 +66,7 @@
             this.cmbDistanciaViaje.Name = "cmbDistanciaViaje";
             this.cmbDistanciaViaje.Size = new System.Drawing.Size(199, 24);
             this.cmbDistanciaViaje.TabIndex = 2;
+            this.cmbDistanciaViaje.SelectedIndexChanged += new System.EventHandler(this.cmbDistanciaViaje_SelectedIndexChanged);
             // 
             // cmbMotivoViaje
             // 
@@ -73,6 +76,7 @@
             this.cmbMotivoViaje.Name = "cmbMotivoViaje";
             this.cmbMotivoViaje.Size = new System.Drawing.Size(199, 24);
             this.cmbMotivoViaje.TabIndex = 4;
+            this.cmbMotivoViaje.SelectedIndexChanged += new System.EventHandler(this.cmbMotivoViaje_SelectedIndexChanged);
             // 
             // btnSiguiente
             // 
@@ -94,6 +98,7 @@
             this.lblExplicacionEncuesta.Size = new System.Drawing.Size(176, 17);
             this.lblExplicacionEncuesta.TabIndex = 0;
             this.lblExplicacionEncuesta.Text = "Explicacion de la Encuesta";
+            this.lblExplicacionEncuesta.Click += new System.EventHandler(this.lblExplicacionEncuesta_Click);
             // 
             // frmMotivoViajes
             // 

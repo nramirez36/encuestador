@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
 
@@ -27,7 +24,6 @@ namespace Encuestador.DL
 
             return com;
         }
-
 
         public static OleDbCommand ArmaCommand(string strSQL, List<OleDbParameter> param, OleDbConnection con)
         {
@@ -85,6 +81,5 @@ namespace Encuestador.DL
             com.Transaction = tran;
             return com.ExecuteReader();
         }
-
     }
 }

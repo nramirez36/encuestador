@@ -41,5 +41,30 @@ namespace Encuestador
 
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDistanciaViaje_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMotivoViaje_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExplicacionEncuesta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

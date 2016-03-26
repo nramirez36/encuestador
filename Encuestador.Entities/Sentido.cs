@@ -1,8 +1,8 @@
 ﻿namespace Encuestador.Entities
 {
-    public class Sitio
+    public class Sentido
     {
-        public int IdSitios { get; set; }
+        public int IdSentido { get; set; }
         public string Descripcion { get; set; }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pbPorcentajeAvance = new System.Windows.Forms.ToolStripProgressBar();
             this.panelNroEncuesta = new System.Windows.Forms.Panel();
-            this.panelSitiosEncuestas = new System.Windows.Forms.Panel();
             this.btnIrSitiosEncuesta = new System.Windows.Forms.Button();
             this.txtNroEncuesta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelSitiosEncuestas = new System.Windows.Forms.Panel();
             this.cmbSentido = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,16 +50,24 @@
             this.btnIrMotivoViajes = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.panelMotivoViaje = new System.Windows.Forms.Panel();
+            this.btnIrCasos = new System.Windows.Forms.Button();
+            this.cmbMotivoViaje = new System.Windows.Forms.ComboBox();
+            this.cmbDistanciaViaje = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.panelNroEncuesta.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
+            this.panelMotivoViaje.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.pbPorcentajeAvance});
             this.statusStrip1.Location = new System.Drawing.Point(0, 189);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(372, 22);
@@ -67,11 +75,12 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // pbPorcentajeAvance
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(224, 17);
-            this.toolStripStatusLabel1.Text = "Aca voy a indicar el porcentaje de avance";
+            this.pbPorcentajeAvance.Margin = new System.Windows.Forms.Padding(90, 3, 70, 3);
+            this.pbPorcentajeAvance.Name = "pbPorcentajeAvance";
+            this.pbPorcentajeAvance.Size = new System.Drawing.Size(180, 16);
+            this.pbPorcentajeAvance.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // panelNroEncuesta
             // 
@@ -83,21 +92,7 @@
             this.panelNroEncuesta.Name = "panelNroEncuesta";
             this.panelNroEncuesta.Size = new System.Drawing.Size(372, 189);
             this.panelNroEncuesta.TabIndex = 1;
-            // 
-            // panelSitiosEncuestas
-            // 
-            this.panelSitiosEncuestas.Controls.Add(this.cmbSentido);
-            this.panelSitiosEncuestas.Controls.Add(this.label3);
-            this.panelSitiosEncuestas.Controls.Add(this.label2);
-            this.panelSitiosEncuestas.Controls.Add(this.cmbSitios);
-            this.panelSitiosEncuestas.Controls.Add(this.btnIrDatosVehiculos);
-            this.panelSitiosEncuestas.Controls.Add(this.txtUbicacion);
-            this.panelSitiosEncuestas.Controls.Add(this.label4);
-            this.panelSitiosEncuestas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
-            this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
-            this.panelSitiosEncuestas.Size = new System.Drawing.Size(372, 189);
-            this.panelSitiosEncuestas.TabIndex = 6;
+            this.panelNroEncuesta.Visible = false;
             // 
             // btnIrSitiosEncuesta
             // 
@@ -116,8 +111,9 @@
             this.txtNroEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroEncuesta.Location = new System.Drawing.Point(15, 39);
             this.txtNroEncuesta.Name = "txtNroEncuesta";
-            this.txtNroEncuesta.Size = new System.Drawing.Size(213, 26);
+            this.txtNroEncuesta.Size = new System.Drawing.Size(128, 26);
             this.txtNroEncuesta.TabIndex = 4;
+            this.txtNroEncuesta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEncuesta_KeyPress);
             // 
             // label1
             // 
@@ -131,18 +127,33 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Ingresar el Número de Encuesta:";
             // 
+            // panelSitiosEncuestas
+            // 
+            this.panelSitiosEncuestas.Controls.Add(this.cmbSentido);
+            this.panelSitiosEncuestas.Controls.Add(this.label3);
+            this.panelSitiosEncuestas.Controls.Add(this.label2);
+            this.panelSitiosEncuestas.Controls.Add(this.cmbSitios);
+            this.panelSitiosEncuestas.Controls.Add(this.btnIrDatosVehiculos);
+            this.panelSitiosEncuestas.Controls.Add(this.txtUbicacion);
+            this.panelSitiosEncuestas.Controls.Add(this.label4);
+            this.panelSitiosEncuestas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
+            this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
+            this.panelSitiosEncuestas.Size = new System.Drawing.Size(372, 189);
+            this.panelSitiosEncuestas.TabIndex = 6;
+            this.panelSitiosEncuestas.Visible = false;
+            // 
             // cmbSentido
             // 
             this.cmbSentido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSentido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSentido.FormattingEnabled = true;
-            this.cmbSentido.Items.AddRange(new object[] {
-            "Ida",
-            "Vuelta"});
             this.cmbSentido.Location = new System.Drawing.Point(135, 106);
             this.cmbSentido.Name = "cmbSentido";
             this.cmbSentido.Size = new System.Drawing.Size(199, 24);
             this.cmbSentido.TabIndex = 12;
+            this.cmbSentido.DropDown += new System.EventHandler(this.cmbSentido_DropDown);
+            this.cmbSentido.SelectionChangeCommitted += new System.EventHandler(this.cmbSentido_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -169,10 +180,14 @@
             this.cmbSitios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSitios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSitios.FormattingEnabled = true;
+            this.cmbSitios.IntegralHeight = false;
+            this.cmbSitios.ItemHeight = 16;
             this.cmbSitios.Location = new System.Drawing.Point(135, 16);
             this.cmbSitios.Name = "cmbSitios";
             this.cmbSitios.Size = new System.Drawing.Size(199, 24);
             this.cmbSitios.TabIndex = 8;
+            this.cmbSitios.DropDown += new System.EventHandler(this.cmbSitios_DropDown);
+            this.cmbSitios.SelectionChangeCommitted += new System.EventHandler(this.cmbSitios_SelectionChangeCommitted);
             // 
             // btnIrDatosVehiculos
             // 
@@ -218,6 +233,7 @@
             this.panelDatosVehiculo.Name = "panelDatosVehiculo";
             this.panelDatosVehiculo.Size = new System.Drawing.Size(372, 189);
             this.panelDatosVehiculo.TabIndex = 14;
+            this.panelDatosVehiculo.Visible = false;
             // 
             // txtFechaHoraEncuesta
             // 
@@ -250,6 +266,7 @@
             // 
             // cmbTipoVehiculo
             // 
+            this.cmbTipoVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoVehiculo.FormattingEnabled = true;
             this.cmbTipoVehiculo.Location = new System.Drawing.Point(149, 12);
@@ -286,14 +303,89 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Tipo de Vehículo:";
             // 
+            // panelMotivoViaje
+            // 
+            this.panelMotivoViaje.Controls.Add(this.btnIrCasos);
+            this.panelMotivoViaje.Controls.Add(this.cmbMotivoViaje);
+            this.panelMotivoViaje.Controls.Add(this.cmbDistanciaViaje);
+            this.panelMotivoViaje.Controls.Add(this.label8);
+            this.panelMotivoViaje.Controls.Add(this.label9);
+            this.panelMotivoViaje.Controls.Add(this.lblExplicacionEncuesta);
+            this.panelMotivoViaje.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMotivoViaje.Location = new System.Drawing.Point(0, 0);
+            this.panelMotivoViaje.Name = "panelMotivoViaje";
+            this.panelMotivoViaje.Size = new System.Drawing.Size(372, 189);
+            this.panelMotivoViaje.TabIndex = 6;
+            this.panelMotivoViaje.Visible = false;
+            // 
+            // btnIrCasos
+            // 
+            this.btnIrCasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIrCasos.Location = new System.Drawing.Point(224, 149);
+            this.btnIrCasos.Name = "btnIrCasos";
+            this.btnIrCasos.Size = new System.Drawing.Size(124, 32);
+            this.btnIrCasos.TabIndex = 11;
+            this.btnIrCasos.Text = "Siguiente";
+            this.btnIrCasos.UseVisualStyleBackColor = true;
+            this.btnIrCasos.Click += new System.EventHandler(this.btnIrCasos_Click);
+            // 
+            // cmbMotivoViaje
+            // 
+            this.cmbMotivoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMotivoViaje.FormattingEnabled = true;
+            this.cmbMotivoViaje.Location = new System.Drawing.Point(149, 110);
+            this.cmbMotivoViaje.Name = "cmbMotivoViaje";
+            this.cmbMotivoViaje.Size = new System.Drawing.Size(199, 24);
+            this.cmbMotivoViaje.TabIndex = 10;
+            // 
+            // cmbDistanciaViaje
+            // 
+            this.cmbDistanciaViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDistanciaViaje.FormattingEnabled = true;
+            this.cmbDistanciaViaje.Location = new System.Drawing.Point(149, 69);
+            this.cmbDistanciaViaje.Name = "cmbDistanciaViaje";
+            this.cmbDistanciaViaje.Size = new System.Drawing.Size(199, 24);
+            this.cmbDistanciaViaje.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 17);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Motivo de Viaje:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(25, 72);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 17);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Distancia de Viaje:";
+            // 
+            // lblExplicacionEncuesta
+            // 
+            this.lblExplicacionEncuesta.AutoSize = true;
+            this.lblExplicacionEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExplicacionEncuesta.Location = new System.Drawing.Point(25, 7);
+            this.lblExplicacionEncuesta.Name = "lblExplicacionEncuesta";
+            this.lblExplicacionEncuesta.Size = new System.Drawing.Size(176, 17);
+            this.lblExplicacionEncuesta.TabIndex = 6;
+            this.lblExplicacionEncuesta.Text = "Explicacion de la Encuesta";
+            // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 211);
             this.Controls.Add(this.panelDatosVehiculo);
-            this.Controls.Add(this.panelSitiosEncuestas);
+            this.Controls.Add(this.panelMotivoViaje);
             this.Controls.Add(this.panelNroEncuesta);
+            this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -301,7 +393,8 @@
             this.Name = "frmControl";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "frmControl";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nueva Encuesta";
             this.Load += new System.EventHandler(this.frmControl_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -311,6 +404,8 @@
             this.panelSitiosEncuestas.PerformLayout();
             this.panelDatosVehiculo.ResumeLayout(false);
             this.panelDatosVehiculo.PerformLayout();
+            this.panelMotivoViaje.ResumeLayout(false);
+            this.panelMotivoViaje.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,10 +414,8 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Panel panelNroEncuesta;
         private System.Windows.Forms.Button btnIrSitiosEncuesta;
-        private System.Windows.Forms.TextBox txtNroEncuesta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelSitiosEncuestas;
         private System.Windows.Forms.ComboBox cmbSentido;
@@ -340,5 +433,14 @@
         private System.Windows.Forms.Button btnIrMotivoViajes;
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelMotivoViaje;
+        private System.Windows.Forms.Button btnIrCasos;
+        private System.Windows.Forms.ComboBox cmbMotivoViaje;
+        private System.Windows.Forms.ComboBox cmbDistanciaViaje;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblExplicacionEncuesta;
+        private System.Windows.Forms.ToolStripProgressBar pbPorcentajeAvance;
+        private System.Windows.Forms.TextBox txtNroEncuesta;
     }
 }

@@ -64,7 +64,6 @@ namespace Encuestador
                     if (oAux != null)
                     {
                         frmMenu frm = new frmMenu();
-                        frm.UsuarioID = oAux.IdEncuestador;
                         frm.UsuarioConectado = oAux;
                         this.Close();
                         frm.Show();

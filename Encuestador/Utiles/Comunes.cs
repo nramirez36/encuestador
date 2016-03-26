@@ -34,5 +34,15 @@ namespace Encuestador.Utiles
             }
             largestWidth = maxLen;
         }
+        public static int GetCountControls(Control.ControlCollection controls)
+        {
+            int tbCount = 0;
+            foreach (Control wc in controls)
+            {
+                if (wc is Panel)
+                    tbCount++;                
+            }
+            return tbCount;
+        }
     }
 }

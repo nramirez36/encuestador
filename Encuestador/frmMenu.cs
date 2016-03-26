@@ -19,7 +19,6 @@ namespace Encuestador
         #endregion
 
         #region Propiedades
-        public int UsuarioID { get; set; }
         public Login UsuarioConectado { get; set; }
         #endregion
 
@@ -42,19 +41,21 @@ namespace Encuestador
         #region Eventos
         private void btnNuevaEncuesta_Click(object sender, EventArgs e)
         {
-            frmNroEncuesta frmNroEncuesta = new frmNroEncuesta();
-            frmNroEncuesta.ShowDialog();
-
+            var frmControl = new frmControl();
+            frmControl.Size = new Size(362, 195);
+            frmControl.UsuarioConectado = UsuarioConectado;
+            frmControl.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-
+            var frm = new frmExportar();
+            frm.Show();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)

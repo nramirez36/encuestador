@@ -28,7 +28,17 @@ namespace Encuestador
         #endregion
 
         #region Metodos
-
+        public bool validarControles()
+        {
+            bool res = false;
+            string msg = "";
+            if (txtNroEncuesta.Text == null || txtNroEncuesta.Text.Equals(""))
+            {
+                MessageBox.Show("Debe ingresar el Número de Encuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         #endregion
 
         #region Eventos
@@ -43,17 +53,7 @@ namespace Encuestador
         }
         #endregion
 
-        public bool validarControles()
-        {
-            bool res = false;
-            string msg = "";
-            if (txtNroEncuesta.Text == null || txtNroEncuesta.Text.Equals(""))
-            {
-                MessageBox.Show("Debe ingresar el Número de Encuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
+
 
 
 

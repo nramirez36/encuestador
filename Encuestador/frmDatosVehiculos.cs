@@ -43,5 +43,35 @@ namespace Encuestador
             this.Close();
             frmMotivoViajes.ShowDialog();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTipoVehiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPatente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFechaHoraEncuesta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControl.Designer.cs">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatosVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,22 +109,13 @@
     <Compile Include="frmMotivoViajes.Designer.cs">
       <DependentUpon>frmMotivoViajes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNroEncuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNroEncuesta.Designer.cs">
-      <DependentUpon>frmNroEncuesta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSitioEncuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSitioEncuesta.Designer.cs">
-      <DependentUpon>frmSitioEncuesta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Init.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utiles\Comunes.cs" />
+    <EmbeddedResource Include="frmControl.resx">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDatosVehiculos.resx">
       <DependentUpon>frmDatosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,12 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMotivoViajes.resx">
       <DependentUpon>frmMotivoViajes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNroEncuesta.resx">
-      <DependentUpon>frmNroEncuesta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSitioEncuesta.resx">
-      <DependentUpon>frmSitioEncuesta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

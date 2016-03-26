@@ -56,8 +56,6 @@ namespace Encuestador
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-
-
             var frmDatosVehiculos = new frmDatosVehiculos();
             this.Close();
             frmDatosVehiculos.ShowDialog();
