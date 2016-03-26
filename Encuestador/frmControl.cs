@@ -14,6 +14,7 @@ namespace Encuestador
     {
         #region Variables
         private int pCantidadTotal;
+        private int pCantidadSumar;
         private string pSentidoSeleccionado = string.Empty;
         private DateTime pFechaEncuesta = DateTime.Now;
 
@@ -32,7 +33,9 @@ namespace Encuestador
 
         #region Propiedades
         public Login UsuarioConectado { get; set; }
+        public int NroEncuesta { get; set; }
         #endregion
+
 
         #region Constuctor
         public frmControl()
@@ -162,7 +165,7 @@ namespace Encuestador
 
         private void SumarPorcentajeAvance()
         {
-            pbPorcentajeAvance.Value += 13;
+            pbPorcentajeAvance.Value += pCantidadSumar;
         }
 
         private void CargarDatos()
@@ -273,6 +276,8 @@ namespace Encuestador
         {
             CargarDatos();
             pCantidadTotal = Comunes.GetCountControls(Controls);
+            double porcentaje = 100 / (pCantidadTotal+1);
+            pCantidadSumar = int.Parse(Math.Round(porcentaje).ToString());
             pbPorcentajeAvance.Value = 0;
             panelNroEncuesta.Visible = true;
         }
@@ -293,11 +298,8 @@ namespace Encuestador
         }
 
         private void btnIrCasos_Click(object sender, EventArgs e)
-        {
-            if (validarControlesMotivos())
-            { }
-
-            this.Close();
+        {            
+            IrACasos1();
         }
 
         private void txtNroEncuesta_KeyPress(object sender, KeyPressEventArgs e)

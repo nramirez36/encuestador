@@ -78,6 +78,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Número de Encuesta";
+            this.Load += new System.EventHandler(this.frmNroEncuesta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

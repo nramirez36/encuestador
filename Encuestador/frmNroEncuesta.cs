@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Encuestador.Entities;
 namespace Encuestador
 {
     public partial class frmNroEncuesta : Form
@@ -17,7 +10,7 @@ namespace Encuestador
         #endregion
 
         #region Propiedades
-
+        public Login UsuarioConectado { get; set; }
         #endregion
 
         #region Constructor
@@ -39,6 +32,12 @@ namespace Encuestador
             }
             return true;
         }
+
+        public void LoadDatos()
+        {
+            this.Text = this.Text + " - " + UsuarioConectado.User;
+        }
+
         #endregion
 
         #region Eventos
@@ -46,15 +45,19 @@ namespace Encuestador
         {
             if (validarControles())
             {
-                frmSitioEncuesta frmDatoSitios = new frmSitioEncuesta();
+                var frmControl = new frmControl();
+                frmControl.NroEncuesta = int.Parse(txtNroEncuesta.Text);
+                frmControl.UsuarioConectado = UsuarioConectado;
                 this.Close();
-                frmDatoSitios.ShowDialog();
+                frmControl.ShowDialog();
             }
         }
+        private void frmNroEncuesta_Load(object sender, EventArgs e)
+        {
+            LoadDatos();
+        }
+
         #endregion
-
-
-
 
 
     }
