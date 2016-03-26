@@ -38,10 +38,7 @@ namespace Encuestador
             this.Text = this.Text + " - " + UsuarioConectado.User;
         }
 
-        #endregion
-
-        #region Eventos
-        private void btnSiguiente_Click(object sender, EventArgs e)
+        private void IrASitiosEncuestas()
         {
             if (validarControles())
             {
@@ -52,9 +49,25 @@ namespace Encuestador
                 frmControl.ShowDialog();
             }
         }
+
+        #endregion
+
+        #region Eventos
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            IrASitiosEncuestas();
+        }
         private void frmNroEncuesta_Load(object sender, EventArgs e)
         {
             LoadDatos();
+        }
+        private void txtNroEncuesta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+                e.Handled = true;
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                IrASitiosEncuestas();
         }
 
         #endregion

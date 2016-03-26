@@ -30,10 +30,6 @@
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pbPorcentajeAvance = new System.Windows.Forms.ToolStripProgressBar();
-            this.panelNroEncuesta = new System.Windows.Forms.Panel();
-            this.btnIrSitiosEncuesta = new System.Windows.Forms.Button();
-            this.txtNroEncuesta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelSitiosEncuestas = new System.Windows.Forms.Panel();
             this.cmbSentido = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +54,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
-            this.panelNroEncuesta.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
             this.panelMotivoViaje.SuspendLayout();
@@ -82,51 +77,6 @@
             this.pbPorcentajeAvance.Size = new System.Drawing.Size(180, 16);
             this.pbPorcentajeAvance.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // panelNroEncuesta
-            // 
-            this.panelNroEncuesta.Controls.Add(this.btnIrSitiosEncuesta);
-            this.panelNroEncuesta.Controls.Add(this.txtNroEncuesta);
-            this.panelNroEncuesta.Controls.Add(this.label1);
-            this.panelNroEncuesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNroEncuesta.Location = new System.Drawing.Point(0, 0);
-            this.panelNroEncuesta.Name = "panelNroEncuesta";
-            this.panelNroEncuesta.Size = new System.Drawing.Size(372, 189);
-            this.panelNroEncuesta.TabIndex = 1;
-            this.panelNroEncuesta.Visible = false;
-            // 
-            // btnIrSitiosEncuesta
-            // 
-            this.btnIrSitiosEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIrSitiosEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIrSitiosEncuesta.Location = new System.Drawing.Point(236, 137);
-            this.btnIrSitiosEncuesta.Name = "btnIrSitiosEncuesta";
-            this.btnIrSitiosEncuesta.Size = new System.Drawing.Size(124, 32);
-            this.btnIrSitiosEncuesta.TabIndex = 5;
-            this.btnIrSitiosEncuesta.Text = "Siguiente";
-            this.btnIrSitiosEncuesta.UseVisualStyleBackColor = true;
-            this.btnIrSitiosEncuesta.Click += new System.EventHandler(this.btnIrSitiosEncuesta_Click);
-            // 
-            // txtNroEncuesta
-            // 
-            this.txtNroEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroEncuesta.Location = new System.Drawing.Point(15, 39);
-            this.txtNroEncuesta.Name = "txtNroEncuesta";
-            this.txtNroEncuesta.Size = new System.Drawing.Size(128, 26);
-            this.txtNroEncuesta.TabIndex = 4;
-            this.txtNroEncuesta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEncuesta_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Ingresar el Número de Encuesta:";
-            // 
             // panelSitiosEncuestas
             // 
             this.panelSitiosEncuestas.Controls.Add(this.cmbSentido);
@@ -141,7 +91,6 @@
             this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
             this.panelSitiosEncuestas.Size = new System.Drawing.Size(372, 189);
             this.panelSitiosEncuestas.TabIndex = 6;
-            this.panelSitiosEncuestas.Visible = false;
             // 
             // cmbSentido
             // 
@@ -390,10 +339,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 211);
-            this.Controls.Add(this.panelMotivoViaje);
-            this.Controls.Add(this.panelNroEncuesta);
             this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.panelDatosVehiculo);
+            this.Controls.Add(this.panelMotivoViaje);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -407,8 +355,6 @@
             this.Load += new System.EventHandler(this.frmControl_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panelNroEncuesta.ResumeLayout(false);
-            this.panelNroEncuesta.PerformLayout();
             this.panelSitiosEncuestas.ResumeLayout(false);
             this.panelSitiosEncuestas.PerformLayout();
             this.panelDatosVehiculo.ResumeLayout(false);
@@ -423,9 +369,6 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Panel panelNroEncuesta;
-        private System.Windows.Forms.Button btnIrSitiosEncuesta;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelSitiosEncuestas;
         private System.Windows.Forms.ComboBox cmbSentido;
         private System.Windows.Forms.Label label3;
@@ -450,6 +393,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblExplicacionEncuesta;
         private System.Windows.Forms.ToolStripProgressBar pbPorcentajeAvance;
-        private System.Windows.Forms.TextBox txtNroEncuesta;
     }
 }

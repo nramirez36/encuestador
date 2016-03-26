@@ -50,6 +50,7 @@
             this.txtNroEncuesta.Name = "txtNroEncuesta";
             this.txtNroEncuesta.Size = new System.Drawing.Size(213, 26);
             this.txtNroEncuesta.TabIndex = 1;
+            this.txtNroEncuesta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEncuesta_KeyPress);
             // 
             // btnSiguiente
             // 

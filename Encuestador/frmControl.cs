@@ -45,15 +45,6 @@ namespace Encuestador
         #endregion
 
         #region Metodos
-        private bool validarControlesNroEncuesta()
-        {
-            if (txtNroEncuesta.Text == null || txtNroEncuesta.Text.Equals(""))
-            {
-                MessageBox.Show("Debe ingresar el Número de Encuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
 
         private bool validarControlesSitioEncuesta()
         {
@@ -106,21 +97,6 @@ namespace Encuestador
             return true;
         }
 
-        private void IrASitiosEncuestas()
-        {
-            if (validarControlesNroEncuesta())
-            {
-                pRespuesta.FechaEncuesta = DateTime.Now;
-                pRespuesta.IdUsuario = UsuarioConectado.IdEncuestador;
-                var nroEncuesta = int.Parse(txtNroEncuesta.Text);
-                pRespuesta.NroEncuesta = nroEncuesta;
-
-                this.Size = new Size(388, 260);
-                panelNroEncuesta.Visible = false;
-                panelSitiosEncuestas.Visible = true;
-                SumarPorcentajeAvance();
-            }
-        }
 
         private void IrAVehiculos()
         {
@@ -172,6 +148,15 @@ namespace Encuestador
         {
             this.Text = this.Text + " - " + UsuarioConectado.User;
             this.txtFechaHoraEncuesta.Text = pFechaEncuesta.ToShortDateString();
+
+            pRespuesta.FechaEncuesta = DateTime.Now;
+            pRespuesta.IdUsuario = UsuarioConectado.IdEncuestador;
+            pRespuesta.NroEncuesta = NroEncuesta;
+
+            this.Size = new Size(388, 260);
+            panelSitiosEncuestas.Visible = true;
+            SumarPorcentajeAvance();
+
             CargarSitios();
             CargarSentidos();
             CargarVehiculos();
@@ -276,16 +261,12 @@ namespace Encuestador
         {
             CargarDatos();
             pCantidadTotal = Comunes.GetCountControls(Controls);
-            double porcentaje = 100 / (pCantidadTotal+1);
+            double porcentaje = 100 / (pCantidadTotal + 1);
             pCantidadSumar = int.Parse(Math.Round(porcentaje).ToString());
-            pbPorcentajeAvance.Value = 0;
-            panelNroEncuesta.Visible = true;
+            pbPorcentajeAvance.Value = pCantidadSumar;
+            //panelNroEncuesta.Visible = true;
         }
 
-        private void btnIrSitiosEncuesta_Click(object sender, EventArgs e)
-        {
-            IrASitiosEncuestas();
-        }
 
         private void btnIrDatosVehiculos_Click(object sender, EventArgs e)
         {
@@ -298,17 +279,8 @@ namespace Encuestador
         }
 
         private void btnIrCasos_Click(object sender, EventArgs e)
-        {            
-            IrACasos1();
-        }
-
-        private void txtNroEncuesta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            base.OnKeyPress(e);
-            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
-                e.Handled = true;
-            if ((int)e.KeyChar == (int)Keys.Enter)
-                IrASitiosEncuestas();
+            IrACasos1();
         }
 
         private void cmbSitios_DropDown(object sender, EventArgs e)
