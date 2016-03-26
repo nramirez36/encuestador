@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,12 +94,6 @@
     <Compile Include="frmControl.Designer.cs">
       <DependentUpon>frmControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDatosVehiculos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDatosVehiculos.Designer.cs">
-      <DependentUpon>frmDatosVehiculos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmExportar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,21 +112,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMotivoViajes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMotivoViajes.Designer.cs">
-      <DependentUpon>frmMotivoViajes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Init.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utiles\Comunes.cs" />
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDatosVehiculos.resx">
-      <DependentUpon>frmDatosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExportar.resx">
       <DependentUpon>frmExportar.cs</DependentUpon>
@@ -127,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMotivoViajes.resx">
-      <DependentUpon>frmMotivoViajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,7 +161,18 @@
       <Name>Encuestador.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

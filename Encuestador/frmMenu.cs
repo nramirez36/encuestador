@@ -64,5 +64,9 @@ namespace Encuestador
         }
         #endregion
 
+        private void frmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

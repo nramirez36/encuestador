@@ -273,6 +273,8 @@
             this.cmbTipoVehiculo.Name = "cmbTipoVehiculo";
             this.cmbTipoVehiculo.Size = new System.Drawing.Size(199, 24);
             this.cmbTipoVehiculo.TabIndex = 8;
+            this.cmbTipoVehiculo.DropDown += new System.EventHandler(this.cmbTipoVehiculo_DropDown);
+            this.cmbTipoVehiculo.SelectionChangeCommitted += new System.EventHandler(this.cmbTipoVehiculo_SelectionChangeCommitted);
             // 
             // btnIrMotivoViajes
             // 
@@ -331,21 +333,27 @@
             // 
             // cmbMotivoViaje
             // 
+            this.cmbMotivoViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMotivoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMotivoViaje.FormattingEnabled = true;
             this.cmbMotivoViaje.Location = new System.Drawing.Point(149, 110);
             this.cmbMotivoViaje.Name = "cmbMotivoViaje";
             this.cmbMotivoViaje.Size = new System.Drawing.Size(199, 24);
             this.cmbMotivoViaje.TabIndex = 10;
+            this.cmbMotivoViaje.DropDown += new System.EventHandler(this.cmbMotivoViaje_DropDown);
+            this.cmbMotivoViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbMotivoViaje_SelectionChangeCommitted);
             // 
             // cmbDistanciaViaje
             // 
+            this.cmbDistanciaViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDistanciaViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDistanciaViaje.FormattingEnabled = true;
             this.cmbDistanciaViaje.Location = new System.Drawing.Point(149, 69);
             this.cmbDistanciaViaje.Name = "cmbDistanciaViaje";
             this.cmbDistanciaViaje.Size = new System.Drawing.Size(199, 24);
             this.cmbDistanciaViaje.TabIndex = 8;
+            this.cmbDistanciaViaje.DropDown += new System.EventHandler(this.cmbDistanciaViaje_DropDown);
+            this.cmbDistanciaViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbDistanciaViaje_SelectionChangeCommitted);
             // 
             // label8
             // 
@@ -382,10 +390,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 211);
-            this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.panelMotivoViaje);
             this.Controls.Add(this.panelNroEncuesta);
             this.Controls.Add(this.panelSitiosEncuestas);
+            this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -395,6 +403,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Encuesta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmControl_FormClosed);
             this.Load += new System.EventHandler(this.frmControl_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
