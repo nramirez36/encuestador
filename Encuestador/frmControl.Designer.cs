@@ -53,19 +53,23 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
+            this.panelCaso1 = new System.Windows.Forms.Panel();
+            this.btnIrACaso2 = new System.Windows.Forms.Button();
+            this.ucCaso1 = new Encuestador.ucCaso();
             this.statusStrip1.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
             this.panelMotivoViaje.SuspendLayout();
+            this.panelCaso1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pbPorcentajeAvance});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 189);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 242);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(372, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(539, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
@@ -89,7 +93,7 @@
             this.panelSitiosEncuestas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
             this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
-            this.panelSitiosEncuestas.Size = new System.Drawing.Size(372, 189);
+            this.panelSitiosEncuestas.Size = new System.Drawing.Size(539, 242);
             this.panelSitiosEncuestas.TabIndex = 6;
             // 
             // cmbSentido
@@ -180,7 +184,7 @@
             this.panelDatosVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDatosVehiculo.Location = new System.Drawing.Point(0, 0);
             this.panelDatosVehiculo.Name = "panelDatosVehiculo";
-            this.panelDatosVehiculo.Size = new System.Drawing.Size(372, 189);
+            this.panelDatosVehiculo.Size = new System.Drawing.Size(539, 242);
             this.panelDatosVehiculo.TabIndex = 14;
             this.panelDatosVehiculo.Visible = false;
             // 
@@ -265,7 +269,7 @@
             this.panelMotivoViaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMotivoViaje.Location = new System.Drawing.Point(0, 0);
             this.panelMotivoViaje.Name = "panelMotivoViaje";
-            this.panelMotivoViaje.Size = new System.Drawing.Size(372, 189);
+            this.panelMotivoViaje.Size = new System.Drawing.Size(539, 242);
             this.panelMotivoViaje.TabIndex = 6;
             this.panelMotivoViaje.Visible = false;
             // 
@@ -334,11 +338,40 @@
             this.lblExplicacionEncuesta.TabIndex = 6;
             this.lblExplicacionEncuesta.Text = "Explicacion de la Encuesta";
             // 
+            // panelCaso1
+            // 
+            this.panelCaso1.Controls.Add(this.btnIrACaso2);
+            this.panelCaso1.Controls.Add(this.ucCaso1);
+            this.panelCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCaso1.Location = new System.Drawing.Point(0, 0);
+            this.panelCaso1.Name = "panelCaso1";
+            this.panelCaso1.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso1.TabIndex = 14;
+            this.panelCaso1.Visible = false;
+            // 
+            // btnIrACaso2
+            // 
+            this.btnIrACaso2.Location = new System.Drawing.Point(408, 206);
+            this.btnIrACaso2.Name = "btnIrACaso2";
+            this.btnIrACaso2.Size = new System.Drawing.Size(75, 23);
+            this.btnIrACaso2.TabIndex = 1;
+            this.btnIrACaso2.Text = "Siguiente";
+            this.btnIrACaso2.UseVisualStyleBackColor = true;
+            // 
+            // ucCaso1
+            // 
+            this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso1.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso1.Name = "ucCaso1";
+            this.ucCaso1.Size = new System.Drawing.Size(539, 242);
+            this.ucCaso1.TabIndex = 0;
+            // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 211);
+            this.ClientSize = new System.Drawing.Size(539, 264);
+            this.Controls.Add(this.panelCaso1);
             this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.panelMotivoViaje);
@@ -361,6 +394,7 @@
             this.panelDatosVehiculo.PerformLayout();
             this.panelMotivoViaje.ResumeLayout(false);
             this.panelMotivoViaje.PerformLayout();
+            this.panelCaso1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +427,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblExplicacionEncuesta;
         private System.Windows.Forms.ToolStripProgressBar pbPorcentajeAvance;
+        private System.Windows.Forms.Panel panelCaso1;
+        private System.Windows.Forms.Button btnIrACaso2;
+        private ucCaso ucCaso1;
     }
 }

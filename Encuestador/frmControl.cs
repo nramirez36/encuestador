@@ -134,7 +134,8 @@ namespace Encuestador
 
                 panelMotivoViaje.Visible = false;
                 //TODO 01: Aca debe ir el panel de casos
-                //panelMotivoViaje.Visible = true;
+                panelCaso1.Visible = true;
+                this.Size = new Size(555, 381);
                 SumarPorcentajeAvance();
             }
         }
@@ -264,7 +265,7 @@ namespace Encuestador
             double porcentaje = 100 / (pCantidadTotal + 1);
             pCantidadSumar = int.Parse(Math.Round(porcentaje).ToString());
             pbPorcentajeAvance.Value = pCantidadSumar;
-            //panelNroEncuesta.Visible = true;
+            panelSitiosEncuestas.Visible = true;
         }
 
 
