@@ -3,10 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Encuestador.Entities;
+using Encuestador.DL;
+using nramirez36.Logger;
 namespace Encuestador.BL
 {
-    class GestorRespuestas
+    public class GestorRespuestas
     {
+        public int RegistrarEncuesta(Respuesta pRespuesta)
+        {
+            try
+            {
+                return Respuestas.RegistrarEncuesta(pRespuesta);
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "RegistrarEncuesta", ex.Message);
+                throw ex;
+            }
+        }
     }
 }

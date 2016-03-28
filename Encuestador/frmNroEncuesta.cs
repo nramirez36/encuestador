@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Encuestador.Entities;
+using nramirez36.Logger;
+
 namespace Encuestador
 {
     public partial class frmNroEncuesta : Form
@@ -68,10 +70,9 @@ namespace Encuestador
                 e.Handled = true;
             if ((int)e.KeyChar == (int)Keys.Enter)
                 IrASitiosEncuestas();
-        }
+        }   
 
         #endregion
-
 
     }
 }

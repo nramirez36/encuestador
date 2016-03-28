@@ -44,9 +44,7 @@ namespace Encuestador
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
-            {
                 IniciarSesion();
-            }
         }
         #endregion
 

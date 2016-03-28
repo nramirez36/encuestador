@@ -35,7 +35,6 @@
             this.rbRuta2 = new System.Windows.Forms.RadioButton();
             this.rbRuta3 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRuta1 = new System.Windows.Forms.Label();
             this.lblRuta2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.lblCosto1 = new System.Windows.Forms.Label();
             this.lblCosto2 = new System.Windows.Forms.Label();
             this.lblCosto3 = new System.Windows.Forms.Label();
+            this.lblRuta1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(492, 51);
+            this.label1.Size = new System.Drawing.Size(459, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -83,6 +83,7 @@
             this.rbRuta1.TabStop = true;
             this.rbRuta1.Text = "Ruta 1";
             this.rbRuta1.UseVisualStyleBackColor = true;
+            this.rbRuta1.CheckedChanged += new System.EventHandler(this.rbRuta1_CheckedChanged);
             // 
             // rbRuta2
             // 
@@ -96,6 +97,7 @@
             this.rbRuta2.TabStop = true;
             this.rbRuta2.Text = "Ruta 2";
             this.rbRuta2.UseVisualStyleBackColor = true;
+            this.rbRuta2.CheckedChanged += new System.EventHandler(this.rbRuta2_CheckedChanged);
             // 
             // rbRuta3
             // 
@@ -109,6 +111,7 @@
             this.rbRuta3.TabStop = true;
             this.rbRuta3.Text = "Ruta 3";
             this.rbRuta3.UseVisualStyleBackColor = true;
+            this.rbRuta3.CheckedChanged += new System.EventHandler(this.rbRuta3_CheckedChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -138,17 +141,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(467, 74);
             this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // lblRuta1
-            // 
-            this.lblRuta1.AutoSize = true;
-            this.lblRuta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRuta1.Location = new System.Drawing.Point(176, 2);
-            this.lblRuta1.Name = "lblRuta1";
-            this.lblRuta1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.lblRuta1.Size = new System.Drawing.Size(86, 27);
-            this.lblRuta1.TabIndex = 0;
-            this.lblRuta1.Text = "Ruta 1";
             // 
             // lblRuta2
             // 
@@ -255,6 +247,17 @@
             this.lblCosto3.TabIndex = 11;
             this.lblCosto3.Text = "$ ##";
             // 
+            // lblRuta1
+            // 
+            this.lblRuta1.AutoSize = true;
+            this.lblRuta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRuta1.Location = new System.Drawing.Point(176, 2);
+            this.lblRuta1.Name = "lblRuta1";
+            this.lblRuta1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
+            this.lblRuta1.Size = new System.Drawing.Size(86, 27);
+            this.lblRuta1.TabIndex = 0;
+            this.lblRuta1.Text = "Ruta 1";
+            // 
             // ucCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +270,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ucCaso";
             this.Size = new System.Drawing.Size(519, 212);
-            this.Load += new System.EventHandler(this.ucCaso_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

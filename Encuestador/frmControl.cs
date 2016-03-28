@@ -13,6 +13,7 @@ namespace Encuestador
     public partial class frmControl : Form
     {
         #region Variables
+        private bool pRegistroFinalizado = false;
         private int pCantidadTotal;
         private int pCantidadSumar;
         private string pSentidoSeleccionado = string.Empty;
@@ -24,18 +25,20 @@ namespace Encuestador
         private DistanciaViaje pDistancia = new DistanciaViaje();
         private MotivoViaje pMotivo = new MotivoViaje();
 
+        private List<Caso> pLstCasosPorId = new List<Caso>();
+
         private GestorSitios pGestorSitios = new GestorSitios();
         private GestorVehiculos pGestorVehiculos = new GestorVehiculos();
         private GestorDistanciasViajes pGestorDistancias = new GestorDistanciasViajes();
         private GestorMotivosViajes pGestorMotivos = new GestorMotivosViajes();
-
+        private GestorCasos pGestorCasos = new GestorCasos();
+        private GestorRespuestas pGestorRespuestas = new GestorRespuestas();
         #endregion
 
         #region Propiedades
         public Login UsuarioConectado { get; set; }
         public int NroEncuesta { get; set; }
         #endregion
-
 
         #region Constuctor
         public frmControl()
@@ -45,6 +48,8 @@ namespace Encuestador
         #endregion
 
         #region Metodos
+
+        #region Validaciones para pasar de Panel
 
         private bool validarControlesSitioEncuesta()
         {
@@ -97,6 +102,24 @@ namespace Encuestador
             return true;
         }
 
+        private bool validarControlesCaso1()
+        {
+            return ucCaso1.validarSeleccionRespuesta();
+        }
+
+        private bool validarControlesCaso2()
+        {
+            return ucCaso2.validarSeleccionRespuesta();
+        }
+
+        private bool validarControlesCaso3()
+        {
+            return ucCaso3.validarSeleccionRespuesta();
+        }
+
+        #endregion
+
+        #region Metodos para pasar de Panel
 
         private void IrAVehiculos()
         {
@@ -133,28 +156,94 @@ namespace Encuestador
                 pRespuesta.IdDistanciaViaje = pDistancia.IdDistanciaViaje;
 
                 panelMotivoViaje.Visible = false;
-                //TODO 01: Aca debe ir el panel de casos
                 panelCaso1.Visible = true;
-                this.Size = new Size(555, 381);
+                ucCaso1.DistanciaViajeSeleccionada = pDistancia;
+                ucCaso1.MotivoSeleccionado = pMotivo;
+
+                CargarCasos();
+                ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
+                ucCaso1.CargarDatos();
+
                 SumarPorcentajeAvance();
             }
         }
 
-        private void SumarPorcentajeAvance()
+        private void IrACasos2()
         {
-            pbPorcentajeAvance.Value += pCantidadSumar;
+            if (validarControlesCaso1())
+            {
+                pRespuesta.RespuestaCaso1 = ucCaso1.IdRutaSeleccionada;
+                panelCaso1.Visible = false;
+
+                panelCaso2.Visible = true;
+                ucCaso2.DistanciaViajeSeleccionada = pDistancia;
+                ucCaso2.MotivoSeleccionado = pMotivo;
+
+                CargarCasos();
+                ucCaso2.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 2);
+                ucCaso2.CargarDatos();
+
+                //this.Size = new Size(555, 381);
+                SumarPorcentajeAvance();
+            }
         }
+
+        private void IrACasos3()
+        {
+            if (validarControlesCaso2())
+            {
+                pRespuesta.RespuestaCaso2 = ucCaso2.IdRutaSeleccionada;
+                panelCaso2.Visible = false;
+
+                panelCaso3.Visible = true;
+                ucCaso3.DistanciaViajeSeleccionada = pDistancia;
+                ucCaso3.MotivoSeleccionado = pMotivo;
+
+                CargarCasos();
+                ucCaso3.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 3);
+                ucCaso3.CargarDatos();
+
+                //this.Size = new Size(555, 381);
+                SumarPorcentajeAvance();
+            }
+        }
+
+        #endregion
+
+        private void Finalizar()
+        {
+            //TODO 01: Validar que los datos del ultimo control esten completos
+            if (validarControlesCaso3())
+            {
+                SumarPorcentajeAvance();
+
+                pRespuesta.RespuestaCaso3 = ucCaso3.IdRutaSeleccionada;
+
+                //TODO 02: Registrar respuesta
+                var resultado = pGestorRespuestas.RegistrarEncuesta(pRespuesta);
+
+                //TODO 04: Mostrar mensaje e ir a la pagina principal
+                if (resultado > 0)
+                {
+                    pRegistroFinalizado = true;
+                    MessageBox.Show("Se ha registrado exitosamente la encuesta", "Encustra Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+        }
+
+        #region Carga de Datos
 
         private void CargarDatos()
         {
             this.Text = this.Text + " - " + UsuarioConectado.User;
-            this.txtFechaHoraEncuesta.Text = pFechaEncuesta.ToShortDateString();
+            this.txtFechaHoraEncuesta.Text = pFechaEncuesta.ToString();
 
             pRespuesta.FechaEncuesta = DateTime.Now;
             pRespuesta.IdUsuario = UsuarioConectado.IdEncuestador;
             pRespuesta.NroEncuesta = NroEncuesta;
 
-            this.Size = new Size(388, 260);
+            // this.Size = new Size(388, 260);
             panelSitiosEncuestas.Visible = true;
             SumarPorcentajeAvance();
 
@@ -216,7 +305,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmControl", "frmControl", "CargarVehiculos", ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -255,6 +344,28 @@ namespace Encuestador
                 throw;
             }
         }
+
+        private void CargarCasos()
+        {
+            try
+            {
+                pLstCasosPorId = new List<Caso>();
+                pLstCasosPorId = pGestorCasos.ObtenerCasosPorIdDistancia(pDistancia.IdDistanciaViaje).ToList();
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl", "frmControl", "CargarCasos", ex.Message);
+                throw;
+            }
+        }
+
+        #endregion
+
+        private void SumarPorcentajeAvance()
+        {
+            pbPorcentajeAvance.Value += pCantidadSumar;
+        }
+
         #endregion
 
         #region Eventos
@@ -267,7 +378,6 @@ namespace Encuestador
             pbPorcentajeAvance.Value = pCantidadSumar;
             panelSitiosEncuestas.Visible = true;
         }
-
 
         private void btnIrDatosVehiculos_Click(object sender, EventArgs e)
         {
@@ -306,7 +416,8 @@ namespace Encuestador
 
         private void cmbSentido_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            pSentidoSeleccionado = cmbSentido.SelectedItem.ToString();
+            var seleccionado = (Sentido)cmbSentido.SelectedItem;
+            pSentidoSeleccionado = seleccionado.Descripcion;
         }
 
         private void cmbTipoVehiculo_SelectionChangeCommitted(object sender, EventArgs e)
@@ -345,12 +456,41 @@ namespace Encuestador
             pMotivo = (MotivoViaje)cmbMotivoViaje.SelectedItem;
         }
 
-        #endregion
+        private void txtPatente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                IrAMotivosViajes();
+        }
 
         private void frmControl_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //TODO 02: Aca se debe preguntar si esta seguro que desea cerrar
-            this.Close();
+            if (!pRegistroFinalizado)
+            {
+                DialogResult dialogo = MessageBox.Show("Aún no termino la encuestra ¿Desea cerrar la encuesta actual? (Se van a perder los datos)",
+                 "Cerrar la encuesta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.No)
+                {
+                    this.Close();
+                }
+            }
         }
+
+        private void btnIrACaso2_Click(object sender, EventArgs e)
+        {
+            IrACasos2();
+        }
+
+        private void btnIrACaso3_Click(object sender, EventArgs e)
+        {
+            IrACasos3();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            Finalizar();
+        }
+
+        #endregion
+
     }
 }

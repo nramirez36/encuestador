@@ -55,12 +55,20 @@
             this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
             this.panelCaso1 = new System.Windows.Forms.Panel();
             this.btnIrACaso2 = new System.Windows.Forms.Button();
+            this.panelCaso2 = new System.Windows.Forms.Panel();
+            this.btnIrACaso3 = new System.Windows.Forms.Button();
+            this.panelCaso3 = new System.Windows.Forms.Panel();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.ucCaso3 = new Encuestador.ucCaso();
+            this.ucCaso2 = new Encuestador.ucCaso();
             this.ucCaso1 = new Encuestador.ucCaso();
             this.statusStrip1.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
             this.panelMotivoViaje.SuspendLayout();
             this.panelCaso1.SuspendLayout();
+            this.panelCaso2.SuspendLayout();
+            this.panelCaso3.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -247,6 +255,7 @@
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(199, 26);
             this.txtPatente.TabIndex = 10;
+            this.txtPatente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatente_KeyPress);
             // 
             // label7
             // 
@@ -351,17 +360,91 @@
             // 
             // btnIrACaso2
             // 
-            this.btnIrACaso2.Location = new System.Drawing.Point(408, 206);
+            this.btnIrACaso2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIrACaso2.Location = new System.Drawing.Point(403, 207);
             this.btnIrACaso2.Name = "btnIrACaso2";
-            this.btnIrACaso2.Size = new System.Drawing.Size(75, 23);
+            this.btnIrACaso2.Size = new System.Drawing.Size(124, 32);
             this.btnIrACaso2.TabIndex = 1;
             this.btnIrACaso2.Text = "Siguiente";
             this.btnIrACaso2.UseVisualStyleBackColor = true;
+            this.btnIrACaso2.Click += new System.EventHandler(this.btnIrACaso2_Click);
+            // 
+            // panelCaso2
+            // 
+            this.panelCaso2.Controls.Add(this.btnIrACaso3);
+            this.panelCaso2.Controls.Add(this.ucCaso2);
+            this.panelCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCaso2.Location = new System.Drawing.Point(0, 0);
+            this.panelCaso2.Name = "panelCaso2";
+            this.panelCaso2.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso2.TabIndex = 15;
+            this.panelCaso2.Visible = false;
+            // 
+            // btnIrACaso3
+            // 
+            this.btnIrACaso3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIrACaso3.Location = new System.Drawing.Point(403, 207);
+            this.btnIrACaso3.Name = "btnIrACaso3";
+            this.btnIrACaso3.Size = new System.Drawing.Size(124, 32);
+            this.btnIrACaso3.TabIndex = 1;
+            this.btnIrACaso3.Text = "Siguiente";
+            this.btnIrACaso3.UseVisualStyleBackColor = true;
+            this.btnIrACaso3.Click += new System.EventHandler(this.btnIrACaso3_Click);
+            // 
+            // panelCaso3
+            // 
+            this.panelCaso3.Controls.Add(this.btnFinalizar);
+            this.panelCaso3.Controls.Add(this.ucCaso3);
+            this.panelCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCaso3.Location = new System.Drawing.Point(0, 0);
+            this.panelCaso3.Name = "panelCaso3";
+            this.panelCaso3.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso3.TabIndex = 16;
+            this.panelCaso3.Visible = false;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(403, 207);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(124, 32);
+            this.btnFinalizar.TabIndex = 1;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // ucCaso3
+            // 
+            this.ucCaso3.CasoSeleccionado = null;
+            this.ucCaso3.DistanciaViajeSeleccionada = null;
+            this.ucCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso3.IdRutaSeleccionada = 0;
+            this.ucCaso3.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso3.MotivoSeleccionado = null;
+            this.ucCaso3.Name = "ucCaso3";
+            this.ucCaso3.Size = new System.Drawing.Size(539, 242);
+            this.ucCaso3.TabIndex = 0;
+            // 
+            // ucCaso2
+            // 
+            this.ucCaso2.CasoSeleccionado = null;
+            this.ucCaso2.DistanciaViajeSeleccionada = null;
+            this.ucCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso2.IdRutaSeleccionada = 0;
+            this.ucCaso2.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso2.MotivoSeleccionado = null;
+            this.ucCaso2.Name = "ucCaso2";
+            this.ucCaso2.Size = new System.Drawing.Size(539, 242);
+            this.ucCaso2.TabIndex = 0;
             // 
             // ucCaso1
             // 
+            this.ucCaso1.CasoSeleccionado = null;
+            this.ucCaso1.DistanciaViajeSeleccionada = null;
             this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso1.IdRutaSeleccionada = 0;
             this.ucCaso1.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso1.MotivoSeleccionado = null;
             this.ucCaso1.Name = "ucCaso1";
             this.ucCaso1.Size = new System.Drawing.Size(539, 242);
             this.ucCaso1.TabIndex = 0;
@@ -371,10 +454,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 264);
-            this.Controls.Add(this.panelCaso1);
+            this.Controls.Add(this.panelCaso3);
+            this.Controls.Add(this.panelCaso2);
             this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.panelMotivoViaje);
+            this.Controls.Add(this.panelCaso1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -395,6 +480,8 @@
             this.panelMotivoViaje.ResumeLayout(false);
             this.panelMotivoViaje.PerformLayout();
             this.panelCaso1.ResumeLayout(false);
+            this.panelCaso2.ResumeLayout(false);
+            this.panelCaso3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +517,11 @@
         private System.Windows.Forms.Panel panelCaso1;
         private System.Windows.Forms.Button btnIrACaso2;
         private ucCaso ucCaso1;
+        private System.Windows.Forms.Panel panelCaso2;
+        private System.Windows.Forms.Button btnIrACaso3;
+        private ucCaso ucCaso2;
+        private System.Windows.Forms.Panel panelCaso3;
+        private System.Windows.Forms.Button btnFinalizar;
+        private ucCaso ucCaso3;
     }
 }
