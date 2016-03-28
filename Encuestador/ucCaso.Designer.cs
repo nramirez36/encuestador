@@ -140,7 +140,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(467, 74);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblRuta2
             // 
@@ -160,7 +160,7 @@
             this.label5.Location = new System.Drawing.Point(5, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 17);
-            this.label5.TabIndex = 2;
+            this.label5.TabIndex = 3;
             this.label5.Text = "Tiempo de Viaje";
             // 
             // label6
@@ -170,7 +170,7 @@
             this.label6.Location = new System.Drawing.Point(5, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 17);
-            this.label6.TabIndex = 3;
+            this.label6.TabIndex = 7;
             this.label6.Text = "Costo de Viaje";
             // 
             // lblRuta3
@@ -181,7 +181,7 @@
             this.lblRuta3.Name = "lblRuta3";
             this.lblRuta3.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
             this.lblRuta3.Size = new System.Drawing.Size(86, 27);
-            this.lblRuta3.TabIndex = 5;
+            this.lblRuta3.TabIndex = 2;
             this.lblRuta3.Text = "Ruta 3";
             // 
             // lblTiempo1
@@ -191,7 +191,7 @@
             this.lblTiempo1.Location = new System.Drawing.Point(176, 36);
             this.lblTiempo1.Name = "lblTiempo1";
             this.lblTiempo1.Size = new System.Drawing.Size(87, 17);
-            this.lblTiempo1.TabIndex = 6;
+            this.lblTiempo1.TabIndex = 4;
             this.lblTiempo1.Text = "## minutos";
             // 
             // lblTiempo2
@@ -201,7 +201,7 @@
             this.lblTiempo2.Location = new System.Drawing.Point(274, 36);
             this.lblTiempo2.Name = "lblTiempo2";
             this.lblTiempo2.Size = new System.Drawing.Size(87, 17);
-            this.lblTiempo2.TabIndex = 7;
+            this.lblTiempo2.TabIndex = 5;
             this.lblTiempo2.Text = "## minutos";
             // 
             // lblTiempo3
@@ -211,7 +211,7 @@
             this.lblTiempo3.Location = new System.Drawing.Point(372, 36);
             this.lblTiempo3.Name = "lblTiempo3";
             this.lblTiempo3.Size = new System.Drawing.Size(87, 17);
-            this.lblTiempo3.TabIndex = 8;
+            this.lblTiempo3.TabIndex = 6;
             this.lblTiempo3.Text = "## minutos";
             // 
             // lblCosto1
@@ -222,7 +222,7 @@
             this.lblCosto1.Name = "lblCosto1";
             this.lblCosto1.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.lblCosto1.Size = new System.Drawing.Size(90, 17);
-            this.lblCosto1.TabIndex = 9;
+            this.lblCosto1.TabIndex = 8;
             this.lblCosto1.Text = "$ ##";
             // 
             // lblCosto2
@@ -233,7 +233,7 @@
             this.lblCosto2.Name = "lblCosto2";
             this.lblCosto2.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.lblCosto2.Size = new System.Drawing.Size(90, 17);
-            this.lblCosto2.TabIndex = 10;
+            this.lblCosto2.TabIndex = 9;
             this.lblCosto2.Text = "$ ##";
             // 
             // lblCosto3
@@ -244,7 +244,7 @@
             this.lblCosto3.Name = "lblCosto3";
             this.lblCosto3.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.lblCosto3.Size = new System.Drawing.Size(90, 17);
-            this.lblCosto3.TabIndex = 11;
+            this.lblCosto3.TabIndex = 10;
             this.lblCosto3.Text = "$ ##";
             // 
             // lblRuta1

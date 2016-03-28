@@ -102,7 +102,7 @@
             this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
             this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
             this.panelSitiosEncuestas.Size = new System.Drawing.Size(539, 242);
-            this.panelSitiosEncuestas.TabIndex = 6;
+            this.panelSitiosEncuestas.TabIndex = 0;
             // 
             // cmbSentido
             // 
@@ -112,7 +112,7 @@
             this.cmbSentido.Location = new System.Drawing.Point(135, 106);
             this.cmbSentido.Name = "cmbSentido";
             this.cmbSentido.Size = new System.Drawing.Size(199, 24);
-            this.cmbSentido.TabIndex = 12;
+            this.cmbSentido.TabIndex = 5;
             this.cmbSentido.DropDown += new System.EventHandler(this.cmbSentido_DropDown);
             this.cmbSentido.SelectionChangeCommitted += new System.EventHandler(this.cmbSentido_SelectionChangeCommitted);
             // 
@@ -123,7 +123,7 @@
             this.label3.Location = new System.Drawing.Point(16, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 11;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Sentido:";
             // 
             // label2
@@ -133,7 +133,7 @@
             this.label2.Location = new System.Drawing.Point(16, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 17);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Ubicación:";
             // 
             // cmbSitios
@@ -146,7 +146,7 @@
             this.cmbSitios.Location = new System.Drawing.Point(135, 16);
             this.cmbSitios.Name = "cmbSitios";
             this.cmbSitios.Size = new System.Drawing.Size(199, 24);
-            this.cmbSitios.TabIndex = 8;
+            this.cmbSitios.TabIndex = 1;
             this.cmbSitios.DropDown += new System.EventHandler(this.cmbSitios_DropDown);
             this.cmbSitios.SelectionChangeCommitted += new System.EventHandler(this.cmbSitios_SelectionChangeCommitted);
             // 
@@ -156,7 +156,7 @@
             this.btnIrDatosVehiculos.Location = new System.Drawing.Point(210, 146);
             this.btnIrDatosVehiculos.Name = "btnIrDatosVehiculos";
             this.btnIrDatosVehiculos.Size = new System.Drawing.Size(124, 32);
-            this.btnIrDatosVehiculos.TabIndex = 13;
+            this.btnIrDatosVehiculos.TabIndex = 6;
             this.btnIrDatosVehiculos.Text = "Siguiente";
             this.btnIrDatosVehiculos.UseVisualStyleBackColor = true;
             this.btnIrDatosVehiculos.Click += new System.EventHandler(this.btnIrDatosVehiculos_Click);
@@ -168,7 +168,7 @@
             this.txtUbicacion.Location = new System.Drawing.Point(135, 61);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(199, 26);
-            this.txtUbicacion.TabIndex = 10;
+            this.txtUbicacion.TabIndex = 3;
             // 
             // label4
             // 
@@ -177,7 +177,7 @@
             this.label4.Location = new System.Drawing.Point(16, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 17);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Número de Sitio:";
             // 
             // panelDatosVehiculo
@@ -193,7 +193,7 @@
             this.panelDatosVehiculo.Location = new System.Drawing.Point(0, 0);
             this.panelDatosVehiculo.Name = "panelDatosVehiculo";
             this.panelDatosVehiculo.Size = new System.Drawing.Size(539, 242);
-            this.panelDatosVehiculo.TabIndex = 14;
+            this.panelDatosVehiculo.TabIndex = 1;
             this.panelDatosVehiculo.Visible = false;
             // 
             // txtFechaHoraEncuesta
@@ -203,7 +203,7 @@
             this.txtFechaHoraEncuesta.Location = new System.Drawing.Point(149, 92);
             this.txtFechaHoraEncuesta.Name = "txtFechaHoraEncuesta";
             this.txtFechaHoraEncuesta.Size = new System.Drawing.Size(199, 26);
-            this.txtFechaHoraEncuesta.TabIndex = 12;
+            this.txtFechaHoraEncuesta.TabIndex = 5;
             // 
             // label5
             // 
@@ -212,7 +212,7 @@
             this.label5.Location = new System.Drawing.Point(25, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 17);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 4;
             this.label5.Text = "Fecha Encuesta:";
             // 
             // label6
@@ -222,7 +222,7 @@
             this.label6.Location = new System.Drawing.Point(25, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 17);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 2;
             this.label6.Text = "Patente:";
             // 
             // cmbTipoVehiculo
@@ -233,7 +233,7 @@
             this.cmbTipoVehiculo.Location = new System.Drawing.Point(149, 12);
             this.cmbTipoVehiculo.Name = "cmbTipoVehiculo";
             this.cmbTipoVehiculo.Size = new System.Drawing.Size(199, 24);
-            this.cmbTipoVehiculo.TabIndex = 8;
+            this.cmbTipoVehiculo.TabIndex = 1;
             this.cmbTipoVehiculo.DropDown += new System.EventHandler(this.cmbTipoVehiculo_DropDown);
             this.cmbTipoVehiculo.SelectionChangeCommitted += new System.EventHandler(this.cmbTipoVehiculo_SelectionChangeCommitted);
             // 
@@ -243,7 +243,7 @@
             this.btnIrMotivoViajes.Location = new System.Drawing.Point(224, 145);
             this.btnIrMotivoViajes.Name = "btnIrMotivoViajes";
             this.btnIrMotivoViajes.Size = new System.Drawing.Size(124, 32);
-            this.btnIrMotivoViajes.TabIndex = 13;
+            this.btnIrMotivoViajes.TabIndex = 6;
             this.btnIrMotivoViajes.Text = "Siguiente";
             this.btnIrMotivoViajes.UseVisualStyleBackColor = true;
             this.btnIrMotivoViajes.Click += new System.EventHandler(this.btnIrMotivoViajes_Click);
@@ -254,7 +254,7 @@
             this.txtPatente.Location = new System.Drawing.Point(149, 51);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(199, 26);
-            this.txtPatente.TabIndex = 10;
+            this.txtPatente.TabIndex = 3;
             this.txtPatente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatente_KeyPress);
             // 
             // label7
@@ -264,7 +264,7 @@
             this.label7.Location = new System.Drawing.Point(25, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 17);
-            this.label7.TabIndex = 7;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Tipo de Vehículo:";
             // 
             // panelMotivoViaje
@@ -279,7 +279,7 @@
             this.panelMotivoViaje.Location = new System.Drawing.Point(0, 0);
             this.panelMotivoViaje.Name = "panelMotivoViaje";
             this.panelMotivoViaje.Size = new System.Drawing.Size(539, 242);
-            this.panelMotivoViaje.TabIndex = 6;
+            this.panelMotivoViaje.TabIndex = 2;
             this.panelMotivoViaje.Visible = false;
             // 
             // btnIrCasos
@@ -288,7 +288,7 @@
             this.btnIrCasos.Location = new System.Drawing.Point(224, 149);
             this.btnIrCasos.Name = "btnIrCasos";
             this.btnIrCasos.Size = new System.Drawing.Size(124, 32);
-            this.btnIrCasos.TabIndex = 11;
+            this.btnIrCasos.TabIndex = 5;
             this.btnIrCasos.Text = "Siguiente";
             this.btnIrCasos.UseVisualStyleBackColor = true;
             this.btnIrCasos.Click += new System.EventHandler(this.btnIrCasos_Click);
@@ -301,7 +301,7 @@
             this.cmbMotivoViaje.Location = new System.Drawing.Point(149, 110);
             this.cmbMotivoViaje.Name = "cmbMotivoViaje";
             this.cmbMotivoViaje.Size = new System.Drawing.Size(199, 24);
-            this.cmbMotivoViaje.TabIndex = 10;
+            this.cmbMotivoViaje.TabIndex = 4;
             this.cmbMotivoViaje.DropDown += new System.EventHandler(this.cmbMotivoViaje_DropDown);
             this.cmbMotivoViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbMotivoViaje_SelectionChangeCommitted);
             // 
@@ -313,7 +313,7 @@
             this.cmbDistanciaViaje.Location = new System.Drawing.Point(149, 69);
             this.cmbDistanciaViaje.Name = "cmbDistanciaViaje";
             this.cmbDistanciaViaje.Size = new System.Drawing.Size(199, 24);
-            this.cmbDistanciaViaje.TabIndex = 8;
+            this.cmbDistanciaViaje.TabIndex = 2;
             this.cmbDistanciaViaje.DropDown += new System.EventHandler(this.cmbDistanciaViaje_DropDown);
             this.cmbDistanciaViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbDistanciaViaje_SelectionChangeCommitted);
             // 
@@ -324,7 +324,7 @@
             this.label8.Location = new System.Drawing.Point(25, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 17);
-            this.label8.TabIndex = 9;
+            this.label8.TabIndex = 3;
             this.label8.Text = "Motivo de Viaje:";
             // 
             // label9
@@ -334,7 +334,7 @@
             this.label9.Location = new System.Drawing.Point(25, 72);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 17);
-            this.label9.TabIndex = 7;
+            this.label9.TabIndex = 1;
             this.label9.Text = "Distancia de Viaje:";
             // 
             // lblExplicacionEncuesta
@@ -344,7 +344,7 @@
             this.lblExplicacionEncuesta.Location = new System.Drawing.Point(25, 7);
             this.lblExplicacionEncuesta.Name = "lblExplicacionEncuesta";
             this.lblExplicacionEncuesta.Size = new System.Drawing.Size(176, 17);
-            this.lblExplicacionEncuesta.TabIndex = 6;
+            this.lblExplicacionEncuesta.TabIndex = 0;
             this.lblExplicacionEncuesta.Text = "Explicacion de la Encuesta";
             // 
             // panelCaso1
@@ -355,7 +355,7 @@
             this.panelCaso1.Location = new System.Drawing.Point(0, 0);
             this.panelCaso1.Name = "panelCaso1";
             this.panelCaso1.Size = new System.Drawing.Size(539, 242);
-            this.panelCaso1.TabIndex = 14;
+            this.panelCaso1.TabIndex = 3;
             this.panelCaso1.Visible = false;
             // 
             // btnIrACaso2
@@ -377,7 +377,7 @@
             this.panelCaso2.Location = new System.Drawing.Point(0, 0);
             this.panelCaso2.Name = "panelCaso2";
             this.panelCaso2.Size = new System.Drawing.Size(539, 242);
-            this.panelCaso2.TabIndex = 15;
+            this.panelCaso2.TabIndex = 6;
             this.panelCaso2.Visible = false;
             // 
             // btnIrACaso3
@@ -399,7 +399,7 @@
             this.panelCaso3.Location = new System.Drawing.Point(0, 0);
             this.panelCaso3.Name = "panelCaso3";
             this.panelCaso3.Size = new System.Drawing.Size(539, 242);
-            this.panelCaso3.TabIndex = 16;
+            this.panelCaso3.TabIndex = 7;
             this.panelCaso3.Visible = false;
             // 
             // btnFinalizar
@@ -454,12 +454,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 264);
-            this.Controls.Add(this.panelCaso3);
-            this.Controls.Add(this.panelCaso2);
             this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.panelMotivoViaje);
             this.Controls.Add(this.panelCaso1);
+            this.Controls.Add(this.panelCaso2);
+            this.Controls.Add(this.panelCaso3);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
