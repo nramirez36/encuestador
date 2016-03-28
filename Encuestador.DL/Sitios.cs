@@ -31,7 +31,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("Sitios.cs", "Sitios.cs", "ObtenerTodosSitios", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener los Sitios");
             }
             finally
             {

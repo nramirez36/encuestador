@@ -16,7 +16,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorMotivosViajes.cs", "GestorMotivosViajes.cs", "ObtenerTodosMotivosViaje", ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

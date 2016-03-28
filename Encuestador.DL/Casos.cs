@@ -42,7 +42,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("Casos.cs", "Casos.cs", "ObtenerCasosPorIdDistancia", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener los Casos");
             }
             finally
             {
@@ -83,7 +83,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("Casos.cs", "Casos.cs", "ObtenerTodosCasos", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener los Casos");
             }
             finally
             {

@@ -16,7 +16,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorSitios.cs", "GestorSitios.cs", "ObtenerTodosSitios", ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

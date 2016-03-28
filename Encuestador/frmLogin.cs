@@ -78,7 +78,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmLogin.cs", "frmLogin.cs", "IniciarSesion", ex.Message);
-                throw;
+                throw ex;
             }
         }
         private bool validarControles()

@@ -17,7 +17,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorUsuarioEncuestador.cs", "GestorUsuarioEncuestador.cs", "IniciarSesion", ex.Message);
-                throw;
+                throw ex;
             }            
         }
 
@@ -30,7 +30,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorUsuarioEncuestador.cs", "GestorUsuarioEncuestador.cs", "ObtenerTodosUsuarios", ex.Message);
-                throw;
+                throw ex;
             }
         }
 

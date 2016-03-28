@@ -16,7 +16,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorDistanciasViajes.cs", "GestorDistanciasViajes.cs", "ObtenerTodasDistanciasViaje", ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

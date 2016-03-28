@@ -17,7 +17,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorCasos.cs", "GestorCasos.cs", "ObtenerCasosPorIdDistancia", ex.Message);
-                throw;
+                throw ex;
             }
         }
         public List<Caso> ObtenerTodosCasos()
@@ -29,7 +29,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorCasos.cs", "GestorCasos.cs", "ObtenerTodosCasos", ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

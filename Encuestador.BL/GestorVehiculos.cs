@@ -17,7 +17,7 @@ namespace Encuestador.BL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("GestorVehiculos.cs", "GestorVehiculos.cs", "ObtenerTodosVehiculos", ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

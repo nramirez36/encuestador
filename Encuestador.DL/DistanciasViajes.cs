@@ -31,7 +31,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("DistanciasViajes.cs", "DistanciasViajes.cs", "ObtenerTodasDistanciasViaje", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener las Distancias");
             }
             finally
             {

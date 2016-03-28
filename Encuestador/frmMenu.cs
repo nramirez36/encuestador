@@ -44,11 +44,6 @@ namespace Encuestador
             var frmNroEncuesta = new frmNroEncuesta();
             frmNroEncuesta.UsuarioConectado = UsuarioConectado;
             frmNroEncuesta.Show();
-
-            //var frmControl = new frmControl();
-            //frmControl.Size = new Size(362, 195);
-            //frmControl.UsuarioConectado = UsuarioConectado;
-            //frmControl.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

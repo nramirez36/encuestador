@@ -31,7 +31,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("Users.cs", "Users.cs", "IniciarSesion", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Iniciar Sesión");
             }
             finally
             {
@@ -63,8 +63,8 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Vehiculos.cs", "Vehiculos.cs", "ObtenerTodosVehiculos", ex.Message);
-                throw;
+                Logger.WriteXMLError("Users.cs", "Users.cs", "ObtenerTodosUsuarios", ex.Message);
+                throw new Exception("Hubo un problema al Obtener los Usuarios");
             }
             finally
             {

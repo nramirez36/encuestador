@@ -31,7 +31,7 @@ namespace Encuestador.DL
             catch (Exception ex)
             {
                 Logger.WriteXMLError("MotivosViajes.cs", "MotivosViajes.cs", "ObtenerTodosMotivosViaje", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener los Motivos");
             }
             finally
             {

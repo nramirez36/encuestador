@@ -123,113 +123,163 @@ namespace Encuestador
 
         private void IrAVehiculos()
         {
-            if (validarControlesSitioEncuesta())
+            try
             {
-                pRespuesta.IdSitio = pSitioSeleccionado.IdSitios;
-                pRespuesta.Sentido = pSentidoSeleccionado;
+                if (validarControlesSitioEncuesta())
+                {
+                    pRespuesta.IdSitio = pSitioSeleccionado.IdSitios;
+                    pRespuesta.Sentido = pSentidoSeleccionado;
 
-                panelSitiosEncuestas.Visible = false;
-                panelDatosVehiculo.Visible = true;
-                SumarPorcentajeAvance();
+                    panelSitiosEncuestas.Visible = false;
+                    panelDatosVehiculo.Visible = true;
+                    SumarPorcentajeAvance();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrAVehiculos", ex.Message);
+                throw new Exception("Hubo un problema al cargar los datos");
             }
         }
 
         private void IrAMotivosViajes()
         {
-            if (validarControlesTipoVehiculo())
+            try
             {
-                pRespuesta.FechaEncuesta = pFechaEncuesta;
-                pRespuesta.IdVehiculo = pVehiculo.IdVehiculo;
-                pRespuesta.Patente = txtPatente.Text;
+                if (validarControlesTipoVehiculo())
+                {
+                    pRespuesta.FechaEncuesta = pFechaEncuesta;
+                    pRespuesta.IdVehiculo = pVehiculo.IdVehiculo;
+                    pRespuesta.Patente = txtPatente.Text;
 
-                panelDatosVehiculo.Visible = false;
-                panelMotivoViaje.Visible = true;
-                SumarPorcentajeAvance();
+                    panelDatosVehiculo.Visible = false;
+                    panelMotivoViaje.Visible = true;
+                    SumarPorcentajeAvance();
+                }
             }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrAMotivosViajes", ex.Message);
+                throw new Exception("Hubo un problema al cargar los datos");
+            }            
         }
 
         private void IrACasos1()
         {
-            if (validarControlesMotivos())
+            try
             {
-                pRespuesta.IdMotivoViaje = pMotivo.IdMotivoViaje;
-                pRespuesta.IdDistanciaViaje = pDistancia.IdDistanciaViaje;
+                if (validarControlesMotivos())
+                {
+                    pRespuesta.IdMotivoViaje = pMotivo.IdMotivoViaje;
+                    pRespuesta.IdDistanciaViaje = pDistancia.IdDistanciaViaje;
 
-                panelMotivoViaje.Visible = false;
-                panelCaso1.Visible = true;
-                ucCaso1.DistanciaViajeSeleccionada = pDistancia;
-                ucCaso1.MotivoSeleccionado = pMotivo;
+                    panelMotivoViaje.Visible = false;
+                    panelCaso1.Visible = true;
+                    ucCaso1.DistanciaViajeSeleccionada = pDistancia;
+                    ucCaso1.MotivoSeleccionado = pMotivo;
 
-                CargarCasos();
-                ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
-                ucCaso1.CargarDatos();
+                    CargarCasos();
+                    ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
+                    ucCaso1.CargarDatos();
 
-                SumarPorcentajeAvance();
+                    this.Size = new Size(570, 381);
+                    SumarPorcentajeAvance();
+                }
             }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos1", ex.Message);
+                throw new Exception("Hubo un problema al cargar los datos");
+            }            
         }
 
         private void IrACasos2()
         {
-            if (validarControlesCaso1())
+            try
             {
-                pRespuesta.RespuestaCaso1 = ucCaso1.IdRutaSeleccionada;
-                panelCaso1.Visible = false;
+                if (validarControlesCaso1())
+                {
+                    pRespuesta.RespuestaCaso1 = ucCaso1.IdRutaSeleccionada;
+                    panelCaso1.Visible = false;
 
-                panelCaso2.Visible = true;
-                ucCaso2.DistanciaViajeSeleccionada = pDistancia;
-                ucCaso2.MotivoSeleccionado = pMotivo;
+                    panelCaso2.Visible = true;
+                    ucCaso2.DistanciaViajeSeleccionada = pDistancia;
+                    ucCaso2.MotivoSeleccionado = pMotivo;
 
-                CargarCasos();
-                ucCaso2.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 2);
-                ucCaso2.CargarDatos();
+                    CargarCasos();
+                    ucCaso2.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 2);
+                    ucCaso2.CargarDatos();
 
-                //this.Size = new Size(555, 381);
-                SumarPorcentajeAvance();
+                    this.Size = new Size(570, 381);
+                    SumarPorcentajeAvance();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos2", ex.Message);
+                throw new Exception("Hubo un problema al cargar los datos");
             }
         }
 
         private void IrACasos3()
         {
-            if (validarControlesCaso2())
+            try
             {
-                pRespuesta.RespuestaCaso2 = ucCaso2.IdRutaSeleccionada;
-                panelCaso2.Visible = false;
+                if (validarControlesCaso2())
+                {
+                    pRespuesta.RespuestaCaso2 = ucCaso2.IdRutaSeleccionada;
+                    panelCaso2.Visible = false;
 
-                panelCaso3.Visible = true;
-                ucCaso3.DistanciaViajeSeleccionada = pDistancia;
-                ucCaso3.MotivoSeleccionado = pMotivo;
+                    panelCaso3.Visible = true;
+                    ucCaso3.DistanciaViajeSeleccionada = pDistancia;
+                    ucCaso3.MotivoSeleccionado = pMotivo;
 
-                CargarCasos();
-                ucCaso3.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 3);
-                ucCaso3.CargarDatos();
+                    CargarCasos();
+                    ucCaso3.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 3);
+                    ucCaso3.CargarDatos();
 
-                //this.Size = new Size(555, 381);
-                SumarPorcentajeAvance();
+                    this.Size = new Size(570, 381);
+                    SumarPorcentajeAvance();
+                }
             }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos3", ex.Message);
+                throw new Exception("Hubo un problema al cargar los datos");
+            }            
         }
 
         #endregion
 
         private void Finalizar()
         {
-            //TODO 01: Validar que los datos del ultimo control esten completos
-            if (validarControlesCaso3())
+            try
             {
-                SumarPorcentajeAvance();
-
-                pRespuesta.RespuestaCaso3 = ucCaso3.IdRutaSeleccionada;
-
-                //TODO 02: Registrar respuesta
-                var resultado = pGestorRespuestas.RegistrarEncuesta(pRespuesta);
-
-                //TODO 04: Mostrar mensaje e ir a la pagina principal
-                if (resultado > 0)
+                //TODO 01: Validar que los datos del ultimo control esten completos
+                if (validarControlesCaso3())
                 {
-                    pRegistroFinalizado = true;
-                    MessageBox.Show("Se ha registrado exitosamente la encuesta", "Encustra Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    pbPorcentajeAvance.Value = 100;
+
+                    pRespuesta.RespuestaCaso3 = ucCaso3.IdRutaSeleccionada;
+
+                    //TODO 02: Registrar respuesta
+                    var resultado = pGestorRespuestas.RegistrarEncuesta(pRespuesta);
+
+                    //TODO 04: Mostrar mensaje e ir a la pagina principal
+                    if (resultado > 0)
+                    {
+                        pRegistroFinalizado = true;
+                        MessageBox.Show("Se ha registrado exitosamente la encuesta", "Encustra Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmControl", "frmControl", "Finalizar", ex.Message);
+                throw ex;
+            }
+
         }
 
         #region Carga de Datos
@@ -243,7 +293,7 @@ namespace Encuestador
             pRespuesta.IdUsuario = UsuarioConectado.IdEncuestador;
             pRespuesta.NroEncuesta = NroEncuesta;
 
-            // this.Size = new Size(388, 260);
+             this.Size = new Size(388, 260);
             panelSitiosEncuestas.Visible = true;
             SumarPorcentajeAvance();
 
@@ -268,7 +318,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmControl", "frmControl", "CargarSitios", ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -323,7 +373,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmControl", "frmControl", "CargarDistancias", ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -341,7 +391,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmControl", "frmControl", "CargarMotivos", ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -355,7 +405,7 @@ namespace Encuestador
             catch (Exception ex)
             {
                 Logger.WriteXMLError("frmControl", "frmControl", "CargarCasos", ex.Message);
-                throw;
+                throw ex;
             }
         }
 
