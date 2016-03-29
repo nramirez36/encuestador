@@ -22,5 +22,29 @@ namespace Encuestador.BL
                 throw ex;
             }
         }
+        public List<EncuestaReportar> ObtenerEncuestas()
+        {
+            try
+            {
+                return Respuestas.ObtenerEncuestas();
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "ObtenerEncuestas", ex.Message);
+                throw ex;
+            }
+        }
+        public List<EncuestaReportar> ObtenerEncuestasParametros(DateTime pFechaDesde, DateTime pFechaHasta, int pIdUsuario)
+        {
+            try
+            {
+                return Respuestas.ObtenerEncuestasParametros(pFechaDesde, pFechaHasta, pIdUsuario);
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "ObtenerEncuestasParametros", ex.Message);
+                throw ex;
+            }
+        }
     }
 }

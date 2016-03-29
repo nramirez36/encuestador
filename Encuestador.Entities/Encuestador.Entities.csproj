@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Caso.cs" />
     <Compile Include="DistanciaViaje.cs" />
+    <Compile Include="EncuestaReportar.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MotivoViaje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

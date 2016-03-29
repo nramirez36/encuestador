@@ -19,10 +19,6 @@ namespace Encuestador
         private GestorUsuarioEncuestador gestorUsuarios = new GestorUsuarioEncuestador();
         #endregion
 
-        #region Propiedades
-
-        #endregion
-
         #region Constructor
         public frmLogin()
         {

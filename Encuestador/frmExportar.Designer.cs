@@ -28,109 +28,154 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.cmbUsuarios = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnExportarXLS = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnExportarCSV = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblResultados = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpDesde
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(31, 31);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(87, 35);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpDesde.TabIndex = 1;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
-            // dateTimePicker2
+            // dtpHasta
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(287, 31);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 0;
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(263, 35);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpHasta.TabIndex = 3;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
-            // comboBox1
+            // cmbUsuarios
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(529, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cmbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUsuarios.FormattingEnabled = true;
+            this.cmbUsuarios.Location = new System.Drawing.Point(464, 35);
+            this.cmbUsuarios.Name = "cmbUsuarios";
+            this.cmbUsuarios.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuarios.TabIndex = 5;
+            this.cmbUsuarios.DropDown += new System.EventHandler(this.cmbUsuarios_DropDown);
+            this.cmbUsuarios.SelectionChangeCommitted += new System.EventHandler(this.cmbUsuarios_SelectionChangeCommitted);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(675, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(591, 35);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label1
+            // btnExportarXLS
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "NO SE ENCONTRARON RESULTADOS";
+            this.btnExportarXLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarXLS.Location = new System.Drawing.Point(465, 101);
+            this.btnExportarXLS.Name = "btnExportarXLS";
+            this.btnExportarXLS.Size = new System.Drawing.Size(120, 23);
+            this.btnExportarXLS.TabIndex = 9;
+            this.btnExportarXLS.Text = "Exportar a Excel";
+            this.btnExportarXLS.UseVisualStyleBackColor = true;
+            this.btnExportarXLS.Visible = false;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(549, 94);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Exportar a Excel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(591, 101);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExportarCSV
             // 
-            this.button3.Location = new System.Drawing.Point(675, 94);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExportarCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarCSV.Location = new System.Drawing.Point(338, 101);
+            this.btnExportarCSV.Name = "btnExportarCSV";
+            this.btnExportarCSV.Size = new System.Drawing.Size(120, 23);
+            this.btnExportarCSV.TabIndex = 8;
+            this.btnExportarCSV.Text = "Exportar a CSV";
+            this.btnExportarCSV.UseVisualStyleBackColor = true;
+            this.btnExportarCSV.Visible = false;
             // 
-            // button4
+            // label3
             // 
-            this.button4.Location = new System.Drawing.Point(442, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Exportar a CSV";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Desde:";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(284, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "SE ENCONTRARON N RESULTADOS";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(208, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Hasta:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(390, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Usuarios:";
+            // 
+            // lblResultados
+            // 
+            this.lblResultados.AutoSize = true;
+            this.lblResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultados.Location = new System.Drawing.Point(28, 70);
+            this.lblResultados.Name = "lblResultados";
+            this.lblResultados.Size = new System.Drawing.Size(196, 17);
+            this.lblResultados.TabIndex = 7;
+            this.lblResultados.Text = "Se encontraron #n resultados";
+            this.lblResultados.Visible = false;
             // 
             // frmExportar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 136);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(701, 136);
+            this.Controls.Add(this.lblResultados);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnExportarCSV);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnExportarXLS);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cmbUsuarios);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmExportar";
-            this.Text = "frmExportar";
+            this.Text = "Exportar";
+            this.Load += new System.EventHandler(this.frmExportar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +183,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.ComboBox cmbUsuarios;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnExportarXLS;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnExportarCSV;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblResultados;
     }
 }
