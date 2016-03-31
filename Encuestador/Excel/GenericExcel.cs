@@ -1,62 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using ExcelDll = Microsoft.Office.Interop.Excel;
 
 namespace Encuestador.Excel
 {
     public static class GenericListOutput
     {
-        public static string ToString<T>(this IList<T> list, string include = "", string exclude = "")
-        {
-            //Variables for build string
-            string propStr = string.Empty;
-            StringBuilder sb = new StringBuilder();
-
-            //Get property collection and set selected property list
-            PropertyInfo[] props = typeof(T).GetProperties();
-            List<PropertyInfo> propList = GetSelectedProperties(props, include, exclude);
-
-            //Add list name and total count
-            string typeName = GetSimpleTypeName(list);
-            sb.AppendLine(string.Format("{0} List - Total Count: {1}", typeName, list.Count.ToString()));
-
-            //Iterate through data list collection
-            foreach (var item in list)
-            {
-                sb.AppendLine("");
-                //Iterate through property collection
-                foreach (var prop in propList)
-                {
-                    //Construct property name and value string
-                    propStr = prop.Name + ": " + prop.GetValue(item, null);
-                    sb.AppendLine(propStr);
-                }
-            }
-            return sb.ToString();
-        }
-
         public static void ToCSV<T>(this IList<T> list, string path = "", string include = "", string exclude = "")
         {
             CreateCsvFile(list, path, include, exclude);
-        }
-
-        public static void ToExcelNoInterop<T>(this IList<T> list, string path = "", string include = "", string exclude = "")
-        {
-            if (path == "")
-                path = Path.GetTempPath() + @"ListDataOutput.csv";
-            var rtnPath = CreateCsvFile(list, path, include, exclude);
-
-            //Open Excel from the file
-            Process proc = new Process();
-            //Quotes wrapped path for any space in folder/file names
-            proc.StartInfo = new ProcessStartInfo("excel.exe", "\"" + rtnPath + "\"");
-            proc.Start();
         }
 
         private static string CreateCsvFile<T>(IList<T> list, string path, string include, string exclude)
@@ -109,52 +65,6 @@ namespace Encuestador.Excel
                 File.WriteAllText(path, sb.ToString());
             }
             return path;
-        }
-
-        public static void ToExcel<T>(this IList<T> list, string include = "", string exclude = "")
-        {
-            //Get property collection and set selected property list
-            PropertyInfo[] props = typeof(T).GetProperties();
-            List<PropertyInfo> propList = GetSelectedProperties(props, include, exclude);
-
-            //Get simple type name
-            string typeName = GetSimpleTypeName(list);
-
-            //Convert list to array for selected properties
-            object[,] listArray = new object[list.Count + 1, propList.Count];
-
-            //Add property name to array as the first row
-            int colIdx = 0;
-            foreach (var prop in propList)
-            {
-                listArray[0, colIdx] = prop.Name;
-                colIdx++;
-            }
-            //Iterate through data list collection for rows
-            int rowIdx = 1;
-            foreach (var item in list)
-            {
-                colIdx = 0;
-                //Iterate through property collection for columns
-                foreach (var prop in propList)
-                {
-                    //Do property value
-                    listArray[rowIdx, colIdx] = prop.GetValue(item, null);
-                    colIdx++;
-                }
-                rowIdx++;
-            }
-            //Processing for Excel
-            object oOpt = System.Reflection.Missing.Value;
-            ExcelDll.Application oXL = new ExcelDll.Application();
-            ExcelDll.Workbooks oWBs = oXL.Workbooks;
-            ExcelDll.Workbook oWB = oWBs.Add(ExcelDll.XlWBATemplate.xlWBATWorksheet);
-            ExcelDll.Worksheet oSheet = (ExcelDll.Worksheet)oWB.ActiveSheet;
-            oSheet.Name = typeName;
-            ExcelDll.Range oRng = oSheet.get_Range("A1", oOpt).get_Resize(list.Count + 1, propList.Count);
-            oRng.set_Value(oOpt, listArray);
-            //Open Excel
-            oXL.Visible = true;
         }
 
         private static List<PropertyInfo> GetSelectedProperties(PropertyInfo[] props, string include, string exclude)

@@ -18,6 +18,11 @@ namespace Encuestador
         private int pCantidadSumar;
         private string pSentidoSeleccionado = string.Empty;
         private DateTime pFechaEncuesta = DateTime.Now;
+        private bool pSitioCambio = false;
+        private bool pSentidoCambio = false;
+        private bool pTipoVehiculoCambio = false;
+        private bool pDistanciaCambio = false;
+        private bool pMotivoCambio = false;
 
         private Sitio pSitioSeleccionado = new Sitio();
         private Respuesta pRespuesta = new Respuesta();
@@ -53,13 +58,13 @@ namespace Encuestador
 
         private bool validarControlesSitioEncuesta()
         {
-            if (cmbSitios.SelectedValue == null || int.Parse(cmbSitios.SelectedValue.ToString()) < 1)
+            if (cmbSitios.SelectedValue == null || int.Parse(cmbSitios.SelectedValue.ToString()) < 1 || !pSitioCambio)
             {
                 MessageBox.Show("Debe seleccionar el Número de Sitio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (cmbSentido.SelectedValue == null || int.Parse(cmbSentido.SelectedValue.ToString()) < 1)
+            if (cmbSentido.SelectedValue == null || int.Parse(cmbSentido.SelectedValue.ToString()) < 1 || !pSentidoCambio)
             {
                 MessageBox.Show("Debe seleccionar el Sentido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -70,7 +75,7 @@ namespace Encuestador
 
         private bool validarControlesTipoVehiculo()
         {
-            if (cmbTipoVehiculo.SelectedValue == null || int.Parse(cmbTipoVehiculo.SelectedValue.ToString()) < 1)
+            if (cmbTipoVehiculo.SelectedValue == null || int.Parse(cmbTipoVehiculo.SelectedValue.ToString()) < 1 || !pTipoVehiculoCambio)
             {
                 MessageBox.Show("Debe seleccionar el Tipo de Vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -87,13 +92,13 @@ namespace Encuestador
 
         private bool validarControlesMotivos()
         {
-            if (cmbDistanciaViaje.SelectedValue == null || int.Parse(cmbDistanciaViaje.SelectedValue.ToString()) < 1)
+            if (cmbDistanciaViaje.SelectedValue == null || int.Parse(cmbDistanciaViaje.SelectedValue.ToString()) < 1 || !pDistanciaCambio)
             {
                 MessageBox.Show("Debe seleccionar la Distancia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (cmbMotivoViaje.SelectedValue == null || int.Parse(cmbMotivoViaje.SelectedValue.ToString()) < 1)
+            if (cmbMotivoViaje.SelectedValue == null || int.Parse(cmbMotivoViaje.SelectedValue.ToString()) < 1 || !pMotivoCambio)
             {
                 MessageBox.Show("Debe ingresar el Motivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -462,17 +467,20 @@ namespace Encuestador
         {
             pSitioSeleccionado = (Sitio)cmbSitios.SelectedItem;
             txtUbicacion.Text = pSitioSeleccionado.Descripcion;
+            pSitioCambio = true;
         }
 
         private void cmbSentido_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var seleccionado = (Sentido)cmbSentido.SelectedItem;
             pSentidoSeleccionado = seleccionado.Descripcion;
+            pSentidoCambio = true;
         }
 
         private void cmbTipoVehiculo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             pVehiculo = (Vehiculo)cmbTipoVehiculo.SelectedItem;
+            pTipoVehiculoCambio = true;
         }
 
         private void cmbTipoVehiculo_DropDown(object sender, EventArgs e)
@@ -499,11 +507,13 @@ namespace Encuestador
         private void cmbDistanciaViaje_SelectionChangeCommitted(object sender, EventArgs e)
         {
             pDistancia = (DistanciaViaje)cmbDistanciaViaje.SelectedItem;
+            pDistanciaCambio = true;
         }
 
         private void cmbMotivoViaje_SelectionChangeCommitted(object sender, EventArgs e)
         {
             pMotivo = (MotivoViaje)cmbMotivoViaje.SelectedItem;
+            pMotivoCambio = true;
         }
 
         private void txtPatente_KeyPress(object sender, KeyPressEventArgs e)

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encuestador.Entities;
 using Encuestador.BL;
@@ -19,7 +16,7 @@ namespace Encuestador
     public partial class frmExportar : Form
     {
         #region Variables
-        private string pPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Reportes\\";
+        private string pPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Reportes\\";
         private string pMensaje = "Se encontraron #n resultados";
         private DateTime pFechaDesdeSeleccionada;
         private DateTime pFechaHastaSeleccionada;
@@ -189,7 +186,7 @@ namespace Encuestador
             var obj = new ExcelUtility();
             var dt = Comunes.ConvertToDataTable(pListaResultado);
 
-            obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".xls", "Details");
+            obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".xls", "Encuestas de los días " + pFechaDesdeSeleccionada.ToShortDateString() + " y " + pFechaHastaSeleccionada.ToShortDateString() + " correspondiente a " + pUsuarioSeleccionado.User);
             MessageBox.Show("Se creo correctamente el archivo");
             this.Cursor = Cursors.Default;
 

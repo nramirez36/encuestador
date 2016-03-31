@@ -198,9 +198,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SistemaEncuestador.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Recursos\add.gif" />
     <Content Include="Recursos\AddPopUp.png" />
     <Content Include="Recursos\icoExcel.jpg" />
+    <Content Include="Recursos\Key.gif" />
+    <Content Include="Recursos\logo-excel.gif" />
     <Content Include="Recursos\logout.png" />
     <None Include="Recursos\Palabras Claves.gif" />
     <Content Include="Recursos\RegistrationIcon1.png" />
