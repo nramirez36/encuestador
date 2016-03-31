@@ -43,7 +43,7 @@
             this.btnNuevaEncuesta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevaEncuesta.Location = new System.Drawing.Point(90, 23);
             this.btnNuevaEncuesta.Name = "btnNuevaEncuesta";
-            this.btnNuevaEncuesta.Size = new System.Drawing.Size(273, 76);
+            this.btnNuevaEncuesta.Size = new System.Drawing.Size(280, 76);
             this.btnNuevaEncuesta.TabIndex = 0;
             this.btnNuevaEncuesta.Text = "Nueva Encuesta";
             this.btnNuevaEncuesta.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExportar.Location = new System.Drawing.Point(90, 116);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(273, 76);
+            this.btnExportar.Size = new System.Drawing.Size(280, 76);
             this.btnExportar.TabIndex = 1;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(90, 215);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(273, 76);
+            this.btnSalir.Size = new System.Drawing.Size(280, 76);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;

@@ -57,6 +57,8 @@ namespace Encuestador
                 IdRutaSeleccionada = 2;
             if (rbRuta3.Checked)
                 IdRutaSeleccionada = 3;
+            if (rbRuta4.Checked)
+                IdRutaSeleccionada = 4;
         }
 
 
@@ -75,6 +77,11 @@ namespace Encuestador
         }
 
         private void rbRuta3_CheckedChanged(object sender, EventArgs e)
+        {
+            AsignarRespuesta();
+        }
+
+        private void rbRuta4_CheckedChanged(object sender, EventArgs e)
         {
             AsignarRespuesta();
         }

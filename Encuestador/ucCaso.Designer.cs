@@ -46,6 +46,7 @@
             this.lblCosto2 = new System.Windows.Forms.Label();
             this.lblCosto3 = new System.Windows.Forms.Label();
             this.lblRuta1 = new System.Windows.Forms.Label();
+            this.rbRuta4 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -258,10 +259,25 @@
             this.lblRuta1.TabIndex = 0;
             this.lblRuta1.Text = "Ruta 1";
             // 
+            // rbRuta4
+            // 
+            this.rbRuta4.AutoSize = true;
+            this.rbRuta4.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rbRuta4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRuta4.Location = new System.Drawing.Point(314, 168);
+            this.rbRuta4.Name = "rbRuta4";
+            this.rbRuta4.Size = new System.Drawing.Size(168, 34);
+            this.rbRuta4.TabIndex = 6;
+            this.rbRuta4.TabStop = true;
+            this.rbRuta4.Text = "Ninguna de las opciones";
+            this.rbRuta4.UseVisualStyleBackColor = true;
+            this.rbRuta4.CheckedChanged += new System.EventHandler(this.rbRuta4_CheckedChanged);
+            // 
             // ucCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rbRuta4);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.rbRuta3);
             this.Controls.Add(this.rbRuta2);
@@ -269,7 +285,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ucCaso";
-            this.Size = new System.Drawing.Size(519, 212);
+            this.Size = new System.Drawing.Size(564, 232);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -296,5 +312,6 @@
         private System.Windows.Forms.Label lblCosto1;
         private System.Windows.Forms.Label lblCosto2;
         private System.Windows.Forms.Label lblCosto3;
+        private System.Windows.Forms.RadioButton rbRuta4;
     }
 }

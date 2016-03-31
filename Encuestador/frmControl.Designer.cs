@@ -59,9 +59,9 @@
             this.btnIrACaso3 = new System.Windows.Forms.Button();
             this.panelCaso3 = new System.Windows.Forms.Panel();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.ucCaso3 = new Encuestador.ucCaso();
-            this.ucCaso2 = new Encuestador.ucCaso();
             this.ucCaso1 = new Encuestador.ucCaso();
+            this.ucCaso2 = new Encuestador.ucCaso();
+            this.ucCaso3 = new Encuestador.ucCaso();
             this.statusStrip1.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
@@ -77,14 +77,14 @@
             this.pbPorcentajeAvance});
             this.statusStrip1.Location = new System.Drawing.Point(0, 242);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(539, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(570, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // pbPorcentajeAvance
             // 
-            this.pbPorcentajeAvance.Margin = new System.Windows.Forms.Padding(90, 3, 70, 3);
+            this.pbPorcentajeAvance.Margin = new System.Windows.Forms.Padding(170, 3, 30, 3);
             this.pbPorcentajeAvance.Name = "pbPorcentajeAvance";
             this.pbPorcentajeAvance.Size = new System.Drawing.Size(180, 16);
             this.pbPorcentajeAvance.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -101,7 +101,7 @@
             this.panelSitiosEncuestas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
             this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
-            this.panelSitiosEncuestas.Size = new System.Drawing.Size(539, 242);
+            this.panelSitiosEncuestas.Size = new System.Drawing.Size(570, 242);
             this.panelSitiosEncuestas.TabIndex = 0;
             // 
             // cmbSentido
@@ -192,7 +192,7 @@
             this.panelDatosVehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDatosVehiculo.Location = new System.Drawing.Point(0, 0);
             this.panelDatosVehiculo.Name = "panelDatosVehiculo";
-            this.panelDatosVehiculo.Size = new System.Drawing.Size(539, 242);
+            this.panelDatosVehiculo.Size = new System.Drawing.Size(570, 242);
             this.panelDatosVehiculo.TabIndex = 1;
             this.panelDatosVehiculo.Visible = false;
             // 
@@ -221,9 +221,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(25, 57);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
+            this.label6.Size = new System.Drawing.Size(47, 17);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Patente:";
+            this.label6.Text = "Placa:";
             // 
             // cmbTipoVehiculo
             // 
@@ -278,7 +278,7 @@
             this.panelMotivoViaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMotivoViaje.Location = new System.Drawing.Point(0, 0);
             this.panelMotivoViaje.Name = "panelMotivoViaje";
-            this.panelMotivoViaje.Size = new System.Drawing.Size(539, 242);
+            this.panelMotivoViaje.Size = new System.Drawing.Size(570, 242);
             this.panelMotivoViaje.TabIndex = 2;
             this.panelMotivoViaje.Visible = false;
             // 
@@ -354,7 +354,7 @@
             this.panelCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso1.Location = new System.Drawing.Point(0, 0);
             this.panelCaso1.Name = "panelCaso1";
-            this.panelCaso1.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso1.Size = new System.Drawing.Size(570, 242);
             this.panelCaso1.TabIndex = 3;
             this.panelCaso1.Visible = false;
             // 
@@ -376,7 +376,7 @@
             this.panelCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso2.Location = new System.Drawing.Point(0, 0);
             this.panelCaso2.Name = "panelCaso2";
-            this.panelCaso2.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso2.Size = new System.Drawing.Size(570, 242);
             this.panelCaso2.TabIndex = 6;
             this.panelCaso2.Visible = false;
             // 
@@ -398,7 +398,7 @@
             this.panelCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso3.Location = new System.Drawing.Point(0, 0);
             this.panelCaso3.Name = "panelCaso3";
-            this.panelCaso3.Size = new System.Drawing.Size(539, 242);
+            this.panelCaso3.Size = new System.Drawing.Size(570, 242);
             this.panelCaso3.TabIndex = 7;
             this.panelCaso3.Visible = false;
             // 
@@ -413,17 +413,17 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // ucCaso3
+            // ucCaso1
             // 
-            this.ucCaso3.CasoSeleccionado = null;
-            this.ucCaso3.DistanciaViajeSeleccionada = null;
-            this.ucCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCaso3.IdRutaSeleccionada = 0;
-            this.ucCaso3.Location = new System.Drawing.Point(0, 0);
-            this.ucCaso3.MotivoSeleccionado = null;
-            this.ucCaso3.Name = "ucCaso3";
-            this.ucCaso3.Size = new System.Drawing.Size(539, 242);
-            this.ucCaso3.TabIndex = 0;
+            this.ucCaso1.CasoSeleccionado = null;
+            this.ucCaso1.DistanciaViajeSeleccionada = null;
+            this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso1.IdRutaSeleccionada = 0;
+            this.ucCaso1.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso1.MotivoSeleccionado = null;
+            this.ucCaso1.Name = "ucCaso1";
+            this.ucCaso1.Size = new System.Drawing.Size(570, 242);
+            this.ucCaso1.TabIndex = 0;
             // 
             // ucCaso2
             // 
@@ -434,26 +434,26 @@
             this.ucCaso2.Location = new System.Drawing.Point(0, 0);
             this.ucCaso2.MotivoSeleccionado = null;
             this.ucCaso2.Name = "ucCaso2";
-            this.ucCaso2.Size = new System.Drawing.Size(539, 242);
+            this.ucCaso2.Size = new System.Drawing.Size(570, 242);
             this.ucCaso2.TabIndex = 0;
             // 
-            // ucCaso1
+            // ucCaso3
             // 
-            this.ucCaso1.CasoSeleccionado = null;
-            this.ucCaso1.DistanciaViajeSeleccionada = null;
-            this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCaso1.IdRutaSeleccionada = 0;
-            this.ucCaso1.Location = new System.Drawing.Point(0, 0);
-            this.ucCaso1.MotivoSeleccionado = null;
-            this.ucCaso1.Name = "ucCaso1";
-            this.ucCaso1.Size = new System.Drawing.Size(539, 242);
-            this.ucCaso1.TabIndex = 0;
+            this.ucCaso3.CasoSeleccionado = null;
+            this.ucCaso3.DistanciaViajeSeleccionada = null;
+            this.ucCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso3.IdRutaSeleccionada = 0;
+            this.ucCaso3.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso3.MotivoSeleccionado = null;
+            this.ucCaso3.Name = "ucCaso3";
+            this.ucCaso3.Size = new System.Drawing.Size(570, 242);
+            this.ucCaso3.TabIndex = 0;
             // 
             // frmControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 264);
+            this.ClientSize = new System.Drawing.Size(570, 264);
             this.Controls.Add(this.panelSitiosEncuestas);
             this.Controls.Add(this.panelDatosVehiculo);
             this.Controls.Add(this.panelMotivoViaje);
