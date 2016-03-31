@@ -27,8 +27,5 @@ namespace Encuestador.Entities
         public string CostoRuta2 { get; set; }
         public string CostoRuta3 { get; set; }
         public int OrdenCaso { get; set; }
-        public string Pregunta1 { get; set; }
-        public string Pregunta2 { get; set; }
-        public string Pregunta3 { get; set; }
     }
 }

@@ -176,6 +176,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmExportar";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exportar";
             this.Load += new System.EventHandler(this.frmExportar_Load);
             this.ResumeLayout(false);
