@@ -11,15 +11,20 @@ using Encuestador.Entities;
 using Encuestador.BL;
 using Encuestador.Utiles;
 using nramirez36.Logger;
+using Encuestador.Excel;
+using System.IO;
+
 namespace Encuestador
 {
     public partial class frmExportar : Form
     {
         #region Variables
+        private string pPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Reportes\\";
         private string pMensaje = "Se encontraron #n resultados";
         private DateTime pFechaDesdeSeleccionada;
         private DateTime pFechaHastaSeleccionada;
         private Login pUsuarioSeleccionado;
+        private List<EncuestaReportar> pListaResultado;
         #endregion
 
         #region Propiedades
@@ -42,12 +47,12 @@ namespace Encuestador
                     lblResultados.Text = pMensaje;
                     pFechaDesdeSeleccionada = dtpDesde.Value;
                     pFechaHastaSeleccionada = dtpHasta.Value;
-                    
-                    var lista = pGestorRespuestas.ObtenerEncuestasParametros(pFechaDesdeSeleccionada, pFechaHastaSeleccionada, pUsuarioSeleccionado.IdEncuestador);
-                    var cont = lista.Count;
+
+                    pListaResultado = pGestorRespuestas.ObtenerEncuestasParametros(pFechaDesdeSeleccionada, pFechaHastaSeleccionada, pUsuarioSeleccionado.IdEncuestador);
+                    var cont = pListaResultado.Count;
                     lblResultados.Text = lblResultados.Text.Replace("#n", cont.ToString());
                     lblResultados.Visible = true;
-                    if (lista.Count > 0)
+                    if (cont > 0)
                     {
                         lblResultados.ForeColor = Color.Green;
                         btnExportarCSV.Visible = true;
@@ -85,6 +90,7 @@ namespace Encuestador
                 throw ex;
             }
         }
+
         private bool validar()
         {
             if (dtpDesde.Value <= DateTime.MinValue || dtpDesde.Value >= DateTime.MaxValue || dtpDesde.Value >= DateTime.Now)
@@ -107,51 +113,15 @@ namespace Encuestador
             return true;
         }
 
-        //public void ListToExcel(List<string> list)
-        //{
-        //    //start excel
-        //    NsExcel.ApplicationClass excapp = new Microsoft.Office.Interop.Excel.ApplicationClass();
-
-        //    //if you want to make excel visible           
-        //    excapp.Visible = true;
-
-        //    //create a blank workbook
-        //    var workbook = excapp.Workbooks.Add(NsExcel.XlWBATemplate.xlWBATWorksheet);
-
-        //    //or open one - this is no pleasant, but yue're probably interested in the first parameter
-        //    string workbookPath = "C:\test.xls";
-        //    var workbook = Workbooks.Open(workbookPath,
-        //        0, false, 5, "", "", false, Excel.XlPlatform.xlWindows, "",
-        //        true, false, 0, true, false, false);
-
-        //    //Not done yet. You have to work on a specific sheet - note the cast
-        //    //You may not have any sheets at all. Then you have to add one with NsExcel.Worksheet.Add()
-        //    var sheet = (NsExcel.Worksheet)workbook.Sheets[1]; //indexing starts from 1
-
-        //    //do something usefull: you select now an individual cell
-        //    var range = sheet.get_Range("A1", "A1");
-        //    range.Value2 = "test"; //Value2 is not a typo
-
-        //    //now the list
-        //    string cellName;
-        //    int counter = 1;
-        //    foreach (var item in list)
-        //    {
-        //        cellName = "A" + counter.ToString();
-        //        var range = sheet.get_Range(cellName, cellName);
-        //        range.Value2 = item.ToString();
-        //        ++counter;
-        //    }
-
-        //    //you've probably got the point by now, so a detailed explanation about workbook.SaveAs and workbook.Close is not necessary
-        //    //important: if you did not make excel visible terminating your application will terminate excel as well - I tested it
-        //    //but if you did it - to be honest - I don't know how to close the main excel window - maybee somewhere around excapp.Windows or excapp.ActiveWindow
-        //}
+        private void CrearDirectorio()
+        {
+            if (!Directory.Exists(pPath))
+                Directory.CreateDirectory(pPath);
+        }
         #endregion
 
         #region Eventos
 
-        #endregion
         public frmExportar()
         {
             InitializeComponent();
@@ -173,6 +143,7 @@ namespace Encuestador
         {
             try
             {
+                CrearDirectorio();
                 CargarUsuarios();
                 dtpDesde.Value = DateTime.Now.AddDays(-7);
                 dtpHasta.Value = DateTime.Now.AddDays(-1);
@@ -211,5 +182,27 @@ namespace Encuestador
         {
             pUsuarioSeleccionado = (Login)cmbUsuarios.SelectedItem;
         }
+
+        private void btnExportarXLS_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            var obj = new ExcelUtility();
+            var dt = Comunes.ConvertToDataTable(pListaResultado);
+
+            obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".xls", "Details");
+            MessageBox.Show("Se creo correctamente el archivo");
+            this.Cursor = Cursors.Default;
+
+        }
+
+        private void btnExportarCSV_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            pListaResultado.ToCSV<EncuestaReportar>(path: pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".csv");
+            MessageBox.Show("Se creo correctamente el archivo");
+            this.Cursor = Cursors.Default;
+        }
+        #endregion
+
     }
 }

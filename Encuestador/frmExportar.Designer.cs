@@ -91,6 +91,7 @@
             this.btnExportarXLS.Text = "Exportar a Excel";
             this.btnExportarXLS.UseVisualStyleBackColor = true;
             this.btnExportarXLS.Visible = false;
+            this.btnExportarXLS.Click += new System.EventHandler(this.btnExportarXLS_Click);
             // 
             // btnCancelar
             // 
@@ -112,6 +113,7 @@
             this.btnExportarCSV.Text = "Exportar a CSV";
             this.btnExportarCSV.UseVisualStyleBackColor = true;
             this.btnExportarCSV.Visible = false;
+            this.btnExportarCSV.Click += new System.EventHandler(this.btnExportarCSV_Click);
             // 
             // label3
             // 

@@ -110,15 +110,14 @@ namespace Encuestador.DL
                     lstParametros.Add(new OleDbParameter("@usuario", pIdUsuario));
                 }
 
-               var dr = OdbcClient.GenerarReader(sql, lstParametros, conexion);
+                var dr = OdbcClient.GenerarReader(sql, lstParametros, conexion);
 
-                //var dt = OdbcClient.GenerarTable(sql, lstParametros, conexion);
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
                         encu = new EncuestaReportar();
-                        
+
                         encu.NroEncuesta = int.Parse(dr["NroEncuesta"].ToString());
                         encu.Sentido = dr["Sentido"].ToString();
                         encu.Patente = dr["Patente"].ToString();

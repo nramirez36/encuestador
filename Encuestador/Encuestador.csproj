@@ -68,6 +68,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="nramirez36.Log">
       <HintPath>..\Encuestador.Librerias\nramirez36.Log.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
       <HintPath>..\packages\AvalonWizard.Mvvm.1.2.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +92,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel\ExcelUtility.cs" />
+    <Compile Include="Excel\GenericExcel.cs" />
     <Compile Include="frmControl.cs">
       <SubType>Form</SubType>
     </Compile>
