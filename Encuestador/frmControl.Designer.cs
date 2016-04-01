@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmControl));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pbPorcentajeAvance = new System.Windows.Forms.ToolStripProgressBar();
             this.panelSitiosEncuestas = new System.Windows.Forms.Panel();
@@ -55,12 +56,12 @@
             this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
             this.panelCaso1 = new System.Windows.Forms.Panel();
             this.btnIrACaso2 = new System.Windows.Forms.Button();
+            this.ucCaso1 = new Encuestador.ucCaso();
             this.panelCaso2 = new System.Windows.Forms.Panel();
             this.btnIrACaso3 = new System.Windows.Forms.Button();
+            this.ucCaso2 = new Encuestador.ucCaso();
             this.panelCaso3 = new System.Windows.Forms.Panel();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.ucCaso1 = new Encuestador.ucCaso();
-            this.ucCaso2 = new Encuestador.ucCaso();
             this.ucCaso3 = new Encuestador.ucCaso();
             this.statusStrip1.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
@@ -425,6 +426,18 @@
             this.btnIrACaso2.UseVisualStyleBackColor = true;
             this.btnIrACaso2.Click += new System.EventHandler(this.btnIrACaso2_Click);
             // 
+            // ucCaso1
+            // 
+            this.ucCaso1.CasoSeleccionado = null;
+            this.ucCaso1.DistanciaViajeSeleccionada = null;
+            this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso1.IdRutaSeleccionada = 0;
+            this.ucCaso1.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso1.MotivoSeleccionado = null;
+            this.ucCaso1.Name = "ucCaso1";
+            this.ucCaso1.Size = new System.Drawing.Size(765, 489);
+            this.ucCaso1.TabIndex = 0;
+            // 
             // panelCaso2
             // 
             this.panelCaso2.Controls.Add(this.btnIrACaso3);
@@ -447,6 +460,18 @@
             this.btnIrACaso3.UseVisualStyleBackColor = true;
             this.btnIrACaso3.Click += new System.EventHandler(this.btnIrACaso3_Click);
             // 
+            // ucCaso2
+            // 
+            this.ucCaso2.CasoSeleccionado = null;
+            this.ucCaso2.DistanciaViajeSeleccionada = null;
+            this.ucCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCaso2.IdRutaSeleccionada = 0;
+            this.ucCaso2.Location = new System.Drawing.Point(0, 0);
+            this.ucCaso2.MotivoSeleccionado = null;
+            this.ucCaso2.Name = "ucCaso2";
+            this.ucCaso2.Size = new System.Drawing.Size(765, 489);
+            this.ucCaso2.TabIndex = 0;
+            // 
             // panelCaso3
             // 
             this.panelCaso3.Controls.Add(this.btnFinalizar);
@@ -468,30 +493,6 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // ucCaso1
-            // 
-            this.ucCaso1.CasoSeleccionado = null;
-            this.ucCaso1.DistanciaViajeSeleccionada = null;
-            this.ucCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCaso1.IdRutaSeleccionada = 0;
-            this.ucCaso1.Location = new System.Drawing.Point(0, 0);
-            this.ucCaso1.MotivoSeleccionado = null;
-            this.ucCaso1.Name = "ucCaso1";
-            this.ucCaso1.Size = new System.Drawing.Size(765, 489);
-            this.ucCaso1.TabIndex = 0;
-            // 
-            // ucCaso2
-            // 
-            this.ucCaso2.CasoSeleccionado = null;
-            this.ucCaso2.DistanciaViajeSeleccionada = null;
-            this.ucCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCaso2.IdRutaSeleccionada = 0;
-            this.ucCaso2.Location = new System.Drawing.Point(0, 0);
-            this.ucCaso2.MotivoSeleccionado = null;
-            this.ucCaso2.Name = "ucCaso2";
-            this.ucCaso2.Size = new System.Drawing.Size(765, 489);
-            this.ucCaso2.TabIndex = 0;
             // 
             // ucCaso3
             // 
@@ -518,8 +519,8 @@
             this.Controls.Add(this.panelMotivoViaje);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmControl";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Encuesta";
