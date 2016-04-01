@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Encuestador.Entities;
 using System.Data.OleDb;
-using nramirez36.Logger;
 
 namespace Encuestador.DL
 {
@@ -41,7 +40,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Casos.cs", "Casos.cs", "ObtenerCasosPorIdDistancia", ex.Message);
                 throw new Exception("Hubo un problema al Obtener los Casos");
             }
             finally
@@ -82,7 +80,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Casos.cs", "Casos.cs", "ObtenerTodosCasos", ex.Message);
                 throw new Exception("Hubo un problema al Obtener los Casos");
             }
             finally

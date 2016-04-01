@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Encuestador.Entities;
 using Encuestador.DL;
-using nramirez36.Logger;
 namespace Encuestador.BL
 {
     public class GestorRespuestas
@@ -18,7 +17,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "RegistrarEncuesta", ex.Message);
                 throw ex;
             }
         }
@@ -30,7 +28,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "EliminarEncuesta", ex.Message);
                 throw ex;
             }
         }
@@ -42,7 +39,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "ObtenerEncuestas", ex.Message);
                 throw ex;
             }
         }
@@ -54,7 +50,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "ObtenerEncuestasParametros", ex.Message);
                 throw ex;
             }
         }

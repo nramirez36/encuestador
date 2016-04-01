@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Encuestador.Entities;
-using nramirez36.Logger;
+
 using System.Data.OleDb;
 
 namespace Encuestador.DL
@@ -31,7 +31,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Users.cs", "Users.cs", "IniciarSesion", ex.Message);
                 throw new Exception("Hubo un problema al Iniciar Sesión");
             }
             finally
@@ -64,7 +63,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Users.cs", "Users.cs", "ObtenerTodosUsuarios", ex.Message);
                 throw new Exception("Hubo un problema al Obtener los Usuarios");
             }
             finally

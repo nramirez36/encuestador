@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Encuestador.Entities;
-using nramirez36.Logger;
+
 using System.Data.OleDb;
 using System.Data;
 
@@ -40,7 +40,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Respuestas.cs", "Respuestas.cs", "RegistrarEncuesta", ex.Message);
                 if (trans != null)
                     trans.Rollback();
                 throw new Exception("No se pudo registrar la encuesta");
@@ -105,7 +104,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Respuestas.cs", "Respuestas.cs", "ObtenerEncuestas", ex.Message);
                 throw new Exception("Hubo un problema al Obtener las Encuestas");
             }
             finally
@@ -174,7 +172,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Respuestas.cs", "Respuestas.cs", "ObtenerEncuestasParametros", ex.Message);
                 throw new Exception("Hubo un problema al Obtener las Encuestas");
             }
             finally

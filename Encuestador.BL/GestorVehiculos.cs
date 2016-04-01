@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Encuestador.Entities;
 using Encuestador.DL;
-using nramirez36.Logger;
+
 
 namespace Encuestador.BL
 {
@@ -16,7 +16,7 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorVehiculos.cs", "GestorVehiculos.cs", "ObtenerTodosVehiculos", ex.Message);
+                
                 throw ex;
             }
         }

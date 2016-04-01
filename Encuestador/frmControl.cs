@@ -5,7 +5,6 @@ using Encuestador.Utiles;
 using Encuestador.BL;
 using Encuestador.Entities;
 using System.Linq;
-using nramirez36.Logger;
 using System.Collections.Generic;
 
 namespace Encuestador
@@ -142,7 +141,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrAVehiculos", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
             }
         }
@@ -164,7 +162,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrAMotivosViajes", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
             }
         }
@@ -193,7 +190,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos1", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
             }
         }
@@ -221,7 +217,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos2", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
             }
         }
@@ -243,13 +238,11 @@ namespace Encuestador
                     ucCaso3.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 3);
                     ucCaso3.CargarDatos();
 
-                    //this.Size = new Size(570, 381);
                     SumarPorcentajeAvance();
                 }
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos3", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
             }
         }
@@ -260,17 +253,14 @@ namespace Encuestador
         {
             try
             {
-                //TODO 01: Validar que los datos del ultimo control esten completos
                 if (validarControlesCaso3())
                 {
                     pbPorcentajeAvance.Value = 100;
 
                     pRespuesta.RespuestaCaso3 = ucCaso3.IdRutaSeleccionada;
 
-                    //TODO 02: Registrar respuesta
                     var resultado = pGestorRespuestas.RegistrarEncuesta(pRespuesta);
 
-                    //TODO 04: Mostrar mensaje e ir a la pagina principal
                     if (resultado > 0)
                     {
                         pRegistroFinalizado = true;
@@ -281,7 +271,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "Finalizar", ex.Message);
                 throw ex;
             }
 
@@ -322,7 +311,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarSitios", ex.Message);
                 throw ex;
             }
         }
@@ -341,8 +329,7 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarSentidos", ex.Message);
-                throw;
+                throw new Exception("Hubo un problema al Obtener los Sentidos");
             }
         }
 
@@ -359,7 +346,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarVehiculos", ex.Message);
                 throw ex;
             }
         }
@@ -377,7 +363,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarDistancias", ex.Message);
                 throw ex;
             }
         }
@@ -395,7 +380,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarMotivos", ex.Message);
                 throw ex;
             }
         }
@@ -409,7 +393,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmControl", "frmControl", "CargarCasos", ex.Message);
                 throw ex;
             }
         }

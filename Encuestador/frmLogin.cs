@@ -9,7 +9,6 @@ using System.Configuration;
 using System.Windows.Forms;
 using Encuestador.BL;
 using Encuestador.Entities;
-using nramirez36.Logger;
 
 namespace Encuestador
 {
@@ -73,7 +72,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmLogin.cs", "frmLogin.cs", "IniciarSesion", ex.Message);
                 throw ex;
             }
         }

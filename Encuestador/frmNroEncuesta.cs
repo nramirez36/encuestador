@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Encuestador.Entities;
-using nramirez36.Logger;
 
 namespace Encuestador
 {

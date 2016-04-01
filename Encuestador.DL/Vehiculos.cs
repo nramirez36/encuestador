@@ -1,5 +1,5 @@
 ﻿using Encuestador.Entities;
-using nramirez36.Logger;
+
 using System;
 using System.Collections.Generic;
 
@@ -30,7 +30,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("Vehiculos.cs", "Vehiculos.cs", "ObtenerTodosVehiculos", ex.Message);
                 throw new Exception("Hubo un problema al Obtener los Tipos de Vehículos");
             }
             finally

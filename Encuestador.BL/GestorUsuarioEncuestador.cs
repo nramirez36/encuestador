@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Encuestador.DL;
-using nramirez36.Logger;
-
 namespace Encuestador.BL
 {
     public class GestorUsuarioEncuestador
@@ -16,7 +14,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorUsuarioEncuestador.cs", "GestorUsuarioEncuestador.cs", "IniciarSesion", ex.Message);
                 throw ex;
             }            
         }
@@ -29,7 +26,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorUsuarioEncuestador.cs", "GestorUsuarioEncuestador.cs", "ObtenerTodosUsuarios", ex.Message);
                 throw ex;
             }
         }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Encuestador.Entities;
 using Encuestador.DL;
-using nramirez36.Logger;
 namespace Encuestador.BL
 {
     public class GestorMotivosViajes
@@ -15,7 +14,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorMotivosViajes.cs", "GestorMotivosViajes.cs", "ObtenerTodosMotivosViaje", ex.Message);
                 throw ex;
             }
         }

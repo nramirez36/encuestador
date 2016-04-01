@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Encuestador.DL;
 using Encuestador.Entities;
-using nramirez36.Logger;
 namespace Encuestador.BL
 {
     public class GestorDistanciasViajes
@@ -15,7 +14,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorDistanciasViajes.cs", "GestorDistanciasViajes.cs", "ObtenerTodasDistanciasViaje", ex.Message);
                 throw ex;
             }
         }

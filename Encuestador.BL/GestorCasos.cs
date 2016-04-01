@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Encuestador.DL;
 using Encuestador.Entities;
-using nramirez36.Logger;
 
 namespace Encuestador.BL
 {
@@ -16,7 +15,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorCasos.cs", "GestorCasos.cs", "ObtenerCasosPorIdDistancia", ex.Message);
                 throw ex;
             }
         }
@@ -28,7 +26,6 @@ namespace Encuestador.BL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("GestorCasos.cs", "GestorCasos.cs", "ObtenerTodosCasos", ex.Message);
                 throw ex;
             }
         }

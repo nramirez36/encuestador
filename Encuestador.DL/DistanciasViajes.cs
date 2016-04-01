@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Encuestador.Entities;
-using nramirez36.Logger;
 
 namespace Encuestador.DL
 {
@@ -30,7 +29,6 @@ namespace Encuestador.DL
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("DistanciasViajes.cs", "DistanciasViajes.cs", "ObtenerTodasDistanciasViaje", ex.Message);
                 throw new Exception("Hubo un problema al Obtener las Distancias");
             }
             finally

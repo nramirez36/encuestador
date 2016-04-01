@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using Encuestador.Entities;
 using Encuestador.BL;
 using Encuestador.Utiles;
-using nramirez36.Logger;
 using Encuestador.Excel;
 using System.IO;
 
@@ -65,7 +64,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmExportar", "frmExportar", "buscarEncuestas", ex.Message);
                 throw ex;
             }
         }
@@ -83,7 +81,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmExportar", "frmExportar", "CargarUsuarios", ex.Message);
                 throw ex;
             }
         }
@@ -128,7 +125,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmExportar", "frmExportar", "borrarEncuestasExportadas", ex.Message);
                 throw ex;
             }
         }
@@ -167,7 +163,6 @@ namespace Encuestador
             }
             catch (Exception ex)
             {
-                Logger.WriteXMLError("frmExportar", "frmExportar", "frmExportar_Load", ex.Message);
                 throw ex;
             }
         }
