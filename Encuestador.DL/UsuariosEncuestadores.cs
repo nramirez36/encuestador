@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Encuestador.Entities;
 using nramirez36.Logger;
 using System.Data.OleDb;
+
 namespace Encuestador.DL
 {
     public class UsuariosEncuestadores
@@ -71,6 +72,6 @@ namespace Encuestador.DL
                 conexion.Close();
             }
             return lstUsuarios;
-        }
+        }       
     }
 }

@@ -166,7 +166,7 @@ namespace Encuestador
             {
                 Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrAMotivosViajes", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
-            }            
+            }
         }
 
         private void IrACasos1()
@@ -187,7 +187,7 @@ namespace Encuestador
                     ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
                     ucCaso1.CargarDatos();
 
-                    this.Size = new Size(570, 381);
+                    //this.Size = new Size(570, 381);
                     SumarPorcentajeAvance();
                 }
             }
@@ -195,7 +195,7 @@ namespace Encuestador
             {
                 Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos1", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
-            }            
+            }
         }
 
         private void IrACasos2()
@@ -215,7 +215,7 @@ namespace Encuestador
                     ucCaso2.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 2);
                     ucCaso2.CargarDatos();
 
-                    this.Size = new Size(570, 381);
+                    //this.Size = new Size(570, 381);
                     SumarPorcentajeAvance();
                 }
             }
@@ -243,7 +243,7 @@ namespace Encuestador
                     ucCaso3.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 3);
                     ucCaso3.CargarDatos();
 
-                    this.Size = new Size(570, 381);
+                    //this.Size = new Size(570, 381);
                     SumarPorcentajeAvance();
                 }
             }
@@ -251,7 +251,7 @@ namespace Encuestador
             {
                 Logger.WriteXMLError("frmControl.cs", "frmControl.cs", "IrACasos3", ex.Message);
                 throw new Exception("Hubo un problema al cargar los datos");
-            }            
+            }
         }
 
         #endregion
@@ -298,7 +298,7 @@ namespace Encuestador
             pRespuesta.IdUsuario = UsuarioConectado.IdEncuestador;
             pRespuesta.NroEncuesta = NroEncuesta;
 
-             this.Size = new Size(388, 260);
+            //this.Size = new Size(388, 260);
             panelSitiosEncuestas.Visible = true;
             SumarPorcentajeAvance();
 
@@ -426,6 +426,10 @@ namespace Encuestador
         #region Eventos
         private void frmControl_Load(object sender, EventArgs e)
         {
+            //this.Size = SystemInformation.PrimaryMonitorSize;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            
             CargarDatos();
             pCantidadTotal = Comunes.GetCountControls(Controls);
             double porcentaje = 100 / (pCantidadTotal + 1);

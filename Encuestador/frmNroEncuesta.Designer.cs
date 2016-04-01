@@ -36,28 +36,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 17);
+            this.label1.Size = new System.Drawing.Size(331, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingresar el Número de Encuesta:";
             // 
             // txtNroEncuesta
             // 
-            this.txtNroEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroEncuesta.Location = new System.Drawing.Point(25, 55);
+            this.txtNroEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroEncuesta.Location = new System.Drawing.Point(27, 63);
             this.txtNroEncuesta.Name = "txtNroEncuesta";
-            this.txtNroEncuesta.Size = new System.Drawing.Size(213, 26);
+            this.txtNroEncuesta.Size = new System.Drawing.Size(213, 32);
             this.txtNroEncuesta.TabIndex = 1;
             this.txtNroEncuesta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEncuesta_KeyPress);
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.Location = new System.Drawing.Point(174, 101);
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(273, 54);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(124, 32);
+            this.btnSiguiente.Size = new System.Drawing.Size(125, 48);
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 145);
+            this.ClientSize = new System.Drawing.Size(410, 124);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.txtNroEncuesta);
             this.Controls.Add(this.label1);

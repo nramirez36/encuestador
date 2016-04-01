@@ -47,7 +47,7 @@ namespace Encuestador
         private void btnExportar_Click(object sender, EventArgs e)
         {
             var frm = new frmExportar();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)

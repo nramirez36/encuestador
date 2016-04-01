@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Encuestador.Entities;
 using nramirez36.Logger;
 using System.Data.OleDb;
+using System.Data;
 
 namespace Encuestador.DL
 {
@@ -50,7 +51,36 @@ namespace Encuestador.DL
             }
             return filasAfectadas;
         }
-
+        public static int EliminarEncuesta(EncuestaReportar pEncuestas)
+        {
+            var conexion = OdbcClient.Conectar();
+            OleDbTransaction trans = null;
+            var filasAfectadas = 0;
+            try
+            {
+                trans = conexion.BeginTransaction();
+                string comando = "DELETE FROM Respuesta WHERE  (IdRespuesta = @id)";
+                var lstParametros = new List<OleDbParameter>();
+                lstParametros.Add(new OleDbParameter("@id", pEncuestas.IdRespuesta));
+                filasAfectadas = OdbcClient.EjecutarCommand(comando, lstParametros, conexion, trans);
+                if (filasAfectadas > 0)
+                    trans.Commit();
+            }
+            catch (Exception)
+            {
+                if (trans != null)
+                {
+                    trans.Rollback();
+                }
+                throw new Exception("No se pudo borrar la encuesta");
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+            return filasAfectadas;
+        }
         public static List<EncuestaReportar> ObtenerEncuestas()
         {
             var conexion = OdbcClient.Conectar();

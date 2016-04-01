@@ -18,6 +18,7 @@ namespace Encuestador
         #region Variables
         private string pPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Reportes\\";
         private string pMensaje = "Se encontraron #n resultados";
+        private bool pBajaRealizada = false;
         private DateTime pFechaDesdeSeleccionada;
         private DateTime pFechaHastaSeleccionada;
         private Login pUsuarioSeleccionado;
@@ -40,7 +41,6 @@ namespace Encuestador
             {
                 if (validar())
                 {
-                    //var lista = pGestorRespuestas.ObtenerEncuestas().ToList();
                     lblResultados.Text = pMensaje;
                     pFechaDesdeSeleccionada = dtpDesde.Value;
                     pFechaHastaSeleccionada = dtpHasta.Value;
@@ -115,6 +115,24 @@ namespace Encuestador
             if (!Directory.Exists(pPath))
                 Directory.CreateDirectory(pPath);
         }
+
+        private void borrarEncuestasExportadas()
+        {
+            var filas = 0;
+            try
+            {
+                foreach (var item in pListaResultado)
+                {
+                    filas += pGestorRespuestas.EliminarEncuesta(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("frmExportar", "frmExportar", "borrarEncuestasExportadas", ex.Message);
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region Eventos
@@ -152,7 +170,6 @@ namespace Encuestador
                 Logger.WriteXMLError("frmExportar", "frmExportar", "frmExportar_Load", ex.Message);
                 throw ex;
             }
-
         }
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
@@ -187,6 +204,10 @@ namespace Encuestador
             var dt = Comunes.ConvertToDataTable(pListaResultado);
 
             obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".xls", "Encuestas de los días " + pFechaDesdeSeleccionada.ToShortDateString() + " y " + pFechaHastaSeleccionada.ToShortDateString() + " correspondiente a " + pUsuarioSeleccionado.User);
+
+            if (!pBajaRealizada)
+                borrarEncuestasExportadas();
+
             MessageBox.Show("Se creo correctamente el archivo");
             this.Cursor = Cursors.Default;
 
@@ -196,10 +217,18 @@ namespace Encuestador
         {
             this.Cursor = Cursors.WaitCursor;
             pListaResultado.ToCSV<EncuestaReportar>(path: pPath + "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".csv");
+
+            if (!pBajaRealizada)
+                borrarEncuestasExportadas();
+
             MessageBox.Show("Se creo correctamente el archivo");
             this.Cursor = Cursors.Default;
         }
         #endregion
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

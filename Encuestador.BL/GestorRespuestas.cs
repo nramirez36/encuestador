@@ -22,6 +22,18 @@ namespace Encuestador.BL
                 throw ex;
             }
         }
+        public int EliminarEncuesta(EncuestaReportar pRespuesta)
+        {
+            try
+            {
+                return Respuestas.EliminarEncuesta(pRespuesta);
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteXMLError("GestorRespuestas.cs", "GestorRespuestas.cs", "EliminarEncuesta", ex.Message);
+                throw ex;
+            }
+        }
         public List<EncuestaReportar> ObtenerEncuestas()
         {
             try

@@ -22,11 +22,11 @@ namespace Encuestador
         }
 
         #endregion
-        
+
         #region Metodos
         public bool validarSeleccionRespuesta()
         {
-            if (rbRuta1.Checked == false && rbRuta2.Checked == false && rbRuta3.Checked == false)
+            if (rbRuta1.Checked == false && rbRuta2.Checked == false && rbRuta3.Checked == false && rbRuta4.Checked == false)
             {
                 MessageBox.Show("Debe seleccionar una Opción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
