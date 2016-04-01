@@ -8,5 +8,6 @@ namespace Encuestador
             var frm = new frmLogin();
             frm.Show();
         }
+
     }
 }
