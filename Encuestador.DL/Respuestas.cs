@@ -122,16 +122,16 @@ namespace Encuestador.DL
             {
                 string sql = "SELECT R.NroEncuesta, R.Sentido, R.Patente, R.FechaEncuesta, R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3, V.Descripcion as TipoVehiculo, U.[User] AS Usuario, M.Descripcion AS Motivo, S.Descripcion AS Sitio, C.TiempoRuta1, C.TiempoRuta2, C.TiempoRuta3, C.CostoRuta1, C.CostoRuta2, C.CostoRuta3, C.OrdenCaso, R.IdRespuesta FROM ((((((Respuesta R INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Casos C ON D.IdDistanciaViaje = C.IdDistanciaViaje) where 1=1 ";
                 var lstParametros = new List<OleDbParameter>();
-                if (pFechaDesde < DateTime.Now)
-                {
-                    sql += " and R.FechaEncuesta >= @fechaDesde";
-                    lstParametros.Add(new OleDbParameter("@fechaDesde", pFechaDesde.ToString()));
-                }
-                if (pFechaHasta < DateTime.Now)
-                {
-                    sql += " and R.FechaEncuesta <= @fechaHasta";
-                    lstParametros.Add(new OleDbParameter("@fechaHasta", pFechaHasta.ToString()));
-                }
+                //if (pFechaDesde < DateTime.Now)
+                //{
+                //    sql += " and R.FechaEncuesta >= @fechaDesde";
+                //    lstParametros.Add(new OleDbParameter("@fechaDesde", pFechaDesde.ToString()));
+                //}
+                //if (pFechaHasta < DateTime.Now)
+                //{
+                //    sql += " and R.FechaEncuesta <= @fechaHasta";
+                //    lstParametros.Add(new OleDbParameter("@fechaHasta", pFechaHasta.ToString()));
+                //}
                 if (pIdUsuario != 0)
                 {
                     sql += " and U.IdEncuestador = @usuario";
@@ -146,26 +146,31 @@ namespace Encuestador.DL
                     {
                         encu = new EncuestaReportar();
 
-                        encu.NroEncuesta = int.Parse(dr["NroEncuesta"].ToString());
-                        encu.Sentido = dr["Sentido"].ToString();
-                        encu.Patente = dr["Patente"].ToString();
                         encu.FechaEncuesta = DateTime.Parse(dr["FechaEncuesta"].ToString());
-                        encu.RespuestaCaso1 = int.Parse(dr["RespuestaCaso1"].ToString());
-                        encu.RespuestaCaso2 = int.Parse(dr["RespuestaCaso2"].ToString());
-                        encu.RespuestaCaso3 = int.Parse(dr["RespuestaCaso3"].ToString());
-                        encu.TipoVehiculo = dr["TipoVehiculo"].ToString();
-                        encu.UsuarioConectado = dr["Usuario"].ToString();
-                        encu.Motivo = dr["Motivo"].ToString();
-                        encu.Sitio = dr["Sitio"].ToString();
-                        encu.TiempoRuta1 = int.Parse(dr["TiempoRuta1"].ToString());
-                        encu.TiempoRuta2 = int.Parse(dr["TiempoRuta2"].ToString());
-                        encu.TiempoRuta3 = int.Parse(dr["TiempoRuta3"].ToString());
-                        encu.CostoRuta1 = dr["CostoRuta1"].ToString();
-                        encu.CostoRuta2 = dr["CostoRuta2"].ToString();
-                        encu.CostoRuta3 = dr["CostoRuta3"].ToString();
-                        encu.OrdenCaso = int.Parse(dr["OrdenCaso"].ToString());
-                        encu.IdRespuesta = int.Parse(dr["IdRespuesta"].ToString());
-                        lstEncuestas.Add(encu);
+
+                        if (pFechaDesde >= encu.FechaEncuesta || pFechaHasta <= encu.FechaEncuesta)
+                        {
+                            encu.NroEncuesta = int.Parse(dr["NroEncuesta"].ToString());
+                            encu.Sentido = dr["Sentido"].ToString();
+                            encu.Patente = dr["Patente"].ToString();
+
+                            encu.RespuestaCaso1 = int.Parse(dr["RespuestaCaso1"].ToString());
+                            encu.RespuestaCaso2 = int.Parse(dr["RespuestaCaso2"].ToString());
+                            encu.RespuestaCaso3 = int.Parse(dr["RespuestaCaso3"].ToString());
+                            encu.TipoVehiculo = dr["TipoVehiculo"].ToString();
+                            encu.UsuarioConectado = dr["Usuario"].ToString();
+                            encu.Motivo = dr["Motivo"].ToString();
+                            encu.Sitio = dr["Sitio"].ToString();
+                            encu.TiempoRuta1 = int.Parse(dr["TiempoRuta1"].ToString());
+                            encu.TiempoRuta2 = int.Parse(dr["TiempoRuta2"].ToString());
+                            encu.TiempoRuta3 = int.Parse(dr["TiempoRuta3"].ToString());
+                            encu.CostoRuta1 = dr["CostoRuta1"].ToString();
+                            encu.CostoRuta2 = dr["CostoRuta2"].ToString();
+                            encu.CostoRuta3 = dr["CostoRuta3"].ToString();
+                            encu.OrdenCaso = int.Parse(dr["OrdenCaso"].ToString());
+                            encu.IdRespuesta = int.Parse(dr["IdRespuesta"].ToString());
+                            lstEncuestas.Add(encu);
+                        }
                         encu = null;
                     }
                 }
