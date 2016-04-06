@@ -58,6 +58,7 @@ Global
 		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Debug|x86.Build.0 = Debug
 		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|Any CPU.ActiveCfg = Release
 		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|x86.ActiveCfg = Release
+		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
