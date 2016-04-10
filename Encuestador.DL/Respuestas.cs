@@ -20,7 +20,8 @@ namespace Encuestador.DL
             try
             {
                 trans = conexion.BeginTransaction();
-                string sql = "INSERT INTO Respuesta (IdUsuario, NroEncuesta, IdSitio, IdMotivoViaje, Sentido, IdVehiculo, Patente, FechaEncuesta, IdDistanciaViaje, RespuestaCaso1, RespuestaCaso2, RespuestaCaso3) VALUES (@IdUsuario, @NroEncuesta, @IdSitio, @IdMotivoViaje, @Sentido, @IdVehiculo, @Patente, @FechaEncuesta, @IdDistanciaViaje, @RespuestaCaso1, @RespuestaCaso2, @RespuestaCaso3)";
+                //TODO 01: Revisar y actualizar este query ya que se modifico la tabla participante
+                string sql = "INSERT INTO Respuesta (IdUsuario, NroEncuesta, IdSitio, IdMotivoViaje, Sentido, IdVehiculo, PatenteLetras, PatenteNumero, FechaEncuesta, IdDistanciaViaje, RespuestaCaso1, RespuestaCaso2, RespuestaCaso3, PatenteExtranjera) VALUES (@IdUsuario, @NroEncuesta, @IdSitio, @IdMotivoViaje, @Sentido, @IdVehiculo, @PatenteLetras, @PatenteNumero, @FechaEncuesta, @IdDistanciaViaje, @RespuestaCaso1, @RespuestaCaso2, @RespuestaCaso3, @PatenteExtranjera)";
                 var lstParametros = new List<OleDbParameter>();
                 lstParametros.Add(new OleDbParameter("@IdUsuario", pRespuesta.IdUsuario));
                 lstParametros.Add(new OleDbParameter("@NroEncuesta", pRespuesta.NroEncuesta));
@@ -28,12 +29,14 @@ namespace Encuestador.DL
                 lstParametros.Add(new OleDbParameter("@IdMotivoViaje", pRespuesta.IdMotivoViaje));
                 lstParametros.Add(new OleDbParameter("@Sentido", pRespuesta.Sentido));
                 lstParametros.Add(new OleDbParameter("@IdVehiculo", pRespuesta.IdVehiculo));
-                lstParametros.Add(new OleDbParameter("@Patente", pRespuesta.Patente));
+                lstParametros.Add(new OleDbParameter("@PatenteLetras", pRespuesta.PatenteLetras));
+                lstParametros.Add(new OleDbParameter("@PatenteNumero", pRespuesta.PatenteNumero));
                 lstParametros.Add(new OleDbParameter("@FechaEncuesta", pRespuesta.FechaEncuesta.ToString()));
                 lstParametros.Add(new OleDbParameter("@IdDistanciaViaje", pRespuesta.IdDistanciaViaje));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso1", pRespuesta.RespuestaCaso1));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso2", pRespuesta.RespuestaCaso2));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso3", pRespuesta.RespuestaCaso3));
+                lstParametros.Add(new OleDbParameter("@PatenteExtranjera", pRespuesta.PatenteExtranjera));
                 filasAfectadas = OdbcClient.EjecutarCommand(sql, lstParametros, conexion, trans);
                 if (filasAfectadas > 0)
                     trans.Commit();
@@ -120,6 +123,9 @@ namespace Encuestador.DL
             List<EncuestaReportar> lstEncuestas = new List<EncuestaReportar>();
             try
             {
+                //TODO 02: Revisar y actualizar este query ya que se modifico la tabla participante
+                //TODO 03: Ver el tema del fitro por fechas
+                //TODO 04: Ver el tema de que si hay que borrar los datos una vez que ya se hizo el export
                 string sql = "SELECT R.NroEncuesta, R.Sentido, R.Patente, R.FechaEncuesta, R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3, V.Descripcion as TipoVehiculo, U.[User] AS Usuario, M.Descripcion AS Motivo, S.Descripcion AS Sitio, C.TiempoRuta1, C.TiempoRuta2, C.TiempoRuta3, C.CostoRuta1, C.CostoRuta2, C.CostoRuta3, C.OrdenCaso, R.IdRespuesta FROM ((((((Respuesta R INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Casos C ON D.IdDistanciaViaje = C.IdDistanciaViaje) where 1=1 ";
                 var lstParametros = new List<OleDbParameter>();
                 //if (pFechaDesde < DateTime.Now)

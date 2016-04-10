@@ -12,7 +12,9 @@ namespace Encuestador.Entities
         public int IdDistanciaViaje { get; set; }
         public string Sentido { get; set; }
         public int IdVehiculo { get; set; }
-        public string Patente { get; set; }
+        public string PatenteNumero { get; set; }
+        public string PatenteLetras { get; set; }
+        public string  PatenteExtranjera { get; set; }
         public DateTime FechaEncuesta { get; set; }
         public int RespuestaCaso1 { get; set; }
         public int RespuestaCaso2 { get; set; }

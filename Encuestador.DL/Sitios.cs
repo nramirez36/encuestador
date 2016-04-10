@@ -13,7 +13,9 @@ namespace Encuestador.DL
             List<Sitio> lstSitios = new List<Sitio>();
             try
             {
-                string sql = "SELECT IdSitios, Descripcion FROM Sitios";
+                //TODO 05: Revisar y actualizar este query ya que se modifico la tabla participante
+                //TODO 06: De aca tomo los sentidos?
+                string sql = "SELECT IdSitios, Descripcion, Sentido1, Sentido2 FROM Sitios";
                 var dr = OdbcClient.GenerarReader(sql, conexion);
                 if (dr.HasRows)
                 {
@@ -22,6 +24,8 @@ namespace Encuestador.DL
                         sitio = new Sitio();
                         sitio.IdSitios = int.Parse(dr["IdSitios"].ToString());
                         sitio.Descripcion = dr["Descripcion"].ToString();
+                        sitio.Sentido1= dr["Sentido1"].ToString();
+                        sitio.Sentido2 = dr["Sentido2"].ToString();
                         lstSitios.Add(sitio);
                         sitio = null;
                     }

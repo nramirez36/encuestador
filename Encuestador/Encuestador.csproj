@@ -70,7 +70,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1459500780_stock_task.ico</ApplicationIcon>
+    <ApplicationIcon>Encuestador.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -134,11 +134,23 @@
     <Compile Include="Init.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucCaso.cs">
+    <Compile Include="UserControls\ucCaso.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucCaso.Designer.cs">
+    <Compile Include="UserControls\ucCaso.Designer.cs">
       <DependentUpon>ucCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDatosSitio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDatosSitio.Designer.cs">
+      <DependentUpon>ucDatosSitio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDatosVehiculo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDatosVehiculo.Designer.cs">
+      <DependentUpon>ucDatosVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Utiles\Comunes.cs" />
     <EmbeddedResource Include="frmControl.resx">
@@ -166,8 +178,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucCaso.resx">
+    <EmbeddedResource Include="UserControls\ucCaso.resx">
       <DependentUpon>ucCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDatosSitio.resx">
+      <DependentUpon>ucDatosSitio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDatosVehiculo.resx">
+      <DependentUpon>ucDatosVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -206,7 +224,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1459500780_stock_task.ico" />
+    <Content Include="Encuestador.ico" />
     <Content Include="App_Data\SistemaEncuestador.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -221,9 +239,7 @@
     <None Include="Recursos\Palabras Claves.gif" />
     <Content Include="Recursos\RegistrationIcon1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ErrorLog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
