@@ -20,7 +20,7 @@ namespace Encuestador.DL
                 {
                     while (dr.Read())
                     {
-                        vehi= new Vehiculo();
+                        vehi = new Vehiculo();
                         vehi.IdVehiculo = int.Parse(dr["IdVehiculo"].ToString());
                         vehi.Descripcion = dr["Descripcion"].ToString();
                         lstVehiculos.Add(vehi);
@@ -28,7 +28,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Tipos de Vehículos");
             }

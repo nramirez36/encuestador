@@ -29,7 +29,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Iniciar Sesión");
             }
@@ -61,7 +61,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Usuarios");
             }
@@ -70,6 +70,6 @@ namespace Encuestador.DL
                 conexion.Close();
             }
             return lstUsuarios;
-        }       
+        }
     }
 }

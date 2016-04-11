@@ -19,5 +19,6 @@ namespace Encuestador.Entities
         public int RespuestaCaso1 { get; set; }
         public int RespuestaCaso2 { get; set; }
         public int RespuestaCaso3 { get; set; }
+        public DateTime HoraEncuesta { get; set; }
     }
 }

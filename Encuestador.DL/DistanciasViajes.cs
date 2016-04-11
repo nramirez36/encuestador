@@ -27,7 +27,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener las Distancias");
             }

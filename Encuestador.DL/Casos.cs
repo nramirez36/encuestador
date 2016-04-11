@@ -14,7 +14,6 @@ namespace Encuestador.DL
             List<Caso> lstCasos = new List<Caso>();
             try
             {
-                //TODO 07: Cambio el formato del tiempo?
                 string sql = "SELECT IdDistanciaViaje, TiempoRuta1, TiempoRuta2, TiempoRuta3, CostoRuta1, CostoRuta2, CostoRuta3, IdCaso, OrdenCaso FROM Casos WHERE (IdDistanciaViaje = @idDistancia) ORDER BY OrdenCaso";
                 var lstParametros = new List<OleDbParameter>();
                 lstParametros.Add(new OleDbParameter("@idDistancia", idDistancia));
@@ -39,7 +38,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Casos");
             }
@@ -79,7 +78,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Casos");
             }

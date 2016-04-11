@@ -45,6 +45,7 @@ namespace Encuestador
                     pFechaHastaSeleccionada = dtpHasta.Value;
 
                     pListaResultado = pGestorRespuestas.ObtenerEncuestasParametros(pFechaDesdeSeleccionada, pFechaHastaSeleccionada, pUsuarioSeleccionado.IdEncuestador);
+
                     var cont = pListaResultado.Count;
                     lblResultados.Text = lblResultados.Text.Replace("#n", cont.ToString());
                     lblResultados.Visible = true;
@@ -198,7 +199,7 @@ namespace Encuestador
             var obj = new ExcelUtility();
             var dt = Comunes.ConvertToDataTable(pListaResultado);
 
-            var nombreFile = "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".xls";
+            var nombreFile = "Reporte_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
             obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + nombreFile, "Encuestas de los días " + pFechaDesdeSeleccionada.ToShortDateString() + " y " + pFechaHastaSeleccionada.ToShortDateString() + " correspondiente a " + pUsuarioSeleccionado.User);
 
             if (!pBajaRealizada)
@@ -212,7 +213,7 @@ namespace Encuestador
         private void btnExportarCSV_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            var nombreFile = "Reporte_" + DateTime.Now.ToString("YYYYMMddHHmmss") + ".csv";
+            var nombreFile = "Reporte_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".csv";
             pListaResultado.ToCSV<EncuestaReportar>(path: pPath + nombreFile);
 
             if (!pBajaRealizada)

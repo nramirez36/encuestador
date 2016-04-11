@@ -30,18 +30,7 @@ namespace Encuestador.BL
             {
                 throw ex;
             }
-        }
-        public List<EncuestaReportar> ObtenerEncuestas()
-        {
-            try
-            {
-                return Respuestas.ObtenerEncuestas();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        }       
         public List<EncuestaReportar> ObtenerEncuestasParametros(DateTime pFechaDesde, DateTime pFechaHasta, int pIdUsuario)
         {
             try

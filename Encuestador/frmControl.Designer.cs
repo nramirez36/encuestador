@@ -32,30 +32,26 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pbPorcentajeAvance = new System.Windows.Forms.ToolStripProgressBar();
             this.panelSitiosEncuestas = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnIrDatosVehiculos = new System.Windows.Forms.Button();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.ucDatosSitio1 = new Encuestador.UserControls.ucDatosSitio();
             this.panelDatosVehiculo = new System.Windows.Forms.Panel();
             this.btnIrMotivoViajes = new System.Windows.Forms.Button();
             this.ucDatosVehiculo1 = new Encuestador.UserControls.ucDatosVehiculo();
             this.panelMotivoViaje = new System.Windows.Forms.Panel();
             this.btnIrCasos = new System.Windows.Forms.Button();
-            this.cmbMotivoViaje = new System.Windows.Forms.ComboBox();
-            this.cmbDistanciaViaje = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
+            this.ucDatosMotivo1 = new Encuestador.UserControls.ucDatosMotivo();
             this.panelCaso1 = new System.Windows.Forms.Panel();
+            this.btnCaso2 = new System.Windows.Forms.Button();
+            this.ucCaso1 = new Encuestador.UserControls.ucCaso();
             this.btnIrACaso2 = new System.Windows.Forms.Button();
-            this.ucCaso1 = new Encuestador.ucCaso();
             this.panelCaso2 = new System.Windows.Forms.Panel();
+            this.btnCaso3 = new System.Windows.Forms.Button();
+            this.ucCaso2 = new Encuestador.UserControls.ucCaso();
             this.btnIrACaso3 = new System.Windows.Forms.Button();
-            this.ucCaso2 = new Encuestador.ucCaso();
             this.panelCaso3 = new System.Windows.Forms.Panel();
+            this.btnFinalizarEncuesta = new System.Windows.Forms.Button();
+            this.ucCaso3 = new Encuestador.UserControls.ucCaso();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.ucCaso3 = new Encuestador.ucCaso();
             this.statusStrip1.SuspendLayout();
             this.panelSitiosEncuestas.SuspendLayout();
             this.panelDatosVehiculo.SuspendLayout();
@@ -85,42 +81,13 @@
             // 
             // panelSitiosEncuestas
             // 
-            this.panelSitiosEncuestas.Controls.Add(this.label3);
-            this.panelSitiosEncuestas.Controls.Add(this.label2);
             this.panelSitiosEncuestas.Controls.Add(this.btnIrDatosVehiculos);
-            this.panelSitiosEncuestas.Controls.Add(this.txtUbicacion);
-            this.panelSitiosEncuestas.Controls.Add(this.label4);
+            this.panelSitiosEncuestas.Controls.Add(this.ucDatosSitio1);
             this.panelSitiosEncuestas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSitiosEncuestas.Location = new System.Drawing.Point(0, 0);
             this.panelSitiosEncuestas.Name = "panelSitiosEncuestas";
             this.panelSitiosEncuestas.Size = new System.Drawing.Size(765, 489);
             this.panelSitiosEncuestas.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Sentido:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ubicación:";
             // 
             // btnIrDatosVehiculos
             // 
@@ -135,30 +102,14 @@
             this.btnIrDatosVehiculos.UseVisualStyleBackColor = true;
             this.btnIrDatosVehiculos.Click += new System.EventHandler(this.btnIrDatosVehiculos_Click);
             // 
-            // txtUbicacion
+            // ucDatosSitio1
             // 
-            this.txtUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUbicacion.Enabled = false;
-            this.txtUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(242, 69);
-            this.txtUbicacion.Multiline = true;
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(511, 74);
-            this.txtUbicacion.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 29);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Número de Sitio:";
+            this.ucDatosSitio1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDatosSitio1.Location = new System.Drawing.Point(0, 0);
+            this.ucDatosSitio1.Name = "ucDatosSitio1";
+            this.ucDatosSitio1.oRespuesta = null;
+            this.ucDatosSitio1.Size = new System.Drawing.Size(765, 489);
+            this.ucDatosSitio1.TabIndex = 7;
             // 
             // panelDatosVehiculo
             // 
@@ -196,11 +147,7 @@
             // panelMotivoViaje
             // 
             this.panelMotivoViaje.Controls.Add(this.btnIrCasos);
-            this.panelMotivoViaje.Controls.Add(this.cmbMotivoViaje);
-            this.panelMotivoViaje.Controls.Add(this.cmbDistanciaViaje);
-            this.panelMotivoViaje.Controls.Add(this.label8);
-            this.panelMotivoViaje.Controls.Add(this.label9);
-            this.panelMotivoViaje.Controls.Add(this.lblExplicacionEncuesta);
+            this.panelMotivoViaje.Controls.Add(this.ucDatosMotivo1);
             this.panelMotivoViaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMotivoViaje.Location = new System.Drawing.Point(0, 0);
             this.panelMotivoViaje.Name = "panelMotivoViaje";
@@ -221,99 +168,39 @@
             this.btnIrCasos.UseVisualStyleBackColor = true;
             this.btnIrCasos.Click += new System.EventHandler(this.btnIrCasos_Click);
             // 
-            // cmbMotivoViaje
+            // ucDatosMotivo1
             // 
-            this.cmbMotivoViaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMotivoViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMotivoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMotivoViaje.FormattingEnabled = true;
-            this.cmbMotivoViaje.Location = new System.Drawing.Point(273, 149);
-            this.cmbMotivoViaje.Name = "cmbMotivoViaje";
-            this.cmbMotivoViaje.Size = new System.Drawing.Size(480, 37);
-            this.cmbMotivoViaje.TabIndex = 4;
-            this.cmbMotivoViaje.DropDown += new System.EventHandler(this.cmbMotivoViaje_DropDown);
-            this.cmbMotivoViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbMotivoViaje_SelectionChangeCommitted);
-            // 
-            // cmbDistanciaViaje
-            // 
-            this.cmbDistanciaViaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDistanciaViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDistanciaViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDistanciaViaje.FormattingEnabled = true;
-            this.cmbDistanciaViaje.Location = new System.Drawing.Point(273, 83);
-            this.cmbDistanciaViaje.Name = "cmbDistanciaViaje";
-            this.cmbDistanciaViaje.Size = new System.Drawing.Size(480, 37);
-            this.cmbDistanciaViaje.TabIndex = 2;
-            this.cmbDistanciaViaje.DropDown += new System.EventHandler(this.cmbDistanciaViaje_DropDown);
-            this.cmbDistanciaViaje.SelectionChangeCommitted += new System.EventHandler(this.cmbDistanciaViaje_SelectionChangeCommitted);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(184, 29);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Motivo de Viaje:";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 83);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 29);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Distancia de Viaje:";
-            // 
-            // lblExplicacionEncuesta
-            // 
-            this.lblExplicacionEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExplicacionEncuesta.AutoSize = true;
-            this.lblExplicacionEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplicacionEncuesta.Location = new System.Drawing.Point(25, 7);
-            this.lblExplicacionEncuesta.Name = "lblExplicacionEncuesta";
-            this.lblExplicacionEncuesta.Size = new System.Drawing.Size(624, 58);
-            this.lblExplicacionEncuesta.TabIndex = 0;
-            this.lblExplicacionEncuesta.Text = "Esta es una encuesta de elección de alternativas de \r\nviajes interurbanos";
-            this.lblExplicacionEncuesta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ucDatosMotivo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDatosMotivo1.Location = new System.Drawing.Point(0, 0);
+            this.ucDatosMotivo1.Name = "ucDatosMotivo1";
+            this.ucDatosMotivo1.oRespuesta = null;
+            this.ucDatosMotivo1.pDistanciaSeleccionada = null;
+            this.ucDatosMotivo1.pMotivoSeleccionado = null;
+            this.ucDatosMotivo1.Size = new System.Drawing.Size(765, 489);
+            this.ucDatosMotivo1.TabIndex = 6;
             // 
             // panelCaso1
             // 
-            this.panelCaso1.Controls.Add(this.btnIrACaso2);
+            this.panelCaso1.Controls.Add(this.btnCaso2);
             this.panelCaso1.Controls.Add(this.ucCaso1);
             this.panelCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso1.Location = new System.Drawing.Point(0, 0);
             this.panelCaso1.Name = "panelCaso1";
             this.panelCaso1.Size = new System.Drawing.Size(765, 489);
             this.panelCaso1.TabIndex = 3;
-            this.panelCaso1.Visible = false;
             // 
-            // btnIrACaso2
+            // btnCaso2
             // 
-            this.btnIrACaso2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCaso2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIrACaso2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIrACaso2.Location = new System.Drawing.Point(554, 426);
-            this.btnIrACaso2.Name = "btnIrACaso2";
-            this.btnIrACaso2.Size = new System.Drawing.Size(199, 48);
-            this.btnIrACaso2.TabIndex = 1;
-            this.btnIrACaso2.Text = "Siguiente";
-            this.btnIrACaso2.UseVisualStyleBackColor = true;
-            this.btnIrACaso2.Click += new System.EventHandler(this.btnIrACaso2_Click);
+            this.btnCaso2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaso2.Location = new System.Drawing.Point(554, 426);
+            this.btnCaso2.Name = "btnCaso2";
+            this.btnCaso2.Size = new System.Drawing.Size(199, 48);
+            this.btnCaso2.TabIndex = 7;
+            this.btnCaso2.Text = "Siguiente";
+            this.btnCaso2.UseVisualStyleBackColor = true;
+            this.btnCaso2.Click += new System.EventHandler(this.btnCaso2_Click);
             // 
             // ucCaso1
             // 
@@ -327,29 +214,35 @@
             this.ucCaso1.Size = new System.Drawing.Size(765, 489);
             this.ucCaso1.TabIndex = 0;
             // 
+            // btnIrACaso2
+            // 
+            this.btnIrACaso2.Location = new System.Drawing.Point(0, 0);
+            this.btnIrACaso2.Name = "btnIrACaso2";
+            this.btnIrACaso2.Size = new System.Drawing.Size(75, 23);
+            this.btnIrACaso2.TabIndex = 0;
+            // 
             // panelCaso2
             // 
-            this.panelCaso2.Controls.Add(this.btnIrACaso3);
+            this.panelCaso2.Controls.Add(this.btnCaso3);
             this.panelCaso2.Controls.Add(this.ucCaso2);
             this.panelCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso2.Location = new System.Drawing.Point(0, 0);
             this.panelCaso2.Name = "panelCaso2";
             this.panelCaso2.Size = new System.Drawing.Size(765, 489);
-            this.panelCaso2.TabIndex = 6;
-            this.panelCaso2.Visible = false;
+            this.panelCaso2.TabIndex = 4;
             // 
-            // btnIrACaso3
+            // btnCaso3
             // 
-            this.btnIrACaso3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCaso3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIrACaso3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIrACaso3.Location = new System.Drawing.Point(554, 426);
-            this.btnIrACaso3.Name = "btnIrACaso3";
-            this.btnIrACaso3.Size = new System.Drawing.Size(199, 48);
-            this.btnIrACaso3.TabIndex = 1;
-            this.btnIrACaso3.Text = "Siguiente";
-            this.btnIrACaso3.UseVisualStyleBackColor = true;
-            this.btnIrACaso3.Click += new System.EventHandler(this.btnIrACaso3_Click);
+            this.btnCaso3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaso3.Location = new System.Drawing.Point(554, 426);
+            this.btnCaso3.Name = "btnCaso3";
+            this.btnCaso3.Size = new System.Drawing.Size(199, 48);
+            this.btnCaso3.TabIndex = 7;
+            this.btnCaso3.Text = "Siguiente";
+            this.btnCaso3.UseVisualStyleBackColor = true;
+            this.btnCaso3.Click += new System.EventHandler(this.btnCaso3_Click);
             // 
             // ucCaso2
             // 
@@ -363,29 +256,35 @@
             this.ucCaso2.Size = new System.Drawing.Size(765, 489);
             this.ucCaso2.TabIndex = 0;
             // 
+            // btnIrACaso3
+            // 
+            this.btnIrACaso3.Location = new System.Drawing.Point(0, 0);
+            this.btnIrACaso3.Name = "btnIrACaso3";
+            this.btnIrACaso3.Size = new System.Drawing.Size(75, 23);
+            this.btnIrACaso3.TabIndex = 0;
+            // 
             // panelCaso3
             // 
-            this.panelCaso3.Controls.Add(this.btnFinalizar);
+            this.panelCaso3.Controls.Add(this.btnFinalizarEncuesta);
             this.panelCaso3.Controls.Add(this.ucCaso3);
             this.panelCaso3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCaso3.Location = new System.Drawing.Point(0, 0);
             this.panelCaso3.Name = "panelCaso3";
             this.panelCaso3.Size = new System.Drawing.Size(765, 489);
-            this.panelCaso3.TabIndex = 7;
-            this.panelCaso3.Visible = false;
+            this.panelCaso3.TabIndex = 5;
             // 
-            // btnFinalizar
+            // btnFinalizarEncuesta
             // 
-            this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnFinalizarEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(554, 426);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(199, 48);
-            this.btnFinalizar.TabIndex = 1;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            this.btnFinalizarEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarEncuesta.Location = new System.Drawing.Point(554, 426);
+            this.btnFinalizarEncuesta.Name = "btnFinalizarEncuesta";
+            this.btnFinalizarEncuesta.Size = new System.Drawing.Size(199, 48);
+            this.btnFinalizarEncuesta.TabIndex = 7;
+            this.btnFinalizarEncuesta.Text = "Siguiente";
+            this.btnFinalizarEncuesta.UseVisualStyleBackColor = true;
+            this.btnFinalizarEncuesta.Click += new System.EventHandler(this.btnFinalizarEncuesta_Click);
             // 
             // ucCaso3
             // 
@@ -398,6 +297,13 @@
             this.ucCaso3.Name = "ucCaso3";
             this.ucCaso3.Size = new System.Drawing.Size(765, 489);
             this.ucCaso3.TabIndex = 0;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(0, 0);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizar.TabIndex = 0;
             // 
             // frmControl
             // 
@@ -423,10 +329,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panelSitiosEncuestas.ResumeLayout(false);
-            this.panelSitiosEncuestas.PerformLayout();
             this.panelDatosVehiculo.ResumeLayout(false);
             this.panelMotivoViaje.ResumeLayout(false);
-            this.panelMotivoViaje.PerformLayout();
             this.panelCaso1.ResumeLayout(false);
             this.panelCaso2.ResumeLayout(false);
             this.panelCaso3.ResumeLayout(false);
@@ -439,30 +343,26 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panelSitiosEncuestas;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIrDatosVehiculos;
-        private System.Windows.Forms.TextBox txtUbicacion;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelDatosVehiculo;
         private System.Windows.Forms.Button btnIrMotivoViajes;
         private System.Windows.Forms.Panel panelMotivoViaje;
         private System.Windows.Forms.Button btnIrCasos;
-        private System.Windows.Forms.ComboBox cmbMotivoViaje;
-        private System.Windows.Forms.ComboBox cmbDistanciaViaje;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblExplicacionEncuesta;
         private System.Windows.Forms.ToolStripProgressBar pbPorcentajeAvance;
         private System.Windows.Forms.Panel panelCaso1;
         private System.Windows.Forms.Button btnIrACaso2;
-        private ucCaso ucCaso1;
         private System.Windows.Forms.Panel panelCaso2;
         private System.Windows.Forms.Button btnIrACaso3;
-        private ucCaso ucCaso2;
         private System.Windows.Forms.Panel panelCaso3;
         private System.Windows.Forms.Button btnFinalizar;
-        private ucCaso ucCaso3;
         private UserControls.ucDatosVehiculo ucDatosVehiculo1;
+        private UserControls.ucDatosSitio ucDatosSitio1;
+        private UserControls.ucDatosMotivo ucDatosMotivo1;
+        private UserControls.ucCaso ucCaso3;
+        private UserControls.ucCaso ucCaso2;
+        private UserControls.ucCaso ucCaso1;
+        private System.Windows.Forms.Button btnCaso2;
+        private System.Windows.Forms.Button btnCaso3;
+        private System.Windows.Forms.Button btnFinalizarEncuesta;
     }
 }

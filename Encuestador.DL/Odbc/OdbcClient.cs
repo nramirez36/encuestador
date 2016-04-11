@@ -8,10 +8,9 @@ namespace Encuestador.DL
 {
     public static class OdbcClient
     {
-        private static string strConexion = ConfigurationManager.ConnectionStrings["encuestadorADO"].ToString();
-
         public static OleDbConnection Conectar()
         {
+            var strConexion = ConfigurationManager.ConnectionStrings["encuestadorADO"].ToString();
             OleDbConnection con = new OleDbConnection(strConexion);
             con.Open();
             return con;

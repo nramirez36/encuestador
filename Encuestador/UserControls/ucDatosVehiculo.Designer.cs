@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.mskPlacaNumeros = new System.Windows.Forms.MaskedTextBox();
-            this.mskPlacaLetras = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaHoraEncuesta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,27 +36,18 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.chkPlacaExtranjera = new System.Windows.Forms.CheckBox();
+            this.txtPatenteLetras = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // mskPlacaNumeros
             // 
+            this.mskPlacaNumeros.BeepOnError = true;
             this.mskPlacaNumeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskPlacaNumeros.Location = new System.Drawing.Point(337, 69);
             this.mskPlacaNumeros.Mask = "999";
             this.mskPlacaNumeros.Name = "mskPlacaNumeros";
             this.mskPlacaNumeros.Size = new System.Drawing.Size(58, 35);
-            this.mskPlacaNumeros.TabIndex = 8;
-            this.mskPlacaNumeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskPlacaNumeros_KeyPress);
-            // 
-            // mskPlacaLetras
-            // 
-            this.mskPlacaLetras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskPlacaLetras.Location = new System.Drawing.Point(273, 69);
-            this.mskPlacaLetras.Mask = "AAA";
-            this.mskPlacaLetras.Name = "mskPlacaLetras";
-            this.mskPlacaLetras.Size = new System.Drawing.Size(58, 35);
-            this.mskPlacaLetras.TabIndex = 3;
-            this.mskPlacaLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskPlacaLetras_KeyPress);
+            this.mskPlacaNumeros.TabIndex = 4;
             // 
             // txtFechaHoraEncuesta
             // 
@@ -118,7 +108,7 @@
             this.txtPatente.Location = new System.Drawing.Point(273, 69);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(199, 35);
-            this.txtPatente.TabIndex = 4;
+            this.txtPatente.TabIndex = 6;
             this.txtPatente.Visible = false;
             // 
             // label7
@@ -131,7 +121,7 @@
             this.label7.Location = new System.Drawing.Point(23, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(202, 29);
-            this.label7.TabIndex = 0;
+            this.label7.TabIndex = 1;
             this.label7.Text = "Tipo de Vehículo:";
             // 
             // chkPlacaExtranjera
@@ -146,21 +136,32 @@
             this.chkPlacaExtranjera.UseVisualStyleBackColor = true;
             this.chkPlacaExtranjera.CheckedChanged += new System.EventHandler(this.chkPlacaExtranjera_CheckedChanged);
             // 
+            // txtPatenteLetras
+            // 
+            this.txtPatenteLetras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatenteLetras.Location = new System.Drawing.Point(273, 69);
+            this.txtPatenteLetras.MaxLength = 3;
+            this.txtPatenteLetras.Name = "txtPatenteLetras";
+            this.txtPatenteLetras.Size = new System.Drawing.Size(58, 35);
+            this.txtPatenteLetras.TabIndex = 3;
+            this.txtPatenteLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatenteNro_KeyPress);
+            // 
             // ucDatosVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtPatenteLetras);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbTipoVehiculo);
             this.Controls.Add(this.txtFechaHoraEncuesta);
-            this.Controls.Add(this.mskPlacaLetras);
             this.Controls.Add(this.mskPlacaNumeros);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.chkPlacaExtranjera);
             this.Name = "ucDatosVehiculo";
             this.Size = new System.Drawing.Size(704, 190);
+            this.Load += new System.EventHandler(this.ucDatosVehiculo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +170,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox mskPlacaNumeros;
-        private System.Windows.Forms.MaskedTextBox mskPlacaLetras;
         private System.Windows.Forms.TextBox txtFechaHoraEncuesta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -177,5 +177,6 @@
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkPlacaExtranjera;
+        private System.Windows.Forms.TextBox txtPatenteLetras;
     }
 }

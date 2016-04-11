@@ -38,6 +38,10 @@ namespace Encuestador.UserControls
         #endregion
 
         #region Metodos
+        private void CargarDatos()
+        {
+            CargarSitios();
+        }
         private void CargarSentidos(Sitio pSitio)
         {
             try
@@ -50,12 +54,12 @@ namespace Encuestador.UserControls
                 cmbSentido.DisplayMember = "Descripcion";
                 cmbSentido.ValueMember = "IdSentido";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Sentidos");
             }
         }
-        private void IrAVehiculos()
+        public bool IrAVehiculos()
         {
             try
             {
@@ -63,11 +67,11 @@ namespace Encuestador.UserControls
                 {
                     oRespuesta.IdSitio = pSitioSeleccionado.IdSitios;
                     oRespuesta.Sentido = pSentidoSeleccionado;
-
-
+                    return true;
                 }
+                return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al cargar los datos");
             }
@@ -108,17 +112,14 @@ namespace Encuestador.UserControls
 
         #region Eventos
 
-
-
-
         private void ucDatosSitio_Load(object sender, EventArgs e)
         {
-
+            CargarDatos();
         }
 
         private void cmbSentido_SelectionChangeCommitted(object sender, EventArgs e)
         {
-              var seleccionado = (Sentido)cmbSentido.SelectedItem;
+            var seleccionado = (Sentido)cmbSentido.SelectedItem;
             pSentidoSeleccionado = seleccionado.Descripcion;
             pSentidoCambio = true;
         }
@@ -135,6 +136,8 @@ namespace Encuestador.UserControls
             pSitioSeleccionado = (Sitio)cmbSitios.SelectedItem;
             txtUbicacion.Text = pSitioSeleccionado.Descripcion;
             pSitioCambio = true;
+
+            this.cmbSentido.Enabled = true;
 
             CargarSentidos(pSitioSeleccionado);
         }

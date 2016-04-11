@@ -1,4 +1,4 @@
-﻿namespace Encuestador
+﻿namespace Encuestador.UserControls
 {
     partial class ucCaso
     {
@@ -39,7 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblRuta3 = new System.Windows.Forms.Label();
-            this.lblTiempo1 = new System.Windows.Forms.Label();
             this.lblTiempo2 = new System.Windows.Forms.Label();
             this.lblTiempo3 = new System.Windows.Forms.Label();
             this.lblCosto1 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.lblCosto3 = new System.Windows.Forms.Label();
             this.lblRuta1 = new System.Windows.Forms.Label();
             this.rbRuta4 = new System.Windows.Forms.RadioButton();
+            this.lblTiempo1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,7 +141,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(665, 115);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 115);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblRuta2
@@ -149,10 +149,10 @@
             this.lblRuta2.AutoSize = true;
             this.lblRuta2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRuta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRuta2.Location = new System.Drawing.Point(314, 2);
+            this.lblRuta2.Location = new System.Drawing.Point(293, 2);
             this.lblRuta2.Name = "lblRuta2";
             this.lblRuta2.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.lblRuta2.Size = new System.Drawing.Size(129, 34);
+            this.lblRuta2.Size = new System.Drawing.Size(108, 34);
             this.lblRuta2.TabIndex = 1;
             this.lblRuta2.Text = "Ruta 2";
             // 
@@ -183,45 +183,36 @@
             this.lblRuta3.AutoSize = true;
             this.lblRuta3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRuta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRuta3.Location = new System.Drawing.Point(451, 2);
+            this.lblRuta3.Location = new System.Drawing.Point(409, 2);
             this.lblRuta3.Name = "lblRuta3";
             this.lblRuta3.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.lblRuta3.Size = new System.Drawing.Size(209, 34);
+            this.lblRuta3.Size = new System.Drawing.Size(112, 34);
             this.lblRuta3.TabIndex = 2;
             this.lblRuta3.Text = "Ruta 3";
-            // 
-            // lblTiempo1
-            // 
-            this.lblTiempo1.AutoSize = true;
-            this.lblTiempo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTiempo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo1.Location = new System.Drawing.Point(177, 38);
-            this.lblTiempo1.Name = "lblTiempo1";
-            this.lblTiempo1.Size = new System.Drawing.Size(129, 26);
-            this.lblTiempo1.TabIndex = 4;
-            this.lblTiempo1.Text = "## minutos";
             // 
             // lblTiempo2
             // 
             this.lblTiempo2.AutoSize = true;
             this.lblTiempo2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTiempo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo2.Location = new System.Drawing.Point(314, 38);
+            this.lblTiempo2.Location = new System.Drawing.Point(293, 38);
             this.lblTiempo2.Name = "lblTiempo2";
-            this.lblTiempo2.Size = new System.Drawing.Size(129, 26);
+            this.lblTiempo2.Size = new System.Drawing.Size(108, 26);
             this.lblTiempo2.TabIndex = 5;
-            this.lblTiempo2.Text = "## minutos";
+            this.lblTiempo2.Text = "##:##";
+            this.lblTiempo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTiempo3
             // 
             this.lblTiempo3.AutoSize = true;
             this.lblTiempo3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTiempo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo3.Location = new System.Drawing.Point(451, 38);
+            this.lblTiempo3.Location = new System.Drawing.Point(409, 38);
             this.lblTiempo3.Name = "lblTiempo3";
-            this.lblTiempo3.Size = new System.Drawing.Size(209, 26);
+            this.lblTiempo3.Size = new System.Drawing.Size(112, 26);
             this.lblTiempo3.TabIndex = 6;
-            this.lblTiempo3.Text = "## minutos";
+            this.lblTiempo3.Text = "##:##";
+            this.lblTiempo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCosto1
             // 
@@ -231,7 +222,7 @@
             this.lblCosto1.Location = new System.Drawing.Point(177, 66);
             this.lblCosto1.Name = "lblCosto1";
             this.lblCosto1.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.lblCosto1.Size = new System.Drawing.Size(129, 47);
+            this.lblCosto1.Size = new System.Drawing.Size(108, 47);
             this.lblCosto1.TabIndex = 8;
             this.lblCosto1.Text = "$ ##";
             // 
@@ -240,10 +231,10 @@
             this.lblCosto2.AutoSize = true;
             this.lblCosto2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCosto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCosto2.Location = new System.Drawing.Point(314, 66);
+            this.lblCosto2.Location = new System.Drawing.Point(293, 66);
             this.lblCosto2.Name = "lblCosto2";
             this.lblCosto2.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.lblCosto2.Size = new System.Drawing.Size(129, 47);
+            this.lblCosto2.Size = new System.Drawing.Size(108, 47);
             this.lblCosto2.TabIndex = 9;
             this.lblCosto2.Text = "$ ##";
             // 
@@ -252,10 +243,10 @@
             this.lblCosto3.AutoSize = true;
             this.lblCosto3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCosto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCosto3.Location = new System.Drawing.Point(451, 66);
+            this.lblCosto3.Location = new System.Drawing.Point(409, 66);
             this.lblCosto3.Name = "lblCosto3";
             this.lblCosto3.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.lblCosto3.Size = new System.Drawing.Size(209, 47);
+            this.lblCosto3.Size = new System.Drawing.Size(112, 47);
             this.lblCosto3.TabIndex = 10;
             this.lblCosto3.Text = "$ ##";
             // 
@@ -267,7 +258,7 @@
             this.lblRuta1.Location = new System.Drawing.Point(177, 2);
             this.lblRuta1.Name = "lblRuta1";
             this.lblRuta1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.lblRuta1.Size = new System.Drawing.Size(129, 34);
+            this.lblRuta1.Size = new System.Drawing.Size(108, 34);
             this.lblRuta1.TabIndex = 0;
             this.lblRuta1.Text = "Ruta 1";
             // 
@@ -284,6 +275,18 @@
             this.rbRuta4.Text = "Ninguna de las opciones";
             this.rbRuta4.UseVisualStyleBackColor = true;
             this.rbRuta4.CheckedChanged += new System.EventHandler(this.rbRuta4_CheckedChanged);
+            // 
+            // lblTiempo1
+            // 
+            this.lblTiempo1.AutoSize = true;
+            this.lblTiempo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTiempo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo1.Location = new System.Drawing.Point(177, 38);
+            this.lblTiempo1.Name = "lblTiempo1";
+            this.lblTiempo1.Size = new System.Drawing.Size(108, 26);
+            this.lblTiempo1.TabIndex = 4;
+            this.lblTiempo1.Text = "##:##";
+            this.lblTiempo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucCaso
             // 
@@ -318,12 +321,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblRuta3;
-        private System.Windows.Forms.Label lblTiempo1;
         private System.Windows.Forms.Label lblTiempo2;
         private System.Windows.Forms.Label lblTiempo3;
         private System.Windows.Forms.Label lblCosto1;
         private System.Windows.Forms.Label lblCosto2;
         private System.Windows.Forms.Label lblCosto3;
         private System.Windows.Forms.RadioButton rbRuta4;
+        private System.Windows.Forms.Label lblTiempo1;
     }
 }

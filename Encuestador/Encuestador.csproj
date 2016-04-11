@@ -140,6 +140,12 @@
     <Compile Include="UserControls\ucCaso.Designer.cs">
       <DependentUpon>ucCaso.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucDatosMotivo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDatosMotivo.Designer.cs">
+      <DependentUpon>ucDatosMotivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucDatosSitio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\ucCaso.resx">
       <DependentUpon>ucCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDatosMotivo.resx">
+      <DependentUpon>ucDatosMotivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucDatosSitio.resx">
       <DependentUpon>ucDatosSitio.cs</DependentUpon>

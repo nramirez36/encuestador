@@ -11,7 +11,9 @@ namespace Encuestador.Entities
         public int IdRespuesta { get; set; }
         public int NroEncuesta { get; set; }
         public String Sentido { get; set; }
-        public String Patente { get; set; }
+        public String PatenteLetras { get; set; }
+        public string PatenteNumero { get; set; }
+        public string PatenteExtranjera { get; set; }
         public DateTime FechaEncuesta { get; set; }
         public int RespuestaCaso1 { get; set; }
         public int RespuestaCaso2 { get; set; }

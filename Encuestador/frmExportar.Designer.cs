@@ -185,9 +185,9 @@
             this.lblResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultados.Location = new System.Drawing.Point(12, 130);
             this.lblResultados.Name = "lblResultados";
-            this.lblResultados.Size = new System.Drawing.Size(327, 29);
+            this.lblResultados.Size = new System.Drawing.Size(309, 29);
             this.lblResultados.TabIndex = 7;
-            this.lblResultados.Text = "Se encontraron #n resultados";
+            this.lblResultados.Text = "Se encontraron #n registros";
             this.lblResultados.Visible = false;
             // 
             // frmExportar

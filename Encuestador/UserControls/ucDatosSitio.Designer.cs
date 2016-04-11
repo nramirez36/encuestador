@@ -42,12 +42,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbSentido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSentido.Enabled = false;
             this.cmbSentido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSentido.FormattingEnabled = true;
             this.cmbSentido.Location = new System.Drawing.Point(241, 167);
             this.cmbSentido.Name = "cmbSentido";
             this.cmbSentido.Size = new System.Drawing.Size(511, 37);
-            this.cmbSentido.TabIndex = 11;
+            this.cmbSentido.TabIndex = 5;
             this.cmbSentido.DropDown += new System.EventHandler(this.cmbSentido_DropDown);
             this.cmbSentido.SelectionChangeCommitted += new System.EventHandler(this.cmbSentido_SelectionChangeCommitted);
             // 
@@ -61,7 +62,7 @@
             this.label3.Location = new System.Drawing.Point(15, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 29);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Sentido:";
             // 
             // label2
@@ -74,7 +75,7 @@
             this.label2.Location = new System.Drawing.Point(15, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 29);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Ubicación:";
             // 
             // cmbSitios
@@ -89,7 +90,7 @@
             this.cmbSitios.Location = new System.Drawing.Point(241, 19);
             this.cmbSitios.Name = "cmbSitios";
             this.cmbSitios.Size = new System.Drawing.Size(511, 37);
-            this.cmbSitios.TabIndex = 7;
+            this.cmbSitios.TabIndex = 1;
             this.cmbSitios.DropDown += new System.EventHandler(this.cmbSitios_DropDown);
             this.cmbSitios.SelectionChangeCommitted += new System.EventHandler(this.cmbSitios_SelectionChangeCommitted);
             // 
@@ -103,7 +104,7 @@
             this.txtUbicacion.Multiline = true;
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(511, 74);
-            this.txtUbicacion.TabIndex = 9;
+            this.txtUbicacion.TabIndex = 3;
             // 
             // label4
             // 
@@ -115,7 +116,7 @@
             this.label4.Location = new System.Drawing.Point(15, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 29);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Número de Sitio:";
             // 
             // ucDatosSitio

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using Encuestador.Entities;
-namespace Encuestador
+namespace Encuestador.UserControls
 {
     public partial class ucCaso : UserControl
     {
-        #region Variables
 
-        #endregion
         #region Propiedades
         public Caso CasoSeleccionado { get; set; }
         public DistanciaViaje DistanciaViajeSeleccionada { get; set; }
@@ -43,9 +41,9 @@ namespace Encuestador
             lblCosto2.Text = lblCosto2.Text.Replace("##", CasoSeleccionado.CostaRuta2);
             lblCosto3.Text = lblCosto3.Text.Replace("##", CasoSeleccionado.CostaRuta3);
 
-            lblTiempo1.Text = lblTiempo1.Text.Replace("##", CasoSeleccionado.TiempoRuta1);
-            lblTiempo2.Text = lblTiempo2.Text.Replace("##", CasoSeleccionado.TiempoRuta2);
-            lblTiempo3.Text = lblTiempo3.Text.Replace("##", CasoSeleccionado.TiempoRuta3);
+            lblTiempo1.Text = lblTiempo1.Text.Replace("##:##", CasoSeleccionado.TiempoRuta1);
+            lblTiempo2.Text = lblTiempo2.Text.Replace("##:##", CasoSeleccionado.TiempoRuta2);
+            lblTiempo3.Text = lblTiempo3.Text.Replace("##:##", CasoSeleccionado.TiempoRuta3);
 
         }
 
@@ -60,8 +58,6 @@ namespace Encuestador
             if (rbRuta4.Checked)
                 IdRutaSeleccionada = 4;
         }
-
-
 
         #endregion
 
@@ -86,7 +82,6 @@ namespace Encuestador
             AsignarRespuesta();
         }
         #endregion
-
 
     }
 }

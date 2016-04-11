@@ -5,7 +5,7 @@ using Encuestador.Entities;
 
 namespace Encuestador.DL
 {
-   public class MotivosViajes
+    public class MotivosViajes
     {
         public static List<MotivoViaje> ObtenerTodosMotivosViaje()
         {
@@ -28,7 +28,7 @@ namespace Encuestador.DL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al Obtener los Motivos");
             }

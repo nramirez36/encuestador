@@ -16,7 +16,6 @@ namespace Encuestador.UserControls
     {
         #region Variables
         private bool pTipoVehiculoCambio = false;
-        private DateTime pFechaEncuesta = DateTime.Now;
 
         private Vehiculo pVehiculo = new Vehiculo();
 
@@ -36,11 +35,11 @@ namespace Encuestador.UserControls
         #region Metodos
         private void CargarDatos()
         {
-            this.txtFechaHoraEncuesta.Text = pFechaEncuesta.ToString();
+            this.txtFechaHoraEncuesta.Text = oRespuesta.FechaEncuesta.ToString();
+            CargarVehiculos();
         }
         private bool validarControlesTipoVehiculo()
         {
-            //TODO 08: Hacer de vuelta esta parte
             if (cmbTipoVehiculo.SelectedValue == null || int.Parse(cmbTipoVehiculo.SelectedValue.ToString()) < 1 || !pTipoVehiculoCambio)
             {
                 MessageBox.Show("Debe seleccionar el Tipo de Vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,7 +56,7 @@ namespace Encuestador.UserControls
             }
             else
             {
-                if (!mskPlacaLetras.MaskFull)
+                if (txtPatenteLetras.Text == null || txtPatenteLetras.Text.Equals(""))
                 {
                     MessageBox.Show("Debe ingresar las Letras de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -87,19 +86,21 @@ namespace Encuestador.UserControls
                 throw ex;
             }
         }
-        private void IrAMotivosViajes()
+        public bool IrAMotivosViajes()
         {
             try
             {
                 if (validarControlesTipoVehiculo())
                 {
                     oRespuesta.IdVehiculo = pVehiculo.IdVehiculo;
-                    oRespuesta.PatenteExtranjera = chkPlacaExtranjera.Checked? txtPatente.Text :string.Empty;
-                    oRespuesta.PatenteLetras = !chkPlacaExtranjera.Checked ? mskPlacaLetras.Text : string.Empty;
-                    oRespuesta.PatenteNumero = !chkPlacaExtranjera.Checked ? mskPlacaNumeros.Text : string.Empty;                    
+                    oRespuesta.PatenteExtranjera = chkPlacaExtranjera.Checked ? txtPatente.Text : string.Empty;
+                    oRespuesta.PatenteLetras = !chkPlacaExtranjera.Checked ? txtPatenteLetras.Text : string.Empty;
+                    oRespuesta.PatenteNumero = !chkPlacaExtranjera.Checked ? mskPlacaNumeros.Text : string.Empty;
+                    return true;
                 }
+                return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Hubo un problema al cargar los datos");
             }
@@ -119,33 +120,34 @@ namespace Encuestador.UserControls
             Comunes.GetLargestTextExtent(this.cmbTipoVehiculo, ref pw);
             this.cmbTipoVehiculo.DropDownWidth = pw;
         }
-        private void mskPlacaLetras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-                mskPlacaNumeros.Focus();
-        }
-        private void mskPlacaNumeros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-                IrAMotivosViajes();
-        }
 
         private void chkPlacaExtranjera_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPlacaExtranjera.Checked)
             {
-                mskPlacaLetras.Visible = false;
+                txtPatenteLetras.Visible = false;
                 mskPlacaNumeros.Visible = false;
                 txtPatente.Visible = true;
             }
             else
             {
-                mskPlacaLetras.Visible = true;
+                txtPatenteLetras.Visible = true;
                 mskPlacaNumeros.Visible = true;
                 txtPatente.Visible = false;
             }
         }
-        #endregion
+        private void ucDatosVehiculo_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
 
+        private void txtPatenteNro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                mskPlacaNumeros.Focus();
+
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+        #endregion
     }
 }
