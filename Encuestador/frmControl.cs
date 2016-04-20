@@ -17,7 +17,7 @@ namespace Encuestador
         private int pCantidadSumar;
 
         private Respuesta pRespuesta = new Respuesta();
-        private DistanciaViaje pDistancia = new DistanciaViaje();
+        private TiempoViaje pDistancia = new TiempoViaje();
         private MotivoViaje pMotivo = new MotivoViaje();
 
         private List<Caso> pLstCasosPorId = new List<Caso>();
@@ -28,7 +28,7 @@ namespace Encuestador
 
         #region Propiedades
         public Login UsuarioConectado { get; set; }
-        public int NroEncuesta { get; set; }
+        public string NroEncuesta { get; set; }
         #endregion
 
         #region Constuctor
@@ -67,7 +67,8 @@ namespace Encuestador
                 if (ucDatosMotivo1.IrACasos1())
                 {
                     pRespuesta.IdMotivoViaje = ucDatosMotivo1.oRespuesta.IdMotivoViaje;
-                    pRespuesta.IdDistanciaViaje = ucDatosMotivo1.oRespuesta.IdDistanciaViaje;
+                    pRespuesta.DistanciaViaje = ucDatosMotivo1.oRespuesta.DistanciaViaje;
+                    pRespuesta.IdTiempoViaje = ucDatosMotivo1.oRespuesta.IdTiempoViaje;
 
                     pDistancia = ucDatosMotivo1.pDistanciaSeleccionada;
                     pMotivo = ucDatosMotivo1.pMotivoSeleccionado;
@@ -194,7 +195,7 @@ namespace Encuestador
             try
             {
                 pLstCasosPorId = new List<Caso>();
-                pLstCasosPorId = pGestorCasos.ObtenerCasosPorIdDistancia(pDistancia.IdDistanciaViaje).ToList();
+                pLstCasosPorId = pGestorCasos.ObtenerCasosPorIdDistancia(pDistancia.IdTiempoViaje,pRespuesta.IdVehiculo).ToList();
             }
             catch (Exception ex)
             {

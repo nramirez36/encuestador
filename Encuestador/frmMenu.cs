@@ -36,7 +36,7 @@ namespace Encuestador
         {
             var frmNroEncuesta = new frmNroEncuesta();
             frmNroEncuesta.UsuarioConectado = UsuarioConectado;
-            frmNroEncuesta.Show();
+            frmNroEncuesta.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

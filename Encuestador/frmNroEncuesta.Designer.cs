@@ -46,6 +46,7 @@
             // 
             // txtNroEncuesta
             // 
+            this.txtNroEncuesta.Enabled = false;
             this.txtNroEncuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroEncuesta.Location = new System.Drawing.Point(27, 63);
             this.txtNroEncuesta.Name = "txtNroEncuesta";

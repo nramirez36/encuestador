@@ -20,7 +20,8 @@ namespace Encuestador.DL
             try
             {
                 trans = conexion.BeginTransaction();
-                string sql = "INSERT INTO Respuesta (IdUsuario, NroEncuesta, IdSitio, IdMotivoViaje, Sentido, IdVehiculo, PatenteLetras, PatenteNumero, FechaEncuesta, IdDistanciaViaje, RespuestaCaso1, RespuestaCaso2, RespuestaCaso3, PatenteExtranjera) VALUES (@IdUsuario, @NroEncuesta, @IdSitio, @IdMotivoViaje, @Sentido, @IdVehiculo, @PatenteLetras, @PatenteNumero, @FechaEncuesta, @IdDistanciaViaje, @RespuestaCaso1, @RespuestaCaso2, @RespuestaCaso3, @PatenteExtranjera)";
+
+                string sql = "INSERT INTO Respuesta (IdUsuario, NroEncuesta, IdSitio, IdMotivoViaje, Sentido, IdVehiculo, PatenteLetras, PatenteNumero, FechaEncuesta, DistanciaViaje, RespuestaCaso1, RespuestaCaso2, RespuestaCaso3, PatenteExtranjera) VALUES (@IdUsuario, @NroEncuesta, @IdSitio, @IdMotivoViaje, @Sentido, @IdVehiculo, @PatenteLetras, @PatenteNumero, @FechaEncuesta, @IdDistanciaViaje, @RespuestaCaso1, @RespuestaCaso2, @RespuestaCaso3, @PatenteExtranjera)";
                 var lstParametros = new List<OleDbParameter>();
                 lstParametros.Add(new OleDbParameter("@IdUsuario", pRespuesta.IdUsuario));
                 lstParametros.Add(new OleDbParameter("@NroEncuesta", pRespuesta.NroEncuesta));
@@ -31,7 +32,7 @@ namespace Encuestador.DL
                 lstParametros.Add(new OleDbParameter("@PatenteLetras", pRespuesta.PatenteLetras));
                 lstParametros.Add(new OleDbParameter("@PatenteNumero", pRespuesta.PatenteNumero));
                 lstParametros.Add(new OleDbParameter("@FechaEncuesta", pRespuesta.FechaEncuesta.ToOADate()));
-                lstParametros.Add(new OleDbParameter("@IdDistanciaViaje", pRespuesta.IdDistanciaViaje));
+                lstParametros.Add(new OleDbParameter("@IdDistanciaViaje", pRespuesta.DistanciaViaje));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso1", pRespuesta.RespuestaCaso1));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso2", pRespuesta.RespuestaCaso2));
                 lstParametros.Add(new OleDbParameter("@RespuestaCaso3", pRespuesta.RespuestaCaso3));
@@ -82,38 +83,6 @@ namespace Encuestador.DL
             }
             return filasAfectadas;
         }
-        public static List<EncuestaReportar> ObtenerEncuestas()
-        {
-            var conexion = OdbcClient.Conectar();
-            EncuestaReportar encu = null;
-            List<EncuestaReportar> lstEncuestas = new List<EncuestaReportar>();
-            try
-            {
-                string sql = "SELECT R.NroEncuesta, R.Sentido, R.PatenteLetras, R.PatenteNumero, R.PatenteExtranjera, R.FechaEncuesta, R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3, V.Descripcion, U.[User] AS Usuario, M.Descripcion AS Motivo, S.Descripcion AS Sitio, C.TiempoRuta1, C.TiempoRuta2, C.TiempoRuta3, C.CostoRuta1, C.CostoRuta2, C.CostoRuta3, C.OrdenCaso, R.IdRespuesta FROM ((((((Respuesta R INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Casos C ON D.IdDistanciaViaje = C.IdDistanciaViaje)";
-                var dr = OdbcClient.GenerarReader(sql, conexion);
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        encu = new EncuestaReportar();
-                        encu.IdRespuesta = int.Parse(dr["IdRespuesta"].ToString());
-                        encu.NroEncuesta = int.Parse(dr["NroEncuesta"].ToString());
-                        //encu.UsuarioConectado = dr["User"].ToString();
-                        lstEncuestas.Add(encu);
-                        encu = null;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw new Exception("Hubo un problema al Obtener las Encuestas");
-            }
-            finally
-            {
-                conexion.Close();
-            }
-            return lstEncuestas;
-        }
 
         public static List<EncuestaReportar> ObtenerEncuestasParametros(DateTime pFechaDesde, DateTime pFechaHasta, int pIdUsuario)
         {
@@ -123,7 +92,11 @@ namespace Encuestador.DL
             try
             {
                 //TODO 04: Ver el tema de que si hay que borrar los datos una vez que ya se hizo el export
-                string sql = "SELECT R.NroEncuesta, R.Sentido, R.PatenteLetras, R.PatenteNumero, R.PatenteExtranjera, R.FechaEncuesta, R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3, V.Descripcion as TipoVehiculo, U.[User] AS Usuario, M.Descripcion AS Motivo, S.Descripcion AS Sitio, C.TiempoRuta1, C.TiempoRuta2, C.TiempoRuta3, C.CostoRuta1, C.CostoRuta2, C.CostoRuta3, C.OrdenCaso, R.IdRespuesta FROM ((((((Respuesta R INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Casos C ON D.IdDistanciaViaje = C.IdDistanciaViaje) where 1=1 ";
+                //string sql = "SELECT R.NroEncuesta, R.IdRespuesta, S.IdSitio, S.Descripcion AS Sitio, R.Sentido, U.[User] AS Usuario, R.FechaEncuesta, V.Descripcion as TipoVehiculo, R.PatenteLetras, R.PatenteNumero, R.PatenteExtranjera, D.Descripcion as Distancia, M.Descripcion AS Motivo, R.RespuestaCaso1, C.TiempoRuta1, C.CostoRuta1, R.RespuestaCaso2, C.TiempoRuta2, C.CostoRuta2, R.RespuestaCaso3, C.TiempoRuta3, C.CostoRuta3, C.OrdenCaso  FROM ((((((Respuesta R INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Casos C ON D.IdDistanciaViaje = C.IdDistanciaViaje) where 1 = 1 ";
+
+                //string sql = "SELECT R.NroEncuesta, R.IdRespuesta, R.IdSitio, S.Descripcion AS Sitio,R.Sentido,U.[User] as Usuario, R.FechaEncuesta, V.Descripcion AS TipoVehiculo, R.PatenteLetras, R.PatenteNumero, R.PatenteExtranjera,D.Descripcion as Distancia, M.Descripcion AS Motivo,                 R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3 FROM(((((Respuesta R INNER JOIN DistanciaViaje D ON R.IdDistanciaViaje = D.IdDistanciaViaje) INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN                          MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN                          Vehiculos V ON R.IdVehiculo = V.IdVehiculo) where 1 = 1 ";
+                string sql= "SELECT R.NroEncuesta, R.IdRespuesta, R.IdSitio, S.Descripcion AS Sitio, R.Sentido, U.[User] AS Usuario, R.FechaEncuesta, V.Descripcion AS TipoVehiculo, R.PatenteLetras, R.PatenteNumero, R.PatenteExtranjera, M.Descripcion AS Motivo, R.RespuestaCaso1, R.RespuestaCaso2, R.RespuestaCaso3, R.HoraEncuesta, R.DistanciaViaje, TV.Descripcion FROM (((((Respuesta R INNER JOIN Login U ON R.IdUsuario = U.IdEncuestador) INNER JOIN MotivoViaje M ON R.IdMotivoViaje = M.IdMotivoViaje) INNER JOIN Sitios S ON R.IdSitio = S.IdSitios) INNER JOIN Vehiculos V ON R.IdVehiculo = V.IdVehiculo) INNER JOIN TiempoViaje TV ON R.IdTiempoViaje = TV.IdTiempoViaje) WHERE (1 = 1)";
+
                 var lstParametros = new List<OleDbParameter>();
                 if (pFechaDesde < DateTime.Now)
                 {
@@ -151,25 +124,32 @@ namespace Encuestador.DL
 
                         encu.FechaEncuesta = DateTime.Parse(dr["FechaEncuesta"].ToString());
 
-                        encu.NroEncuesta = int.Parse(dr["NroEncuesta"].ToString());
+                        encu.NroEncuesta = dr["NroEncuesta"].ToString();
                         encu.Sentido = dr["Sentido"].ToString();
-                        encu.PatenteLetras = dr["PatenteLetras"].ToString();
-                        encu.PatenteNumero = dr["PatenteNumero"].ToString();
-                        encu.PatenteExtranjera = dr["PatenteExtranjera"].ToString();
+                        encu.HoraEncuesta=encu.FechaEncuesta.ToShortTimeString();
+                        var placaLetras = dr["PatenteLetras"].ToString();
+                        var placaNumero = dr["PatenteNumero"].ToString();
+                        var placaExtranjera = dr["PatenteExtranjera"].ToString();
+                        if (!string.IsNullOrEmpty(placaExtranjera))
+                            encu.Placa = placaExtranjera;
+                        else
+                            encu.Placa = placaLetras + "-" + placaNumero;
+                        encu.Distancia = dr["Distancia"].ToString();
                         encu.RespuestaCaso1 = int.Parse(dr["RespuestaCaso1"].ToString());
                         encu.RespuestaCaso2 = int.Parse(dr["RespuestaCaso2"].ToString());
                         encu.RespuestaCaso3 = int.Parse(dr["RespuestaCaso3"].ToString());
                         encu.TipoVehiculo = dr["TipoVehiculo"].ToString();
-                        encu.UsuarioConectado = dr["Usuario"].ToString();
+                        encu.Usuario = dr["Usuario"].ToString();
                         encu.Motivo = dr["Motivo"].ToString();
                         encu.Sitio = dr["Sitio"].ToString();
-                        encu.TiempoRuta1 = int.Parse(dr["TiempoRuta1"].ToString());
-                        encu.TiempoRuta2 = int.Parse(dr["TiempoRuta2"].ToString());
-                        encu.TiempoRuta3 = int.Parse(dr["TiempoRuta3"].ToString());
-                        encu.CostoRuta1 = dr["CostoRuta1"].ToString();
-                        encu.CostoRuta2 = dr["CostoRuta2"].ToString();
-                        encu.CostoRuta3 = dr["CostoRuta3"].ToString();
-                        encu.OrdenCaso = int.Parse(dr["OrdenCaso"].ToString());
+                        encu.IdSitio = int.Parse(dr["IdSitio"].ToString());
+                        //encu.TiempoRuta1 = dr["TiempoRuta1"].ToString();
+                        //encu.TiempoRuta2 = dr["TiempoRuta2"].ToString();
+                        //encu.TiempoRuta3 = dr["TiempoRuta3"].ToString();
+                        //encu.CostoRuta1 = dr["CostoRuta1"].ToString();
+                        //encu.CostoRuta2 = dr["CostoRuta2"].ToString();
+                        //encu.CostoRuta3 = dr["CostoRuta3"].ToString();
+                        //encu.OrdenCaso = int.Parse(dr["OrdenCaso"].ToString());
                         encu.IdRespuesta = int.Parse(dr["IdRespuesta"].ToString());
                         lstEncuestas.Add(encu);
                         encu = null;
@@ -185,6 +165,48 @@ namespace Encuestador.DL
                 conexion.Close();
             }
             return lstEncuestas;
+        }
+
+
+        public static string RegistrarEncuestaXUsuario(int pIdUsuario, string pNombreUsuario, string pAmPm)
+        {
+            var conexion = OdbcClient.Conectar();
+            OleDbTransaction trans = null;
+            var filasAfectadas = 0;
+            try
+            {
+                trans = conexion.BeginTransaction();
+                string sql = "INSERT INTO NroEncuestaXUsuario (IdUsuario) VALUES (@IdUsuario)";
+                var lstParametros = new List<OleDbParameter>();
+                lstParametros.Add(new OleDbParameter("@IdUsuario", pIdUsuario));
+                filasAfectadas = OdbcClient.EjecutarCommand(sql, lstParametros, conexion, trans);
+
+                sql = "SELECT @@Identity";
+                var idEncuesta = int.Parse(OdbcClient.EjecutarScalar(sql, conexion, trans));
+                var nroEncuesta = pNombreUsuario + "-"+pAmPm+"-"+idEncuesta.ToString().PadLeft(6, '0');
+
+                sql = "UPDATE NroEncuestaXUsuario SET NroEncuesta = @NroEncuesta WHERE IdEncuesta = @IdEncuesta AND IdUsuario = @IdUsuario";
+                lstParametros = new List<OleDbParameter>();
+                lstParametros.Add(new OleDbParameter("@NroEncuesta", nroEncuesta));
+                lstParametros.Add(new OleDbParameter("@IdEncuesta", idEncuesta));
+                lstParametros.Add(new OleDbParameter("@IdUsuario", pIdUsuario));
+                filasAfectadas = OdbcClient.EjecutarCommand(sql, lstParametros, conexion, trans);
+                if (filasAfectadas > 0)
+                    trans.Commit();
+
+                return nroEncuesta;
+
+            }
+            catch (Exception ex)
+            {
+                if (trans != null)
+                    trans.Rollback();
+                throw new Exception("No se pudo registrar la encuesta");
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
     }
 }

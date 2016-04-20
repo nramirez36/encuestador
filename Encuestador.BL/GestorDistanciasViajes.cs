@@ -6,11 +6,11 @@ namespace Encuestador.BL
 {
     public class GestorDistanciasViajes
     {
-        public List<DistanciaViaje> ObtenerTodasDistanciasViaje()
+        public List<TiempoViaje> ObtenerTodosTiemposViaje()
         {
             try
             {
-                return DistanciasViajes.ObtenerTodasDistanciasViaje();
+                return TiemposViajes.ObtenerTodosTiemposViaje();
             }
             catch (Exception ex)
             {

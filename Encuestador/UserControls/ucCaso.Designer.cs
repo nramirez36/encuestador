@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblRuta3 = new System.Windows.Forms.Label();
+            this.lblTiempo1 = new System.Windows.Forms.Label();
             this.lblTiempo2 = new System.Windows.Forms.Label();
             this.lblTiempo3 = new System.Windows.Forms.Label();
             this.lblCosto1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.lblCosto3 = new System.Windows.Forms.Label();
             this.lblRuta1 = new System.Windows.Forms.Label();
             this.rbRuta4 = new System.Windows.Forms.RadioButton();
-            this.lblTiempo1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,11 +55,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Location = new System.Drawing.Point(17, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(670, 145);
+            this.label1.Size = new System.Drawing.Size(671, 183);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -117,6 +116,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -135,13 +136,13 @@
             this.tableLayoutPanel1.Controls.Add(this.lblCosto2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblCosto3, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblRuta1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 170);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 203);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 115);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(550, 115);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblRuta2
@@ -186,9 +187,21 @@
             this.lblRuta3.Location = new System.Drawing.Point(409, 2);
             this.lblRuta3.Name = "lblRuta3";
             this.lblRuta3.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.lblRuta3.Size = new System.Drawing.Size(112, 34);
+            this.lblRuta3.Size = new System.Drawing.Size(136, 34);
             this.lblRuta3.TabIndex = 2;
             this.lblRuta3.Text = "Ruta 3";
+            // 
+            // lblTiempo1
+            // 
+            this.lblTiempo1.AutoSize = true;
+            this.lblTiempo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTiempo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo1.Location = new System.Drawing.Point(177, 38);
+            this.lblTiempo1.Name = "lblTiempo1";
+            this.lblTiempo1.Size = new System.Drawing.Size(108, 26);
+            this.lblTiempo1.TabIndex = 4;
+            this.lblTiempo1.Text = "##:##";
+            this.lblTiempo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTiempo2
             // 
@@ -209,7 +222,7 @@
             this.lblTiempo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempo3.Location = new System.Drawing.Point(409, 38);
             this.lblTiempo3.Name = "lblTiempo3";
-            this.lblTiempo3.Size = new System.Drawing.Size(112, 26);
+            this.lblTiempo3.Size = new System.Drawing.Size(136, 26);
             this.lblTiempo3.TabIndex = 6;
             this.lblTiempo3.Text = "##:##";
             this.lblTiempo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,6 +238,7 @@
             this.lblCosto1.Size = new System.Drawing.Size(108, 47);
             this.lblCosto1.TabIndex = 8;
             this.lblCosto1.Text = "$ ##";
+            this.lblCosto1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCosto2
             // 
@@ -237,6 +251,7 @@
             this.lblCosto2.Size = new System.Drawing.Size(108, 47);
             this.lblCosto2.TabIndex = 9;
             this.lblCosto2.Text = "$ ##";
+            this.lblCosto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCosto3
             // 
@@ -246,9 +261,10 @@
             this.lblCosto3.Location = new System.Drawing.Point(409, 66);
             this.lblCosto3.Name = "lblCosto3";
             this.lblCosto3.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.lblCosto3.Size = new System.Drawing.Size(112, 47);
+            this.lblCosto3.Size = new System.Drawing.Size(136, 47);
             this.lblCosto3.TabIndex = 10;
             this.lblCosto3.Text = "$ ##";
+            this.lblCosto3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRuta1
             // 
@@ -275,18 +291,6 @@
             this.rbRuta4.Text = "Ninguna de las opciones";
             this.rbRuta4.UseVisualStyleBackColor = true;
             this.rbRuta4.CheckedChanged += new System.EventHandler(this.rbRuta4_CheckedChanged);
-            // 
-            // lblTiempo1
-            // 
-            this.lblTiempo1.AutoSize = true;
-            this.lblTiempo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTiempo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo1.Location = new System.Drawing.Point(177, 38);
-            this.lblTiempo1.Name = "lblTiempo1";
-            this.lblTiempo1.Size = new System.Drawing.Size(108, 26);
-            this.lblTiempo1.TabIndex = 4;
-            this.lblTiempo1.Text = "##:##";
-            this.lblTiempo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucCaso
             // 

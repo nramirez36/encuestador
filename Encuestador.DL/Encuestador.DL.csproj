@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casos.cs" />
-    <Compile Include="DistanciasViajes.cs" />
+    <Compile Include="TiemposViajes.cs" />
     <Compile Include="MotivosViajes.cs" />
     <Compile Include="Odbc\OdbcClient.cs" />
     <Compile Include="Respuestas.cs" />

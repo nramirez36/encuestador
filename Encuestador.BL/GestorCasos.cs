@@ -7,11 +7,11 @@ namespace Encuestador.BL
 {
     public class GestorCasos
     {
-        public List<Caso> ObtenerCasosPorIdDistancia(int pIdDistancia)
+        public List<Caso> ObtenerCasosPorIdDistancia(int pIdDistancia, int pIdVehiculo)
         {
             try
             {
-                return Casos.ObtenerCasosPorIdDistancia(pIdDistancia);
+                return Casos.ObtenerCasosPorIdDistancia(pIdDistancia, pIdVehiculo);
             }
             catch (Exception ex)
             {

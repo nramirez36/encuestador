@@ -66,7 +66,12 @@ namespace Encuestador.DL
             com.Transaction = tran;
             return com.ExecuteNonQuery();
         }
-
+        public static string EjecutarScalar(String strSQL, OleDbConnection con, OleDbTransaction trans)
+        {
+            var cmd = ArmaCommand(strSQL, con);
+            cmd.Transaction = trans;
+            return cmd.ExecuteScalar().ToString();
+        }
         public static string EjecutarScalar(String strSQL, List<OleDbParameter> lista, OleDbConnection con, OleDbTransaction tran)
         {
             var cmd = ArmaCommand(strSQL, lista, con);

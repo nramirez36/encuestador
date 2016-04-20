@@ -35,7 +35,8 @@ namespace Encuestador.UserControls
         #region Metodos
         private void CargarDatos()
         {
-            this.txtFechaHoraEncuesta.Text = oRespuesta.FechaEncuesta.ToString();
+            this.txtFechaHoraEncuesta.Text = oRespuesta.FechaEncuesta.ToShortDateString();
+            this.txtHoraEncuesta.Text = oRespuesta.FechaEncuesta.ToShortTimeString();
             CargarVehiculos();
         }
         private bool validarControlesTipoVehiculo()
@@ -46,27 +47,24 @@ namespace Encuestador.UserControls
                 return false;
             }
 
-            if (chkPlacaExtranjera.Checked)
-            {
-                if (txtPatente.Text == null || txtPatente.Text.Equals(""))
-                {
-                    MessageBox.Show("Debe ingresar la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-            }
-            else
-            {
-                if (txtPatenteLetras.Text == null || txtPatenteLetras.Text.Equals(""))
-                {
-                    MessageBox.Show("Debe ingresar las Letras de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                if (!mskPlacaNumeros.MaskFull)
-                {
-                    MessageBox.Show("Debe ingresar los Números de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-            }
+            //if (txtPatente.Text == null || txtPatente.Text.Equals(""))
+            //{
+            //       MessageBox.Show("Debe ingresar la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return false;
+            //}
+            //else
+            //{
+            //    if (txtPatenteLetras.Text == null || txtPatenteLetras.Text.Equals(""))
+            //    {
+            //        MessageBox.Show("Debe ingresar las Letras de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return false;
+            //    }
+            //    if (!mskPlacaNumeros.MaskFull)
+            //    {
+            //        MessageBox.Show("Debe ingresar los Números de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return false;
+            //    }
+            //}
 
             return true;
         }
@@ -93,9 +91,14 @@ namespace Encuestador.UserControls
                 if (validarControlesTipoVehiculo())
                 {
                     oRespuesta.IdVehiculo = pVehiculo.IdVehiculo;
-                    oRespuesta.PatenteExtranjera = chkPlacaExtranjera.Checked ? txtPatente.Text : string.Empty;
-                    oRespuesta.PatenteLetras = !chkPlacaExtranjera.Checked ? txtPatenteLetras.Text : string.Empty;
-                    oRespuesta.PatenteNumero = !chkPlacaExtranjera.Checked ? mskPlacaNumeros.Text : string.Empty;
+                    //oRespuesta.PatenteExtranjera = chkPlacaExtranjera.Checked ? txtPatente.Text : string.Empty;
+                    //oRespuesta.PatenteLetras = !chkPlacaExtranjera.Checked ? txtPatenteLetras.Text : string.Empty;
+                    //oRespuesta.PatenteNumero = !chkPlacaExtranjera.Checked ? mskPlacaNumeros.Text : string.Empty;
+
+                    oRespuesta.PatenteExtranjera = txtPatente.Text;
+                    oRespuesta.PatenteLetras = txtPatenteLetras.Text;
+                    oRespuesta.PatenteNumero = mskPlacaNumeros.Text;
+
                     return true;
                 }
                 return false;
@@ -121,21 +124,21 @@ namespace Encuestador.UserControls
             this.cmbTipoVehiculo.DropDownWidth = pw;
         }
 
-        private void chkPlacaExtranjera_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkPlacaExtranjera.Checked)
-            {
-                txtPatenteLetras.Visible = false;
-                mskPlacaNumeros.Visible = false;
-                txtPatente.Visible = true;
-            }
-            else
-            {
-                txtPatenteLetras.Visible = true;
-                mskPlacaNumeros.Visible = true;
-                txtPatente.Visible = false;
-            }
-        }
+        //private void chkPlacaExtranjera_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chkPlacaExtranjera.Checked)
+        //    {
+        //        txtPatenteLetras.Visible = false;
+        //        mskPlacaNumeros.Visible = false;
+        //        txtPatente.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        txtPatenteLetras.Visible = true;
+        //        mskPlacaNumeros.Visible = true;
+        //        txtPatente.Visible = false;
+        //    }
+        //}
         private void ucDatosVehiculo_Load(object sender, EventArgs e)
         {
             CargarDatos();
@@ -149,5 +152,23 @@ namespace Encuestador.UserControls
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
         #endregion
+
+        private void mskPlacaNumeros_TextChanged(object sender, EventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(txtPatenteLetras.Text) || !string.IsNullOrEmpty(mskPlacaNumeros.Text))
+            //{   
+            //    txtPatenteLetras.Enabled = true;
+            //    mskPlacaNumeros.Enabled = true;
+            //    txtPatente.Enabled = false;
+            //}
+            //else
+            //{
+            //    txtPatenteLetras.Enabled = false;
+            //    mskPlacaNumeros.Enabled = false;
+            //    txtPatente.Enabled = true;
+            //}
+        }
+
+        
     }
 }

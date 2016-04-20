@@ -4,26 +4,26 @@ using Encuestador.Entities;
 
 namespace Encuestador.DL
 {
-    public class DistanciasViajes
+    public class TiemposViajes
     {
-        public static List<DistanciaViaje> ObtenerTodasDistanciasViaje()
+        public static List<TiempoViaje> ObtenerTodosTiemposViaje()
         {
             var conexion = OdbcClient.Conectar();
-            DistanciaViaje distancia = null;
-            List<DistanciaViaje> lstDistancias = new List<DistanciaViaje>();
+            TiempoViaje tiempo = null;
+            List<TiempoViaje> lstDistancias = new List<TiempoViaje>();
             try
             {
-                string sql = "SELECT IdDistanciaViaje, Descripcion FROM DistanciaViaje";
+                string sql = "SELECT IdTiempoViaje, Descripcion FROM TiempoViaje";
                 var dr = OdbcClient.GenerarReader(sql, conexion);
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        distancia = new DistanciaViaje();
-                        distancia.IdDistanciaViaje = int.Parse(dr["IdDistanciaViaje"].ToString());
-                        distancia.Descripcion = dr["Descripcion"].ToString();
-                        lstDistancias.Add(distancia);
-                        distancia = null;
+                        tiempo = new TiempoViaje();
+                        tiempo.IdTiempoViaje = int.Parse(dr["IdTiempoViaje"].ToString());
+                        tiempo.Descripcion = dr["Descripcion"].ToString();
+                        lstDistancias.Add(tiempo);
+                        tiempo = null;
                     }
                 }
             }

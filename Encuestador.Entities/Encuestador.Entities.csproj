@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caso.cs" />
-    <Compile Include="DistanciaViaje.cs" />
     <Compile Include="EncuestaReportar.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MotivoViaje.cs" />
@@ -69,6 +68,7 @@
     <Compile Include="Respuesta.cs" />
     <Compile Include="Sentido.cs" />
     <Compile Include="Sitio.cs" />
+    <Compile Include="TiempoViaje.cs" />
     <Compile Include="Vehiculo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

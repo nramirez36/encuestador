@@ -42,5 +42,16 @@ namespace Encuestador.BL
                 throw ex;
             }
         }
+        public string RegistrarEncuestaXUsuario(int pIdUsuario, string pNombreUsuario, string pAmPm)
+        {
+            try
+            {
+                return Respuestas.RegistrarEncuestaXUsuario(pIdUsuario, pNombreUsuario,pAmPm);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

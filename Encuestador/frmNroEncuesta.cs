@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 using Encuestador.Entities;
-
+using Encuestador.BL;
 namespace Encuestador
 {
     public partial class frmNroEncuesta : Form
     {
         #region Variables
-
+        private GestorRespuestas gestorRespuestas = new GestorRespuestas();
         #endregion
 
         #region Propiedades
@@ -35,6 +35,9 @@ namespace Encuestador
         public void LoadDatos()
         {
             this.Text = this.Text + " - " + UsuarioConectado.User;
+            var ampm=  DateTime.Now.Hour<12 ? "am" : "pm";
+            var pNroRespuesta = gestorRespuestas.RegistrarEncuestaXUsuario(UsuarioConectado.IdEncuestador, UsuarioConectado.User,ampm);
+            txtNroEncuesta.Text = pNroRespuesta;
         }
 
         private void IrASitiosEncuestas()
@@ -42,7 +45,7 @@ namespace Encuestador
             if (validarControles())
             {
                 var frmControl = new frmControl();
-                frmControl.NroEncuesta = int.Parse(txtNroEncuesta.Text);
+                frmControl.NroEncuesta = txtNroEncuesta.Text;
                 frmControl.UsuarioConectado = UsuarioConectado;
                 this.Close();
                 frmControl.ShowDialog();

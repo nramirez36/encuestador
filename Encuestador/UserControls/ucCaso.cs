@@ -8,7 +8,7 @@ namespace Encuestador.UserControls
 
         #region Propiedades
         public Caso CasoSeleccionado { get; set; }
-        public DistanciaViaje DistanciaViajeSeleccionada { get; set; }
+        public TiempoViaje DistanciaViajeSeleccionada { get; set; }
         public MotivoViaje MotivoSeleccionado { get; set; }
         public int IdRutaSeleccionada { get; set; }
         #endregion
@@ -82,6 +82,5 @@ namespace Encuestador.UserControls
             AsignarRespuesta();
         }
         #endregion
-
     }
 }
