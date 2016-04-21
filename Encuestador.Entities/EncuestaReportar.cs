@@ -20,20 +20,13 @@ namespace Encuestador.Entities
         public String Placa { get; set; }
         public string  Distancia { get; set; }
         public string Motivo { get; set; }
-
+        public string TiempoViaje { get; set; }
 
         public int RespuestaCaso1 { get; set; }
-        public string TiempoRuta1 { get; set; }
-        public string CostoRuta1 { get; set; }
 
         public int RespuestaCaso2 { get; set; }
-        public string TiempoRuta2 { get; set; }
-        public string CostoRuta2 { get; set; }
 
         public int RespuestaCaso3 { get; set; }
-        public string CostoRuta3 { get; set; }
-        public string TiempoRuta3 { get; set; }        
         
-        public int OrdenCaso { get; set; }
     }
 }

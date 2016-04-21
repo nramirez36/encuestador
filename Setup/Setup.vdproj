@@ -21,20 +21,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_61333445B1A8A60A803BEC0BE75FADA6"
-        "OwnerKey" = "8:_B93D5C1CF3AC9F30B793F6313F042355"
+        "MsmKey" = "8:_2B3418715DEE2AF5FC98A8EED183D8CD"
+        "OwnerKey" = "8:_B0A8CE08BECBFD3066B4338B165DC9F1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_61333445B1A8A60A803BEC0BE75FADA6"
+        "MsmKey" = "8:_2B3418715DEE2AF5FC98A8EED183D8CD"
         "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_61333445B1A8A60A803BEC0BE75FADA6"
-        "OwnerKey" = "8:_C30D417AB410DEE1A2D3635B868B4BB2"
+        "MsmKey" = "8:_3C76F5CF015D0F907A4C86921D6A3D96"
+        "OwnerKey" = "8:_D152330E2EDDEE4E135A68760F90D92F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C76F5CF015D0F907A4C86921D6A3D96"
+        "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C76F5CF015D0F907A4C86921D6A3D96"
+        "OwnerKey" = "8:_3CC6DD23B695076E4DA45B432A128879"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3CC6DD23B695076E4DA45B432A128879"
+        "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4F8F76C3F464AFDF8CD1E96B90EC34EE"
+        "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,26 +69,74 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B0A8CE08BECBFD3066B4338B165DC9F1"
+        "OwnerKey" = "8:_CCD1F26908A3BF484D78E21BC182B97E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0A8CE08BECBFD3066B4338B165DC9F1"
+        "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0A8CE08BECBFD3066B4338B165DC9F1"
+        "OwnerKey" = "8:_4F8F76C3F464AFDF8CD1E96B90EC34EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B93D5C1CF3AC9F30B793F6313F042355"
-        "OwnerKey" = "8:_C30D417AB410DEE1A2D3635B868B4BB2"
+        "MsmKey" = "8:_CCD1F26908A3BF484D78E21BC182B97E"
+        "OwnerKey" = "8:_4F8F76C3F464AFDF8CD1E96B90EC34EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B93D5C1CF3AC9F30B793F6313F042355"
+        "MsmKey" = "8:_CCD1F26908A3BF484D78E21BC182B97E"
         "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C30D417AB410DEE1A2D3635B868B4BB2"
+        "MsmKey" = "8:_D152330E2EDDEE4E135A68760F90D92F"
+        "OwnerKey" = "8:_3CC6DD23B695076E4DA45B432A128879"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D152330E2EDDEE4E135A68760F90D92F"
         "OwnerKey" = "8:_B8CA5D5EA6EC444B9F44610D1D661AEC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2B3418715DEE2AF5FC98A8EED183D8CD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3CC6DD23B695076E4DA45B432A128879"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D152330E2EDDEE4E135A68760F90D92F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3C76F5CF015D0F907A4C86921D6A3D96"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,19 +154,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C30D417AB410DEE1A2D3635B868B4BB2"
+        "OwnerKey" = "8:_4F8F76C3F464AFDF8CD1E96B90EC34EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B93D5C1CF3AC9F30B793F6313F042355"
+        "OwnerKey" = "8:_CCD1F26908A3BF484D78E21BC182B97E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_61333445B1A8A60A803BEC0BE75FADA6"
+        "OwnerKey" = "8:_B0A8CE08BECBFD3066B4338B165DC9F1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -223,20 +295,113 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_61333445B1A8A60A803BEC0BE75FADA6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2B3418715DEE2AF5FC98A8EED183D8CD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Encuestador.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_61333445B1A8A60A803BEC0BE75FADA6"
+                    "_2B3418715DEE2AF5FC98A8EED183D8CD"
+                    {
+                    "Name" = "8:stdole.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:stdole.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C76F5CF015D0F907A4C86921D6A3D96"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Encuestador.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3C76F5CF015D0F907A4C86921D6A3D96"
                     {
                     "Name" = "8:Encuestador.Entities.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:Encuestador.Entities.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3CC6DD23B695076E4DA45B432A128879"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Encuestador.BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_3CC6DD23B695076E4DA45B432A128879"
+                    {
+                    "Name" = "8:Encuestador.BL.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Encuestador.BL.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4F8F76C3F464AFDF8CD1E96B90EC34EE"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4F8F76C3F464AFDF8CD1E96B90EC34EE"
+                    {
+                    "Name" = "8:Microsoft.Office.Interop.Excel.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Office.Interop.Excel.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
@@ -274,20 +439,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B93D5C1CF3AC9F30B793F6313F042355"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B0A8CE08BECBFD3066B4338B165DC9F1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Encuestador.DL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B93D5C1CF3AC9F30B793F6313F042355"
+                    "_B0A8CE08BECBFD3066B4338B165DC9F1"
                     {
-                    "Name" = "8:Encuestador.DL.dll"
+                    "Name" = "8:office.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Encuestador.DL.dll"
+            "SourcePath" = "8:office.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
@@ -305,20 +470,51 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C30D417AB410DEE1A2D3635B868B4BB2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CCD1F26908A3BF484D78E21BC182B97E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Encuestador.BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C30D417AB410DEE1A2D3635B868B4BB2"
+                    "_CCD1F26908A3BF484D78E21BC182B97E"
                     {
-                    "Name" = "8:Encuestador.BL.dll"
+                    "Name" = "8:Microsoft.Vbe.Interop.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Encuestador.BL.dll"
+            "SourcePath" = "8:Microsoft.Vbe.Interop.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D152330E2EDDEE4E135A68760F90D92F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Encuestador.DL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D152330E2EDDEE4E135A68760F90D92F"
+                    {
+                    "Name" = "8:Encuestador.DL.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Encuestador.DL.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"
@@ -404,7 +600,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Encuestador"
         "ProductCode" = "8:{5A45B0CD-646A-41FC-86D3-C930220C3807}"
-        "PackageCode" = "8:{E60D796D-8674-41B4-954B-DC3B67787AFC}"
+        "PackageCode" = "8:{98220956-E0C1-438C-BD09-DDE93E8C04FE}"
         "UpgradeCode" = "8:{31F426F0-3B2C-4644-9D66-046D304C08A9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -951,7 +1147,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_99D49B3F008F44A288E41752DAB12978"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8221F5573E204770B3498959E01551F5"
             {
             "SourcePath" = "8:"
             "TargetName" = "8:"
@@ -981,7 +1177,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B8CA5D5EA6EC444B9F44610D1D661AEC"
             {
-            "SourcePath" = "8:..\\Encuestador\\obj\\x86\\Debug\\Encuestador.exe"
+            "SourcePath" = "8:..\\Encuestador\\obj\\Release\\Encuestador.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C9E5B90F0C2242299C29AE54C37BEBF6"

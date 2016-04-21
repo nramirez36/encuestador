@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mskPlacaNumeros = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaHoraEncuesta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,17 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoraEncuesta = new System.Windows.Forms.TextBox();
+            this.txtPlacaNumero = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // mskPlacaNumeros
-            // 
-            this.mskPlacaNumeros.BeepOnError = true;
-            this.mskPlacaNumeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskPlacaNumeros.Location = new System.Drawing.Point(337, 69);
-            this.mskPlacaNumeros.Mask = "999";
-            this.mskPlacaNumeros.Name = "mskPlacaNumeros";
-            this.mskPlacaNumeros.Size = new System.Drawing.Size(58, 35);
-            this.mskPlacaNumeros.TabIndex = 4;
             // 
             // txtFechaHoraEncuesta
             // 
@@ -133,7 +123,7 @@
             this.txtPatenteLetras.Name = "txtPatenteLetras";
             this.txtPatenteLetras.Size = new System.Drawing.Size(58, 35);
             this.txtPatenteLetras.TabIndex = 3;
-            this.txtPatenteLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatenteNro_KeyPress);
+            this.txtPatenteLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatenteLetras_KeyPress);
             // 
             // label1
             // 
@@ -145,7 +135,7 @@
             this.label1.Location = new System.Drawing.Point(25, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 29);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Placa (otro país):";
             // 
             // label2
@@ -172,10 +162,21 @@
             this.txtHoraEncuesta.Size = new System.Drawing.Size(199, 35);
             this.txtHoraEncuesta.TabIndex = 10;
             // 
+            // txtPlacaNumero
+            // 
+            this.txtPlacaNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlacaNumero.Location = new System.Drawing.Point(337, 69);
+            this.txtPlacaNumero.MaxLength = 3;
+            this.txtPlacaNumero.Name = "txtPlacaNumero";
+            this.txtPlacaNumero.Size = new System.Drawing.Size(58, 35);
+            this.txtPlacaNumero.TabIndex = 4;
+            this.txtPlacaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlacaNumero_KeyPress);
+            // 
             // ucDatosVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtPlacaNumero);
             this.Controls.Add(this.txtHoraEncuesta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -184,7 +185,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbTipoVehiculo);
             this.Controls.Add(this.txtFechaHoraEncuesta);
-            this.Controls.Add(this.mskPlacaNumeros);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.label7);
             this.Name = "ucDatosVehiculo";
@@ -196,8 +196,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox mskPlacaNumeros;
         private System.Windows.Forms.TextBox txtFechaHoraEncuesta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -208,5 +206,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoraEncuesta;
+        private System.Windows.Forms.TextBox txtPlacaNumero;
     }
 }

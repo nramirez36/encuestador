@@ -116,8 +116,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -156,6 +155,7 @@
             this.lblRuta2.Size = new System.Drawing.Size(108, 34);
             this.lblRuta2.TabIndex = 1;
             this.lblRuta2.Text = "Ruta 2";
+            this.lblRuta2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -190,6 +190,7 @@
             this.lblRuta3.Size = new System.Drawing.Size(136, 34);
             this.lblRuta3.TabIndex = 2;
             this.lblRuta3.Text = "Ruta 3";
+            this.lblRuta3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTiempo1
             // 
@@ -277,6 +278,7 @@
             this.lblRuta1.Size = new System.Drawing.Size(108, 34);
             this.lblRuta1.TabIndex = 0;
             this.lblRuta1.Text = "Ruta 1";
+            this.lblRuta1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rbRuta4
             // 
@@ -285,10 +287,10 @@
             this.rbRuta4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbRuta4.Location = new System.Drawing.Point(355, 362);
             this.rbRuta4.Name = "rbRuta4";
-            this.rbRuta4.Size = new System.Drawing.Size(254, 43);
+            this.rbRuta4.Size = new System.Drawing.Size(97, 43);
             this.rbRuta4.TabIndex = 6;
             this.rbRuta4.TabStop = true;
-            this.rbRuta4.Text = "Ninguna de las opciones";
+            this.rbRuta4.Text = "Ninguna";
             this.rbRuta4.UseVisualStyleBackColor = true;
             this.rbRuta4.CheckedChanged += new System.EventHandler(this.rbRuta4_CheckedChanged);
             // 

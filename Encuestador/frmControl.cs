@@ -78,7 +78,7 @@ namespace Encuestador
 
                     CargarCasos();
                     ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
-                    ucCaso1.CargarDatos();
+                    ucCaso1.CargarDatos();                    
 
                     panelMotivoViaje.Visible = false;
                     panelCaso1.Visible = true;
@@ -156,6 +156,7 @@ namespace Encuestador
                     pbPorcentajeAvance.Value = 100;
 
                     pRespuesta.RespuestaCaso3 = ucCaso3.IdRutaSeleccionada;
+
 
                     var resultado = pGestorRespuestas.RegistrarEncuesta(pRespuesta);
 

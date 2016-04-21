@@ -81,7 +81,10 @@ namespace Encuestador.UserControls
             try
             {
                 var lista = pGestorSitios.ObtenerTodosSitios().ToList();
-                cmbSitios.DataSource = lista;
+                lista.Add(new Sitio() { IdSitios = 0, Descripcion = "Seleccione el Sitio" });
+                var listaOrdenada = lista.OrderBy(x => x.IdSitios).ToList();
+
+                cmbSitios.DataSource = listaOrdenada;
                 cmbSitios.DisplayMember = "Descripcion";
                 cmbSitios.ValueMember = "IdSitios";
             }

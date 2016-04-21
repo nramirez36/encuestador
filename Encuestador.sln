@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encuestador.DL", "Encuestad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encuestador.Entities", "Encuestador.Entities\Encuestador.Entities.csproj", "{081B0F92-89C5-4D06-8C0B-6A6498F1B091}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,12 +51,6 @@ Global
 		{081B0F92-89C5-4D06-8C0B-6A6498F1B091}.Release|Any CPU.Build.0 = Release|Any CPU
 		{081B0F92-89C5-4D06-8C0B-6A6498F1B091}.Release|x86.ActiveCfg = Release|Any CPU
 		{081B0F92-89C5-4D06-8C0B-6A6498F1B091}.Release|x86.Build.0 = Release|Any CPU
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Debug|Any CPU.ActiveCfg = Debug
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Debug|x86.ActiveCfg = Debug
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Debug|x86.Build.0 = Debug
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|Any CPU.ActiveCfg = Release
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|x86.ActiveCfg = Release
-		{1DFC23CB-A0CD-445E-9097-0A0E2E1954C8}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

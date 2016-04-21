@@ -35,7 +35,7 @@
             this.lblExplicacionEncuesta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.mskDistancia = new System.Windows.Forms.MaskedTextBox();
+            this.txtDistancia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cmbMotivoViaje
@@ -134,20 +134,20 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Km";
             // 
-            // mskDistancia
+            // txtDistancia
             // 
-            this.mskDistancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskDistancia.Location = new System.Drawing.Point(251, 88);
-            this.mskDistancia.Mask = "99999999";
-            this.mskDistancia.Name = "mskDistancia";
-            this.mskDistancia.Size = new System.Drawing.Size(167, 32);
-            this.mskDistancia.TabIndex = 2;
+            this.txtDistancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDistancia.Location = new System.Drawing.Point(251, 88);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(167, 32);
+            this.txtDistancia.TabIndex = 2;
+            this.txtDistancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDistancia_KeyPress);
             // 
             // ucDatosMotivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.mskDistancia);
+            this.Controls.Add(this.txtDistancia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbMotivoViaje);
@@ -172,6 +172,6 @@
         private System.Windows.Forms.Label lblExplicacionEncuesta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox mskDistancia;
+        private System.Windows.Forms.TextBox txtDistancia;
     }
 }

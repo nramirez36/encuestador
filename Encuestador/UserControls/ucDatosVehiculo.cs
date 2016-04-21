@@ -47,24 +47,16 @@ namespace Encuestador.UserControls
                 return false;
             }
 
-            //if (txtPatente.Text == null || txtPatente.Text.Equals(""))
-            //{
-            //       MessageBox.Show("Debe ingresar la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return false;
-            //}
-            //else
-            //{
-            //    if (txtPatenteLetras.Text == null || txtPatenteLetras.Text.Equals(""))
-            //    {
-            //        MessageBox.Show("Debe ingresar las Letras de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return false;
-            //    }
-            //    if (!mskPlacaNumeros.MaskFull)
-            //    {
-            //        MessageBox.Show("Debe ingresar los Números de la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return false;
-            //    }
-            //}
+            var patenteLetras = txtPatenteLetras.Text;
+            var patenteNros = txtPlacaNumero.Text;
+            var patenteExtr = txtPatente.Text;
+
+            //if (((txtPatenteLetras.Text == null || txtPatenteLetras.Equals("")) && (txtPlacaNumero.Text == null || txtPlacaNumero.Equals(""))) || (txtPatente.Text == null || txtPatente.Equals("")))
+            if (string.IsNullOrEmpty(patenteExtr) && string.IsNullOrEmpty(patenteLetras) && string.IsNullOrEmpty(patenteNros))
+            {
+                MessageBox.Show("Debe ingresar la Placa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return true;
         }
@@ -91,13 +83,9 @@ namespace Encuestador.UserControls
                 if (validarControlesTipoVehiculo())
                 {
                     oRespuesta.IdVehiculo = pVehiculo.IdVehiculo;
-                    //oRespuesta.PatenteExtranjera = chkPlacaExtranjera.Checked ? txtPatente.Text : string.Empty;
-                    //oRespuesta.PatenteLetras = !chkPlacaExtranjera.Checked ? txtPatenteLetras.Text : string.Empty;
-                    //oRespuesta.PatenteNumero = !chkPlacaExtranjera.Checked ? mskPlacaNumeros.Text : string.Empty;
-
                     oRespuesta.PatenteExtranjera = txtPatente.Text;
                     oRespuesta.PatenteLetras = txtPatenteLetras.Text;
-                    oRespuesta.PatenteNumero = mskPlacaNumeros.Text;
+                    oRespuesta.PatenteNumero = txtPlacaNumero.Text;
 
                     return true;
                 }
@@ -124,51 +112,32 @@ namespace Encuestador.UserControls
             this.cmbTipoVehiculo.DropDownWidth = pw;
         }
 
-        //private void chkPlacaExtranjera_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (chkPlacaExtranjera.Checked)
-        //    {
-        //        txtPatenteLetras.Visible = false;
-        //        mskPlacaNumeros.Visible = false;
-        //        txtPatente.Visible = true;
-        //    }
-        //    else
-        //    {
-        //        txtPatenteLetras.Visible = true;
-        //        mskPlacaNumeros.Visible = true;
-        //        txtPatente.Visible = false;
-        //    }
-        //}
         private void ucDatosVehiculo_Load(object sender, EventArgs e)
         {
             CargarDatos();
         }
-
-        private void txtPatenteNro_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPatenteLetras_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                //MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
             if ((int)e.KeyChar == (int)Keys.Enter)
-                mskPlacaNumeros.Focus();
+                txtPlacaNumero.Focus();
+        }
 
-            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        private void txtPlacaNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
         #endregion
-
-        private void mskPlacaNumeros_TextChanged(object sender, EventArgs e)
-        {
-            //if (!string.IsNullOrEmpty(txtPatenteLetras.Text) || !string.IsNullOrEmpty(mskPlacaNumeros.Text))
-            //{   
-            //    txtPatenteLetras.Enabled = true;
-            //    mskPlacaNumeros.Enabled = true;
-            //    txtPatente.Enabled = false;
-            //}
-            //else
-            //{
-            //    txtPatenteLetras.Enabled = false;
-            //    mskPlacaNumeros.Enabled = false;
-            //    txtPatente.Enabled = true;
-            //}
-        }
-
-        
     }
+
 }

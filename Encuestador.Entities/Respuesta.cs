@@ -22,5 +22,6 @@ namespace Encuestador.Entities
         public DateTime HoraEncuesta { get; set; }
         public string NombreUsuario { get; set; }
         public int IdTiempoViaje { get; set; }
+
     }
 }

@@ -202,9 +202,6 @@ namespace Encuestador
             var nombreFile = "Reporte_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
             obj.WriteDataTableToExcel(dt, "Encuestas_fecha", pPath + nombreFile, "Encuestas de los días " + pFechaDesdeSeleccionada.ToShortDateString() + " y " + pFechaHastaSeleccionada.ToShortDateString() + " correspondiente a " + pUsuarioSeleccionado.User);
 
-            //if (!pBajaRealizada)
-            //    borrarEncuestasExportadas();
-
             MessageBox.Show("Se creo correctamente el archivo " + nombreFile + " en la siguiente ubicación: " + pPath);
             this.Cursor = Cursors.Default;
 
@@ -216,17 +213,16 @@ namespace Encuestador
             var nombreFile = "Reporte_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".csv";
             pListaResultado.ToCSV<EncuestaReportar>(path: pPath + nombreFile);
 
-            //if (!pBajaRealizada)
-            //    borrarEncuestasExportadas();
 
             MessageBox.Show("Se creo correctamente el archivo " + nombreFile + " en la siguiente ubicación: " + pPath);
             this.Cursor = Cursors.Default;
         }
-        #endregion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
+
     }
 }
