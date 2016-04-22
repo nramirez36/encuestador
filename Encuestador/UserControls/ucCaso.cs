@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Encuestador.Entities;
+using System.Globalization;
+
 namespace Encuestador.UserControls
 {
     public partial class ucCaso : UserControl
@@ -37,9 +39,9 @@ namespace Encuestador.UserControls
         {
             var mensajeActualizado = label1.Text.Replace("##", DistanciaViajeSeleccionada.Descripcion).Replace("#motivo", MotivoSeleccionado.Descripcion);
             label1.Text = mensajeActualizado;
-            lblCosto1.Text = lblCosto1.Text.Replace("##", CasoSeleccionado.CostaRuta1);
-            lblCosto2.Text = lblCosto2.Text.Replace("##", CasoSeleccionado.CostaRuta2);
-            lblCosto3.Text = lblCosto3.Text.Replace("##", CasoSeleccionado.CostaRuta3);
+            lblCosto1.Text = lblCosto1.Text.Replace("##", CasoSeleccionado.CostaRuta1).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
+            lblCosto2.Text = lblCosto2.Text.Replace("##", CasoSeleccionado.CostaRuta2).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
+            lblCosto3.Text = lblCosto3.Text.Replace("##", CasoSeleccionado.CostaRuta3).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
 
             lblTiempo1.Text = lblTiempo1.Text.Replace("##:##", CasoSeleccionado.TiempoRuta1);
             lblTiempo2.Text = lblTiempo2.Text.Replace("##:##", CasoSeleccionado.TiempoRuta2);

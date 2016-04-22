@@ -88,6 +88,7 @@
             this.cmbSitios.IntegralHeight = false;
             this.cmbSitios.ItemHeight = 29;
             this.cmbSitios.Location = new System.Drawing.Point(241, 19);
+            this.cmbSitios.MaxDropDownItems = 6;
             this.cmbSitios.Name = "cmbSitios";
             this.cmbSitios.Size = new System.Drawing.Size(511, 37);
             this.cmbSitios.TabIndex = 1;

@@ -268,12 +268,8 @@ namespace Encuestador
         {
             if (!pRegistroFinalizado)
             {
-                DialogResult dialogo = MessageBox.Show("Aún no termino la encuestra ¿Desea cerrar la encuesta actual? (Se van a perder los datos)",
-                 "Cerrar la encuesta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogo == DialogResult.Yes)
-                {
-                    this.Close();
-                }
+                DialogResult dialogo = MessageBox.Show("Encuesta anulada",
+                 "Cerrar la encuesta", MessageBoxButtons.OK, MessageBoxIcon.Question);                
             }
         }
 

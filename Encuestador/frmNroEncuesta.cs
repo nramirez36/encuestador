@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using Encuestador.Entities;
 using Encuestador.BL;
+using System.Globalization;
+
 namespace Encuestador
 {
     public partial class frmNroEncuesta : Form
@@ -35,7 +37,8 @@ namespace Encuestador
         public void LoadDatos()
         {
             this.Text = this.Text + " - " + UsuarioConectado.User;
-            var ampm=  DateTime.Now.Hour<12 ? "am" : "pm";
+            //var ampm=  DateTime.Now.Hour<12 ? "am" : "pm";
+            var ampm = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture) == "AM" ? "am" : "pm";
             var pNroRespuesta = gestorRespuestas.RegistrarEncuestaXUsuario(UsuarioConectado.IdEncuestador, UsuarioConectado.User,ampm);
             txtNroEncuesta.Text = pNroRespuesta;
         }

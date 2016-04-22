@@ -85,7 +85,7 @@ namespace Encuestador.UserControls
                 var listaOrdenada = lista.OrderBy(x => x.IdSitios).ToList();
 
                 cmbSitios.DataSource = listaOrdenada;
-                cmbSitios.DisplayMember = "Descripcion";
+                cmbSitios.DisplayMember = "IdSitios";
                 cmbSitios.ValueMember = "IdSitios";
             }
             catch (Exception ex)

@@ -93,6 +93,7 @@ namespace Encuestador.UserControls
                 cmbDistanciaViaje.DataSource = listaOrdenada;
                 cmbDistanciaViaje.DisplayMember = "Descripcion";
                 cmbDistanciaViaje.ValueMember = "IdTiempoViaje";
+                cmbDistanciaViaje.MaxDropDownItems = 6;
             }
             catch (Exception ex)
             {
