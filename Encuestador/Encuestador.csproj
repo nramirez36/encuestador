@@ -233,10 +233,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Encuestador.ico" />
     <Content Include="App_Data\SistemaEncuestador.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Encuestador.ico" />
     <None Include="Recursos\1459500780_stock_task.ico" />
     <Content Include="Recursos\add.gif" />
     <Content Include="Recursos\AddPopUp.png" />

@@ -37,12 +37,14 @@ namespace Encuestador.UserControls
 
         public void CargarDatos()
         {
+            var simboloColones = new CultureInfo("es-CR").NumberFormat.CurrencySymbol;
+
             var mensajeActualizado = label1.Text.Replace("##", DistanciaViajeSeleccionada.Descripcion).Replace("#motivo", MotivoSeleccionado.Descripcion);
             label1.Text = mensajeActualizado;
-            lblCosto1.Text = lblCosto1.Text.Replace("##", CasoSeleccionado.CostaRuta1).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
-            lblCosto2.Text = lblCosto2.Text.Replace("##", CasoSeleccionado.CostaRuta2).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
-            lblCosto3.Text = lblCosto3.Text.Replace("##", CasoSeleccionado.CostaRuta3).Replace("$", NumberFormatInfo.CurrentInfo.CurrencySymbol);
-
+            lblCosto1.Text = lblCosto1.Text.Replace("##", CasoSeleccionado.CostaRuta1).Replace("$", simboloColones);
+            lblCosto2.Text = lblCosto2.Text.Replace("##", CasoSeleccionado.CostaRuta2).Replace("$", simboloColones);
+            lblCosto3.Text = lblCosto3.Text.Replace("##", CasoSeleccionado.CostaRuta3).Replace("$", simboloColones);
+            
             lblTiempo1.Text = lblTiempo1.Text.Replace("##:##", CasoSeleccionado.TiempoRuta1);
             lblTiempo2.Text = lblTiempo2.Text.Replace("##:##", CasoSeleccionado.TiempoRuta2);
             lblTiempo3.Text = lblTiempo3.Text.Replace("##:##", CasoSeleccionado.TiempoRuta3);

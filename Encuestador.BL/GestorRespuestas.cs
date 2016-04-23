@@ -30,7 +30,7 @@ namespace Encuestador.BL
             {
                 throw ex;
             }
-        }       
+        }
         public List<EncuestaReportar> ObtenerEncuestasParametros(DateTime pFechaDesde, DateTime pFechaHasta, int pIdUsuario)
         {
             try
@@ -46,7 +46,18 @@ namespace Encuestador.BL
         {
             try
             {
-                return Respuestas.RegistrarEncuestaXUsuario(pIdUsuario, pNombreUsuario,pAmPm);
+                return Respuestas.RegistrarEncuestaXUsuario(pIdUsuario, pNombreUsuario, pAmPm);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int EliminarEncuestaXUsuario(string pNroEncuesta, int pIdEncuesta, int pIdUser)
+        {
+            try
+            {
+                return Respuestas.EliminarEncuestaXUsuario(pNroEncuesta, pIdEncuesta, pIdUser);
             }
             catch (Exception ex)
             {

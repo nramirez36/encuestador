@@ -14,7 +14,7 @@ namespace Encuestador.Entities
         public string Sitio { get; set; }
         public String Sentido { get; set; }
         public string Usuario { get; set; }
-        public DateTime FechaEncuesta { get; set; }
+        public string FechaEncuesta { get; set; }
         public string HoraEncuesta{ get; set; }
         public string TipoVehiculo { get; set; }
         public String Placa { get; set; }

@@ -125,7 +125,7 @@ namespace Encuestador.DL
                     while (dr.Read())
                     {
                         encu = new EncuestaReportar();
-                        encu.FechaEncuesta = DateTime.Parse(dr["FechaEncuesta"].ToString());
+                        encu.FechaEncuesta = DateTime.Parse(dr["FechaEncuesta"].ToString()).ToShortDateString();
 
                         encu.NroEncuesta = dr["NroEncuesta"].ToString();
                         encu.IdRespuesta = int.Parse(dr["IdRespuesta"].ToString());
@@ -134,8 +134,8 @@ namespace Encuestador.DL
                         encu.Sentido = dr["Sentido"].ToString();
                         encu.Usuario = dr["Usuario"].ToString();
 
-                        //encu.HoraEncuesta = encu.FechaEncuesta.ToShortTimeString();
-                        encu.HoraEncuesta = dr["HoraEncuesta"].ToString();
+                        encu.HoraEncuesta = DateTime.Parse(dr["HoraEncuesta"].ToString()).ToShortTimeString();
+                        //encu.HoraEncuesta = dr["HoraEncuesta"].ToString();
                         encu.TipoVehiculo = dr["TipoVehiculo"].ToString();
 
                         var placaLetras = dr["PatenteLetras"].ToString();
@@ -211,7 +211,7 @@ namespace Encuestador.DL
                 if (filasAfectadas > 0)
                     trans.Commit();
 
-                return nroEncuesta;
+                return nroEncuesta+"*"+idEncuesta;
 
             }
             catch (Exception ex)
@@ -224,6 +224,39 @@ namespace Encuestador.DL
             {
                 conexion.Close();
             }
+        }
+
+        public static int EliminarEncuestaXUsuario(string pNroEncuesta, int pIdEncuesta, int pIdUser)
+        {
+            var conexion = OdbcClient.Conectar();
+            OleDbTransaction trans = null;
+            var filasAfectadas = 0;
+            try
+            {
+                trans = conexion.BeginTransaction();
+                string comando = "DELETE FROM NroEncuestaXUsuario WHERE  NroEncuesta = @NroEncuesta and IdEncuesta = @IdEncuesta AND IdUsuario = @IdUsuario";
+                var lstParametros = new List<OleDbParameter>();
+                lstParametros.Add(new OleDbParameter("@NroEncuesta", pNroEncuesta));
+                lstParametros.Add(new OleDbParameter("@IdEncuesta", pIdEncuesta));
+                lstParametros.Add(new OleDbParameter("@IdUsuario", pIdUser));
+                filasAfectadas = OdbcClient.EjecutarCommand(comando, lstParametros, conexion, trans);
+                if (filasAfectadas > 0)
+                    trans.Commit();
+            }
+            catch (Exception)
+            {
+                if (trans != null)
+                {
+                    trans.Rollback();
+                }
+                throw new Exception("No se pudo borrar la encuesta");
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+            return filasAfectadas;
         }
     }
 }

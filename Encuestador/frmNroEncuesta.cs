@@ -10,6 +10,7 @@ namespace Encuestador
     {
         #region Variables
         private GestorRespuestas gestorRespuestas = new GestorRespuestas();
+        private int pIdEncuesta;
         #endregion
 
         #region Propiedades
@@ -39,8 +40,9 @@ namespace Encuestador
             this.Text = this.Text + " - " + UsuarioConectado.User;
             //var ampm=  DateTime.Now.Hour<12 ? "am" : "pm";
             var ampm = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture) == "AM" ? "am" : "pm";
-            var pNroRespuesta = gestorRespuestas.RegistrarEncuestaXUsuario(UsuarioConectado.IdEncuestador, UsuarioConectado.User,ampm);
-            txtNroEncuesta.Text = pNroRespuesta;
+            var pNroRespuesta = gestorRespuestas.RegistrarEncuestaXUsuario(UsuarioConectado.IdEncuestador, UsuarioConectado.User,ampm).Split('*');
+            txtNroEncuesta.Text = pNroRespuesta[0];
+            pIdEncuesta = int.Parse(pNroRespuesta[1]);
         }
 
         private void IrASitiosEncuestas()
@@ -50,6 +52,7 @@ namespace Encuestador
                 var frmControl = new frmControl();
                 frmControl.NroEncuesta = txtNroEncuesta.Text;
                 frmControl.UsuarioConectado = UsuarioConectado;
+                frmControl.IdEncuesta = pIdEncuesta;
                 this.Close();
                 frmControl.ShowDialog();
             }

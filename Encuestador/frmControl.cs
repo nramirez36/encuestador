@@ -29,6 +29,7 @@ namespace Encuestador
         #region Propiedades
         public Login UsuarioConectado { get; set; }
         public string NroEncuesta { get; set; }
+        public int IdEncuesta { get; set; }
         #endregion
 
         #region Constuctor
@@ -78,7 +79,7 @@ namespace Encuestador
 
                     CargarCasos();
                     ucCaso1.CasoSeleccionado = pLstCasosPorId.Single(p => p.OrdenCaso == 1);
-                    ucCaso1.CargarDatos();                    
+                    ucCaso1.CargarDatos();
 
                     panelMotivoViaje.Visible = false;
                     panelCaso1.Visible = true;
@@ -101,7 +102,7 @@ namespace Encuestador
 
                     panelCaso1.Visible = false;
                     panelCaso2.Visible = true;
-                    
+
                     ucCaso2.DistanciaViajeSeleccionada = pDistancia;
                     ucCaso2.MotivoSeleccionado = pMotivo;
 
@@ -196,7 +197,7 @@ namespace Encuestador
             try
             {
                 pLstCasosPorId = new List<Caso>();
-                pLstCasosPorId = pGestorCasos.ObtenerCasosPorIdDistancia(pDistancia.IdTiempoViaje,pRespuesta.IdVehiculo).ToList();
+                pLstCasosPorId = pGestorCasos.ObtenerCasosPorIdDistancia(pDistancia.IdTiempoViaje, pRespuesta.IdVehiculo).ToList();
             }
             catch (Exception ex)
             {
@@ -264,16 +265,24 @@ namespace Encuestador
             IrACasos1();
         }
 
-        private void frmControl_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmControl_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!pRegistroFinalizado)
             {
-                DialogResult dialogo = MessageBox.Show("Encuesta anulada",
-                 "Cerrar la encuesta", MessageBoxButtons.OK, MessageBoxIcon.Question);                
+                var res = pGestorRespuestas.EliminarEncuestaXUsuario(pRespuesta.NroEncuesta, IdEncuesta, UsuarioConectado.IdEncuestador);
+
+                DialogResult dialogo = MessageBox.Show("¿Desea cerrar la encuesta? (Va a perder todo el progreso)",
+                 "Cerrar la encuesta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
             }
         }
-
-        #endregion
 
         private void btnCaso2_Click(object sender, EventArgs e)
         {
@@ -289,5 +298,7 @@ namespace Encuestador
         {
             Finalizar();
         }
+        #endregion
+
     }
 }
